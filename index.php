@@ -37,7 +37,9 @@
                     <div id="header-cart-content">
                         <div id="cart-img-div">
                             <img id="cart-img" src="/img/cart.png" alt="cart_image">
-                            <div id="cart-nbr"><!-- nombre d'element dans le panier --></div>
+                            <div id="cart-nbr">
+                                <!-- nombre d'element dans le panier -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -58,23 +60,24 @@
             </nav>
         </div>
     </header>
-
     <main>
         <!-- Barre de navigation gauche -->
         <nav id="side-nav">
             <a href="">Home</a>
             <button class="dropdown-btn">Products</button>
             <div class="dropdown-container">
-                <a href="">Geodes</a>
-                <a href="">Rough Gemstones</a>
-                <a href="">Crystals</a>
+                <a href="/php/category.php?geodes">Geodes</a>
+                <a href="/php/category.php?roughGems">Rough Gems</a>
+                <a href="/php/category.php?crystals">Crystals</a>
             </div>
             <a href="">About</a>
             <a href="">Contact</a>
         </nav>
         <!-- Contenu principal de la page -->
         <div id="page-content">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, odio repellendus. Aut, doloribus? Laudantium error atque obcaecati consequuntur quibusdam doloremque consectetur quas nemo nisi! Magnam adipisci alias odio totam ab.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, odio repellendus. Aut, doloribus? Laudantium
+            error atque obcaecati consequuntur quibusdam doloremque consectetur quas nemo nisi! Magnam adipisci alias
+            odio totam ab.
         </div>
     </main>
 

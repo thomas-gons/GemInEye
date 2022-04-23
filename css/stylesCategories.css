@@ -1,0 +1,14 @@
+#gems {
+    display: grid;
+    grid-gap: 10px;
+    align-content: space-between;
+    justify-content: center;
+    margin: auto auto;
+}
+
+.gem {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}

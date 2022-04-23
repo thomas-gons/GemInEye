@@ -4,7 +4,7 @@
             "description": "Classic, gem gray-blue celestine crystals fill a geode on this large specimen from the classic locale at Sakoany. The freestanding crystal with the classic chisel termination is about 5.5 cm long and the large crystal attached to the walls is about 7.0 cm long. Sakoany celestines are the world's finest and this is a large richly filled geode. Weighs 2420 grams or 5.3 pounds. Ex Paul Zerfass Collection.",
             "origin": "Boeny, Madagascar",
             "category": 1,
-            "img": "img/geodes/celestine.png",
+            "img": "/img/geodes/celestine.png",
             "url": "https://www.mindat.org/photo-885484.html",
             "quantity": 0,
             "price": 0
@@ -40,7 +40,8 @@
             "price": 0
         }
     ],
-    "rough gems": [{
+    "roughGems": [
+        {
             "name": "Azurite, Goethite, Limonite",
             "description": "An intergrown aggregate of very sharp, dark midnight blue Azurite crystals covers all sides of a small amount of dark brown Limonite/Goethite gossan matrix.",
             "origin": "Arizona, USA",
@@ -126,7 +127,7 @@
             "description": "Etched, gemmy, light blue aquamarine crystal.",
             "origin": "New South Wales, Australia",
             "category": 3,
-            "img": "/img/crystal/aquamarine.png",
+            "img": "/img/crystals/aquamarine.png",
             "url": "https://www.mindat.org/photo-965056.html",
             "quantity": 0,
             "price": 0

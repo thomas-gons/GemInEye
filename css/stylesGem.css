@@ -1,0 +1,15 @@
+#gem {
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin: 5% 25% 0 25%;
+    height: 40%;
+}
+
+#gem-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 35%;
+    margin-left: 10%;
+}
+
