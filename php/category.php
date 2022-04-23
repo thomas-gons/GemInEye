@@ -57,7 +57,7 @@
                 <ul id="head-list">
                     <li class="li-elem"><a href="/index.php">Home</a></li>
                     <li class="li-line"></li>
-                    <li class="li-elem"><a href="">Products</a></li>
+                    <li class="li-elem"><a href="/php/category.php">Products</a></li>
                     <li class="li-line"></li>
                     <li class="li-elem"><a href="">About</a></li>
                     <li class="li-line"></li>

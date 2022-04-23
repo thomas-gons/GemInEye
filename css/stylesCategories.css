@@ -6,6 +6,10 @@
     margin: auto auto;
 }
 
+/* .gem img:hover {
+    transform: scale(1.05);
+} */
+
 .gem {
     display: flex;
     flex-direction: column;

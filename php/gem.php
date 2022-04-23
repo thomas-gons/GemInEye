@@ -56,7 +56,7 @@
                 <ul id="head-list">
                     <li class="li-elem"><a href="/index.php">Home</a></li>
                     <li class="li-line"></li>
-                    <li class="li-elem"><a href="">Products</a></li>
+                    <li class="li-elem"><a href="/php/category.php">Products</a></li>
                     <li class="li-line"></li>
                     <li class="li-elem"><a href="">About</a></li>
                     <li class="li-line"></li>
@@ -88,7 +88,9 @@
                 $data = json_decode($jsonStr, true)[$_SESSION["category"]];
 
                 $gemIndexInJSON = array_search($gem, array_column($data, "name"));
-                $gemName = strtolower(explode(',', trim($data[$gemIndexInJSON]["name"]))[0]);
+
+                $sep = str_contains($data[$gemIndexInJSON]["name"], "(") ? ' ': ',';
+                $gemName = strtolower(explode($sep, trim($data[$gemIndexInJSON]["name"]))[0]);
 
                 echo "<img src='/img/".$_SESSION['category']."/".$gemName.".png'
                         width=400 height=400/>
