@@ -11,8 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
-    <link href="/css/stylesGem.css" rel="stylesheet" type="text/css">
+    <link href="/css/stylesCategories.css" rel="stylesheet" type="text/css">
     <script src="/js/side_navbar.js" defer></script>
+    <script src="/js/categories.js" defer></script>
 </head>
 
 <body>
@@ -56,7 +57,7 @@
                 <ul id="head-list">
                     <li class="li-elem"><a href="/index.php">Home</a></li>
                     <li class="li-line"></li>
-                    <li class="li-elem"><a href="/php/category.php">Products</a></li>
+                    <li class="li-elem"><a href="/category.php">Products</a></li>
                     <li class="li-line"></li>
                     <li class="li-elem"><a href="">About</a></li>
                     <li class="li-line"></li>
@@ -68,38 +69,34 @@
     <main>
         <!-- Barre de navigation gauche -->
         <nav id="side-nav">
-            <a href="">Home</a>
+            <a href="/index.php">Home</a>
             <button class="dropdown-btn">Products</button>
             <div class="dropdown-container">
-                <a href="/php/category.php?geodes">Geodes</a>
-                <a href="/php/category.php?roughGems">Rough Gems</a>
-                <a href="/php/category.php?crystals">Crystals</a>
+                <a href="/category.php?geodes">Geodes</a>
+                <a href="/category.php?roughGems">Rough Gems</a>
+                <a href="/category.php?crystals">Crystals</a>
             </div>
             <a href="">About</a>
             <a href="">Contact</a>
         </nav>
         <!-- Contenu principal de la page -->
-        <div id="gem">
+        <div id="gems">
             <?php 
-                $indexQuestMark = strpos($_SERVER["REQUEST_URI"], "&");
-                $gem = urldecode(substr($_SERVER["REQUEST_URI"], $indexQuestMark + 1));
-                
-                $jsonStr = file_get_contents("../data/stock.json");
-                $data = json_decode($jsonStr, true)[$_SESSION["category"]];
+                $indexQuestMark = strpos($_SERVER["REQUEST_URI"], "?");
+                $category = substr($_SERVER["REQUEST_URI"], $indexQuestMark + 1);
+                $_SESSION["category"] = $category;
 
-                $gemIndexInJSON = array_search($gem, array_column($data, "name"));
-
-                $sep = str_contains($data[$gemIndexInJSON]["name"], "(") ? ' ': ',';
-                $gemName = strtolower(explode($sep, trim($data[$gemIndexInJSON]["name"]))[0]);
-
-                echo "<img src='/img/".$_SESSION['category']."/".$gemName.".png'
-                        width=400 height=400/>
-                      <div id='gem-info'>
-                          <i>Name: ".$data[$gemIndexInJSON]["name"]."</i><br>
-                          <i>Origin: ".$data[$gemIndexInJSON]["origin"]."</i><br>
-                          <i>Description: ".$data[$gemIndexInJSON]["description"]."</i><br>
-                          <i>Price: ".$data[$gemIndexInJSON]["price"]." €</i>
-                      </div>";
+                $jsonStr = file_get_contents("data/stock.json");
+                $data = json_decode($jsonStr, true)[$category];
+                foreach($data as $d){
+                    echo "<div class='gem'>
+                            <a href='/gem.php?$category&".$d["name"]."'>
+                                <img class='gem-img' src='$d[img]' alt=".$d["name"].">
+                            </a>
+                            <i>$d[name]</i>
+                            <i>$d[origin]</i>
+                         </div>";
+                }
             ?>
         </div>
     </main>

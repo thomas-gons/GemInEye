@@ -51,7 +51,7 @@
                 <ul id="head-list">
                     <li class="li-elem"><a href="">Home</a></li>
                     <li class="li-line"></li>
-                    <li class="li-elem"><a href="/php/category.php">Products</a></li>
+                    <li class="li-elem"><a href="/category.php">Products</a></li>
                     <li class="li-line"></li>
                     <li class="li-elem"><a href="">About</a></li>
                     <li class="li-line"></li>
@@ -66,9 +66,9 @@
             <a href="">Home</a>
             <button class="dropdown-btn">Products</button>
             <div class="dropdown-container">
-                <a href="/php/category.php?geodes">Geodes</a>
-                <a href="/php/category.php?roughGems">Rough Gems</a>
-                <a href="/php/category.php?crystals">Crystals</a>
+                <a href="category.php?geodes">Geodes</a>
+                <a href="category.php?roughGems">Rough Gems</a>
+                <a href="category.php?crystals">Crystals</a>
             </div>
             <a href="">About</a>
             <a href="">Contact</a>
