@@ -55,11 +55,8 @@
             <nav id="head-nav">
                 <ul id="head-list">
                     <li class="li-elem"><a href="/index.php">Home</a></li>
-
                     <li class="li-elem"><a href="/category.php">Products</a></li>
-
                     <li class="li-elem"><a href="">About</a></li>
-
                     <li class="li-elem"><a href="">Contact</a></li>
                 </ul>
             </nav>

@@ -71,7 +71,7 @@
             <button class="dropdown-btn">Products</button>
             <div class="dropdown-container">
                 <a href="/category.php?geodes">Geodes</a>
-                <a href="/category.php?roughGems">Rough Gems</a>
+                <a href="/category.php?rough_gems">Rough Gems</a>
                 <a href="/category.php?crystals">Crystals</a>
             </div>
             <a href="">About</a>

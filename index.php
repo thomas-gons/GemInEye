@@ -49,7 +49,7 @@
         <div id="nav-container">
             <nav id="head-nav">
                 <ul id="head-list">
-                    <li class="li-elem"><a href="">Home</a></li>
+                    <li class="li-elem"><a href="/index.php">Home</a></li>
                     <li class="li-elem"><a href="/category.php">Products</a></li>
                     <li class="li-elem"><a href="">About</a></li>
                     <li class="li-elem"><a href="">Contact</a></li>
@@ -64,7 +64,7 @@
             <button class="dropdown-btn">Products</button>
             <div class="dropdown-container">
                 <a href="category.php?geodes">Geodes</a>
-                <a href="category.php?roughGems">Rough Gems</a>
+                <a href="category.php?rough_gems">Rough Gems</a>
                 <a href="category.php?crystals">Crystals</a>
             </div>
             <a href="">About</a>
