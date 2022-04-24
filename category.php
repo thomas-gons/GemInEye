@@ -13,7 +13,6 @@
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <link href="/css/stylesCategories.css" rel="stylesheet" type="text/css">
     <script src="/js/side_navbar.js" defer></script>
-    <script src="/js/categories.js" defer></script>
 </head>
 
 <body>
@@ -56,11 +55,11 @@
             <nav id="head-nav">
                 <ul id="head-list">
                     <li class="li-elem"><a href="/index.php">Home</a></li>
-                    <li class="li-line"></li>
+
                     <li class="li-elem"><a href="/category.php">Products</a></li>
-                    <li class="li-line"></li>
+
                     <li class="li-elem"><a href="">About</a></li>
-                    <li class="li-line"></li>
+
                     <li class="li-elem"><a href="">Contact</a></li>
                 </ul>
             </nav>
@@ -73,34 +72,44 @@
             <button class="dropdown-btn">Products</button>
             <div class="dropdown-container">
                 <a href="/category.php?geodes">Geodes</a>
-                <a href="/category.php?roughGems">Rough Gems</a>
+                <a href="/category.php?rough_gems">Rough Gems</a>
                 <a href="/category.php?crystals">Crystals</a>
             </div>
             <a href="">About</a>
             <a href="">Contact</a>
         </nav>
         <!-- Contenu principal de la page -->
-        <div id="gems">
-            <?php 
-                $indexQuestMark = strpos($_SERVER["REQUEST_URI"], "?");
-                $category = substr($_SERVER["REQUEST_URI"], $indexQuestMark + 1);
-                $_SESSION["category"] = $category;
-
-                $jsonStr = file_get_contents("data/stock.json");
-                $data = json_decode($jsonStr, true)[$category];
-                foreach($data as $d){
-                    echo "<div class='gem'>
-                            <a href='/gem.php?$category&".$d["name"]."'>
-                                <img class='gem-img' src='$d[img]' alt=".$d["name"].">
-                            </a>
-                            <i>$d[name]</i>
-                            <i>$d[origin]</i>
-                         </div>";
-                }
-            ?>
+        <div id="page-content">
+            <div class="content-title">
+                <h1>
+                    <?php
+                        $indexQuestMark = strpos($_SERVER["REQUEST_URI"], "?");
+                        $category = substr($_SERVER["REQUEST_URI"], $indexQuestMark + 1);
+                        $title = implode(' ', explode('_', $category));
+                        $title = ucwords($title);
+                        echo $title;
+                    ?>
+                </h1>
+            </div>
+            <div id="gems">
+                <?php
+                    $_SESSION["category"] = $category;
+                    $jsonStr = file_get_contents("data/stock.json");
+                    $data = json_decode($jsonStr, true)[$category];
+                    foreach($data as $d){
+                        echo "<div class='gem'>
+                                <a href='/gem.php?$category&".$d["name"]."'>
+                                    <img class='gem-img' src='$d[img]' alt=".$d["name"].">
+                                </a>
+                                <p class='gem-name'>$d[name]</p>
+                                <i style='font-weight: 600;'>$d[origin]</i>
+                            </div>";
+                    }
+                ?>
+            </div>
         </div>
     </main>
-     <footer>
+    <footer>
         <ul id="footer-list">
             <li class="footer-list-item"><a href="/index.php">Home</a></li>
             <li class="footer-list-item"><a href="">About</a></li>

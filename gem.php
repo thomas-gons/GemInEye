@@ -12,7 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <link href="/css/stylesGem.css" rel="stylesheet" type="text/css">
+    <link href="/css/stylesCategories.css" rel="stylesheet" type="text/css">
     <script src="/js/side_navbar.js" defer></script>
+    <script src="/js/cart.js" defer></script>
 </head>
 
 <body>
@@ -32,9 +34,9 @@
                     <h1>Gem In Eye</h1>
                 </div>
                 <div id="header-login">
-                    <!-- TODO : PHP : afficher Sign in + Log in, si pas connecté -->
+                    <!-- TODO : PHP : afficher Sign in + Sign up, si pas connecté -->
                     <button class="log-btn">Sign in</button>
-                    <button class="log-btn">Log in</button>
+                    <button class="log-btn">Sign up</button>
                     <!-- TODO : PHP : afficher Log out, si connecté -->
                     <!-- <button class="log-btn">Log out</button> -->
                 </div>
@@ -55,11 +57,8 @@
             <nav id="head-nav">
                 <ul id="head-list">
                     <li class="li-elem"><a href="/index.php">Home</a></li>
-                    <li class="li-line"></li>
                     <li class="li-elem"><a href="/category.php">Products</a></li>
-                    <li class="li-line"></li>
                     <li class="li-elem"><a href="">About</a></li>
-                    <li class="li-line"></li>
                     <li class="li-elem"><a href="">Contact</a></li>
                 </ul>
             </nav>
@@ -79,31 +78,59 @@
             <a href="">Contact</a>
         </nav>
         <!-- Contenu principal de la page -->
-        <div id="gem">
-            <?php 
-                $indexQuestMark = strpos($_SERVER["REQUEST_URI"], "&");
-                $gem = urldecode(substr($_SERVER["REQUEST_URI"], $indexQuestMark + 1));
-                
-                $jsonStr = file_get_contents("data/stock.json");
-                $data = json_decode($jsonStr, true)[$_SESSION["category"]];
+        <div id="page-content">
+            <div id="gem">
+                <?php 
+                    $indexQuestMark = strpos($_SERVER["REQUEST_URI"], "&");
+                    $gem = urldecode(substr($_SERVER["REQUEST_URI"], $indexQuestMark + 1));
+                    
+                    $jsonStr = file_get_contents("data/stock.json");
+                    $data = json_decode($jsonStr, true)[$_SESSION["category"]];
 
-                $gemIndexInJSON = array_search($gem, array_column($data, "name"));
+                    $gemIndexInJSON = array_search($gem, array_column($data, "name"));
 
-                $sep = str_contains($data[$gemIndexInJSON]["name"], "(") ? ' ': ',';
-                $gemName = strtolower(explode($sep, trim($data[$gemIndexInJSON]["name"]))[0]);
-
-                echo "<img src='/img/".$_SESSION['category']."/".$gemName.".png'
-                        width=400 height=400/>
-                      <div id='gem-info'>
-                          <i>Name: ".$data[$gemIndexInJSON]["name"]."</i><br>
-                          <i>Origin: ".$data[$gemIndexInJSON]["origin"]."</i><br>
-                          <i>Description: ".$data[$gemIndexInJSON]["description"]."</i><br>
-                          <i>Price: ".$data[$gemIndexInJSON]["price"]." €</i>
-                      </div>";
-            ?>
+                    $sep = str_contains($data[$gemIndexInJSON]["name"], "(") ? ' ': ',';
+                    $gemName = strtolower(explode($sep, trim($data[$gemIndexInJSON]["name"]))[0]);
+                    echo "<div id='gem-container'>
+                            <img src='/img/".$_SESSION['category']."/".$gemName.".png' width=400 height=400/>
+                            <div id='gem-data'>
+                                <p class='gem-name'>".$data[$gemIndexInJSON]["name"]."</p>
+                                <p>Origin:</p>
+                                <p>".$data[$gemIndexInJSON]["origin"]."</p>
+                                <div id='gem-info'>
+                                    <span>Price : </span>
+                                    <span class='gem-price'>$".$data[$gemIndexInJSON]["price"]."</span>
+                                </div>
+                                <div id='gem-buy'>
+                                    <input type='hidden' id='stock' value=".$data[$gemIndexInJSON]["quantity"].">";
+                    if (intval($data[$gemIndexInJSON]["quantity"]) === 0) {
+                        echo "<p class='not-available'>Out of Stock</p>";
+                    } else {
+                        echo "<p class='available'>In Stock</p>";
+                    }
+                    echo "          <div id='select-quantity'>
+                                        <div style='width:100%;'>
+                                            <span>Quantity : </span><span id='quantity-span'>0</span>
+                                            
+                                        </div>
+                                        <div style='width:50%;'>
+                                            <button class='quantity-btn' id='quantity-less'>-</button>
+                                            <button class='quantity-btn' id='quantity-more'>+</button>
+                                        </div>
+                                    </div>
+                                    <button type='submit' name='addCart' id='add-to-cart'>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='gem-descr'>
+                            <p>Description:</p>
+                            <p>".$data[$gemIndexInJSON]["description"]."</p>
+                        </div>";
+                ?>
+            </div>
         </div>
     </main>
-     <footer>
+    <footer>
         <ul id="footer-list">
             <li class="footer-list-item"><a href="/index.php">Home</a></li>
             <li class="footer-list-item"><a href="">About</a></li>

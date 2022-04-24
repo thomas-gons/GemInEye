@@ -50,11 +50,8 @@
             <nav id="head-nav">
                 <ul id="head-list">
                     <li class="li-elem"><a href="">Home</a></li>
-                    <li class="li-line"></li>
                     <li class="li-elem"><a href="/category.php">Products</a></li>
-                    <li class="li-line"></li>
                     <li class="li-elem"><a href="">About</a></li>
-                    <li class="li-line"></li>
                     <li class="li-elem"><a href="">Contact</a></li>
                 </ul>
             </nav>
@@ -80,7 +77,6 @@
             odio totam ab.
         </div>
     </main>
-
     <footer>
         <ul id="footer-list">
             <li class="footer-list-item"><a href="">Home</a></li>

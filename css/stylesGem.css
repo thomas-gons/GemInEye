@@ -1,15 +1,113 @@
 #gem {
-    display: inline-flex;
-    justify-content: space-evenly;
-    margin: 5% 25% 0 25%;
-    height: 40%;
-}
-
-#gem-info {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    width: 35%;
-    margin-left: 10%;
+    justify-content: center;
+    align-items: center;
 }
-
+#gem-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    width: 50%;
+    min-width: min-content;
+}
+#gem-container img {
+    margin: 10px;
+    margin-right: 40px;
+    border-radius: 10px;
+}
+#gem-data {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+#gem-info {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 20px;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+span {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.gem-price {
+    font-size: 1.3rem;
+    margin: 5px;
+    color: #ff2600;
+}
+#gem-buy {
+    padding: 20px 10px;
+}
+.available {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #25b873;
+    margin-bottom: 10px;
+}
+.not-available {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ff2600;
+    margin-bottom: 10px;
+}
+#select-quantity {
+    margin: 5px;
+    padding: 5px 0;
+}
+#quantity-span {
+    margin-right: 5px;
+}
+.quantity-btn {
+    width: 30px;
+    border-radius: 5px;
+    border: 1px solid #292929;
+    margin: 5px;
+    padding: 2px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.quantity-btn:active {
+    transform: scale(0.95);
+}
+#quantity-less:hover {
+    background-color: #ff2600;
+    color: #ffffff;
+}
+#quantity-more:hover {
+    background-color: #25b873;
+    color: #ffffff;
+}
+#add-to-cart {
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    border: 1px solid #292929;
+    background-color: #ff9239;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 0;
+}
+#add-to-cart:hover {
+    background-color: #e46701;
+    color: #ffffff;
+}
+#add-to-cart:active {
+    transform: scale(0.95);
+}
+#gem-descr {
+    width: 65%;
+    margin: auto;
+    padding: 30px 60px;
+}
+p {
+    text-align: justify;
+    font-weight: 600;
+}
