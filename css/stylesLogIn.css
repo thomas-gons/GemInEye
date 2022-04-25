@@ -1,0 +1,40 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10% auto;
+    min-width: max-content;
+}
+
+#auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #323232;
+    border-radius: 20px;
+    padding: 10px 40px 0px;
+}
+
+#username-email-container, #password-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    text-align: center;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+a {
+    padding-left: 5px;
+    text-decoration: none;
+}

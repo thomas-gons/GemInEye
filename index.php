@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    $current_uri = $_SERVER["REQUEST_URI"];
+    if (!isset($_SESSION['referrer'])) {
+        $_SESSION['referrer'] = $current_uri;
+    } else {
+        $previous_uri = $_SESSION['referrer'];
+        $_SESSION['referrer'] = $current_uri;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,19 +36,23 @@
                 <div id="header-title">
                     <h1>Gem In Eye</h1>
                 </div>
-                <div id="header-login">
-                    <!-- TODO : PHP : afficher Sign in + Log in, si pas connecté -->
-                    <button class="log-btn">Sign in</button>
-                    <button class="log-btn">Log in</button>
-                    <!-- TODO : PHP : afficher Log out, si connecté -->
-                    <!-- <button class="log-btn">Log out</button> -->
-                </div>
-                <div id="header-cart">
-                    <div id="header-cart-content">
-                        <div id="cart-img-div">
-                            <img id="cart-img" src="/img/cart.png" alt="cart_image">
-                            <div id="cart-nbr">
-                                <!-- nombre d'element dans le panier -->
+                <div id="header-log-cart">
+                    <div id="header-log">
+                        <?php if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
+                            echo "<a href='logOut.php' class='log-btn'>Log out</a>";
+                        } else {
+                            echo "<a href='sign-in.php' class='log-btn'>Sign in</a>
+                                  <a href='sign-up.php' class='log-btn'>Sign up</a>";
+                        }
+                        ?>
+                    </div>
+                    <div id="header-cart">
+                        <div id="header-cart-content">
+                            <div id="cart-img-div">
+                                <img id="cart-img" src="/img/cart.png" alt="cart_image">
+                                <div id="cart-nbr">
+                                    <!-- nombre d'element dans le panier -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -52,7 +66,7 @@
                     <li class="li-elem"><a href="/index.php">Home</a></li>
                     <li class="li-elem"><a href="/category.php">Products</a></li>
                     <li class="li-elem"><a href="">About</a></li>
-                    <li class="li-elem"><a href="">Contact</a></li>
+                    <li class="li-elem"><a href="/contact.php">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -60,7 +74,7 @@
     <main>
         <!-- Barre de navigation gauche -->
         <nav id="side-nav">
-            <a href="">Home</a>
+            <a href="/index.php">Home</a>
             <button class="dropdown-btn">Products</button>
             <div class="dropdown-container">
                 <a href="category.php?geodes">Geodes</a>
@@ -68,7 +82,7 @@
                 <a href="category.php?crystals">Crystals</a>
             </div>
             <a href="">About</a>
-            <a href="">Contact</a>
+            <a href="/contact.php">Contact</a>
         </nav>
         <!-- Contenu principal de la page -->
         <div id="page-content">
@@ -79,9 +93,9 @@
     </main>
     <footer>
         <ul id="footer-list">
-            <li class="footer-list-item"><a href="">Home</a></li>
+            <li class="footer-list-item"><a href="/index.php">Home</a></li>
             <li class="footer-list-item"><a href="">About</a></li>
-            <li class="footer-list-item"><a href="">Contact</a></li>
+            <li class="footer-list-item"><a href="/contact.php">Contact</a></li>
             <li class="footer-list-item"><a href="">Privacy Policy</a></li>
         </ul>
         <div id="footer-logo-img">

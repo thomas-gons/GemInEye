@@ -1,13 +1,47 @@
 <!-- pattern for customers data -->
-
-<c1>
-    <login></login>
-    <password></password>
-    <firstname></firstname>
-    <lastname></lastname>
-    <gender></gender>
-    <email></email>
-    <birthdate></birthdate>
-    <address></address>
-    <job></job>
-</c1>
+<customers-list>
+    <customer>
+        <login>Thomas</login>
+        <password>a</password>
+        <firstname></firstname>
+        <lastname></lastname>
+        <gender></gender>
+        <email>a@b.c</email>
+        <birthdate></birthdate>
+        <address></address>
+        <job></job>
+    </customer>
+    <customer>
+        <login>Maxime</login>
+        <password>b</password>
+        <firstname></firstname>
+        <lastname></lastname>
+        <gender></gender>
+        <email>b@c.d</email>
+        <birthdate></birthdate>
+        <address></address>
+        <job></job>
+    </customer>
+    <customer>
+        <login>Lucas</login>
+        <password>c</password>
+        <firstname></firstname>
+        <lastname></lastname>
+        <gender></gender>
+        <email>c@d.e</email>
+        <birthdate></birthdate>
+        <address></address>
+        <job></job>
+    </customer>
+    <customer>
+        <login>Raphael</login>
+        <password>d</password>
+        <firstname></firstname>
+        <lastname></lastname>
+        <gender></gender>
+        <email>d@e.f</email>
+        <birthdate></birthdate>
+        <address></address>
+        <job></job>
+    </customer>
+</customers-list>

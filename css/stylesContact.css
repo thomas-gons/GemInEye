@@ -1,0 +1,9 @@
+.FormContact {
+    margin: 0 auto;
+    margin-top: 15%;
+    width: 30%;
+}
+
+.formContactError {
+    color: red;
+}
