@@ -22,7 +22,7 @@
         echo $_SESSION['referrer'];
         header("Location: ".$_SESSION["referrer"]);
     } else {
-        header("Location: /sign-in.php");
+        header("Location: /sign_in.php");
     }
     
    

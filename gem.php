@@ -18,8 +18,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
-    <link href="/css/stylesGem.css" rel="stylesheet" type="text/css">
-    <link href="/css/stylesCategories.css" rel="stylesheet" type="text/css">
+    <link href="/css/styles_gem.css" rel="stylesheet" type="text/css">
+    <link href="/css/styles_categories.css" rel="stylesheet" type="text/css">
     <script src="/js/side_navbar.js" defer></script>
     <script src="/js/cart.js" defer></script>
 </head>
@@ -30,7 +30,6 @@
         <div id="top-container">
             <div id="top-logo-content">
                 <div id="top-logo-img">
-                    <!-- Lien a changer quand on changera en index.php -->
                     <a href="/index.php">
                         <img id="top-logo" src="/img/logo.png" alt="logo_Gem_In_Eye">
                     </a>
@@ -43,10 +42,10 @@
                 <div id="header-log-cart">
                     <div id="header-log">
                     <?php if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
-                            echo "<a href='logOut.php' class='log-btn'>Log out</a>";
+                            echo "<a href='log_out.php' class='log-btn'>Log out</a>";
                         } else {
-                            echo "<a href='sign-in.php' class='log-btn'>Sign in</a>
-                                  <a href='sign-up.php' class='log-btn'>Sign up</a>";
+                            echo "<a href='sign_in.php' class='log-btn'>Sign in</a>
+                                  <a href='sign_up.php' class='log-btn'>Sign up</a>";
                         }
                         ?>
                     </div>

@@ -58,9 +58,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
-    <link href="/css/stylesContact.css" rel="stylesheet" type="text/css">
+    <link href="/css/styles_contact.css" rel="stylesheet" type="text/css">
     <script src="/js/side_navbar.js" defer></script>
-    <script src="/js/FormVerif.js" defer></script>
+    <script src="/js/form_verif.js" defer></script>
 </head>
 
 <body>
@@ -69,8 +69,7 @@
         <div id="top-container">
             <div id="top-logo-content">
                 <div id="top-logo-img">
-                    <!-- Lien a changer quand on changera en index.php -->
-                    <a href="/index.html">
+                    <a href="/index.php">
                         <img id="top-logo" src="/img/logo.png" alt="logo_Gem_In_Eye">
                     </a>
                 </div>
@@ -80,11 +79,13 @@
                     <h1>Gem In Eye</h1>
                 </div>
                 <div id="header-login">
-                    <!-- TODO : PHP : afficher Sign in + Log in, si pas connecté -->
-                    <button class="log-btn">Sign in</button>
-                    <button class="log-btn">Log in</button>
-                    <!-- TODO : PHP : afficher Log out, si connecté -->
-                    <!-- <button class="log-btn">Log out</button> -->
+                    <?php if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
+                            echo "<a href='log_out.php' class='log-btn'>Log out</a>";
+                        } else {
+                            echo "<a href='sign_in.php' class='log-btn'>Sign in</a>
+                                  <a href='sign_up.php' class='log-btn'>Sign up</a>";
+                        }
+                        ?>
                 </div>
                 <div id="header-cart">
                     <div id="header-cart-content">
