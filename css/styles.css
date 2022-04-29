@@ -127,13 +127,72 @@ header {
     height: 50px;
     margin: auto;
 }
-#cart-nbr {
-    margin: auto 5px;
-    min-width: 20px;
-    min-height: 20px;
+
+#cart-content {
+    width: 325px;
+    position: absolute;
+    padding: 10px;
     border-radius: 5px;
-    background-color: #ffffff;
+    background-color: transparent;
 }
+
+#cart-items-nb {
+    width: 22px;
+    height: 22px;
+    margin-left: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20pt;
+    background-color: red;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#cart-items {
+    visibility: hidden;
+    width: 300px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 75px;
+    right: 275px;
+    background: #101010;
+    border-radius: 15px;
+    padding: 10px;
+    min-width: max-content;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #ffffff;
+    text-align: center;
+    margin-bottom: 10;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.cart-item-name {
+    max-width: 150px;
+
+}
+.cart-item-quantity {
+    margin-right: 10px;
+}
+
 #nav-container {
     display: flex;
     flex-wrap: nowrap;
