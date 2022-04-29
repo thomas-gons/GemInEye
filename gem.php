@@ -46,7 +46,7 @@
 
                     $gemName = strtolower(explode(" ", trim($data[$gemIndexInJSON]["name"]))[0]);
                     echo "<div id='gem-container'>
-                            <img src='/img/".$_SESSION['category']."/".$gemName.".png' id='gem-img' width=400 height=400/>
+                            <img src='/img/".$_SESSION['category']."/".$gemName.".png' id='gem-img' width=375 height=375/>
                             <div id='gem-data'>
                                 <p class='gem-name'>".$data[$gemIndexInJSON]["name"]."</p>
                                 <p>Origin:</p>
