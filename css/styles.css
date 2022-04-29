@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
     height: 100vh;
     min-width: fit-content;
-    background-color: #494949;
+    background-color: #3f3f3f;
 }
 header {
     display: flex;
@@ -40,10 +40,10 @@ header {
     width: 100%;
     height: 100%;
     transition: 0.3s;
-    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.384));
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.384));
 }
 #top-logo:hover {
-    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.6));
+    filter: drop-shadow(1px 1px 8px rgba(255, 255, 255, 0.6));
 }
 #header-container {
     width: 100%;
@@ -69,7 +69,6 @@ header {
     flex-direction: row;
     justify-items: space-between;
 }
-
 #header-log {
     flex: 10%;
     display: flex;
@@ -127,7 +126,6 @@ header {
     height: 50px;
     margin: auto;
 }
-
 #cart-content {
     width: 325px;
     position: absolute;
@@ -135,7 +133,6 @@ header {
     border-radius: 5px;
     background-color: transparent;
 }
-
 #cart-items-nb {
     width: 22px;
     height: 22px;
@@ -149,7 +146,6 @@ header {
     font-size: 12px;
     font-weight: 700;
 }
-
 #cart-items {
     visibility: hidden;
     width: 300px;
@@ -159,12 +155,11 @@ header {
     justify-content: center;
     top: 75px;
     right: 275px;
-    background: #101010;
+    background: #242424;
     border-radius: 15px;
     padding: 10px;
     min-width: max-content;
 }
-
 .cart-item {
     display: flex;
     flex-direction: row;
@@ -173,6 +168,9 @@ header {
     margin-bottom: 10px;
 }
 
+.cart-item>img{
+    border-radius: 15%;
+}
 .cart-item:last-child {
     display: flex;
     flex-direction: row;
@@ -180,19 +178,17 @@ header {
     align-items: center;
     border-bottom: #ffffff;
     text-align: center;
-    margin-bottom: 10;
-    font-size: 20px;
     font-weight: 700;
 }
 
 .cart-item-name {
+    font-size: 1rem;
     max-width: 150px;
-
 }
 .cart-item-quantity {
-    margin-right: 10px;
+    font-size: 1rem;
+    margin: 0 10px;
 }
-
 #nav-container {
     display: flex;
     flex-wrap: nowrap;
@@ -255,7 +251,6 @@ main {
     min-width: min-content;
     overflow-x: hidden;
     overflow-y: hidden;
-    padding: 10px;
     background-color: #292929;
     box-shadow: 5px 18px 15px rgba(0, 0, 0, 0.25);
 }
@@ -266,7 +261,7 @@ main {
     font-size: 1.3rem;
     font-weight: 400;
     color: #c9c9c9;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border: none;
     background: none;
     text-decoration: none;
@@ -293,7 +288,7 @@ main {
     font-size: 1rem;
 }
 #page-content {
-    width: 92vw;
+    width: 89vw;
     min-width: min-content;
     height: min-content;
     margin-bottom: 60px;

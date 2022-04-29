@@ -7,7 +7,12 @@
         $previous_uri = $_SESSION['referrer'];
         $_SESSION['referrer'] = $current_uri;
     }
+    if ($_SESSION['contact'] !== 'send') {
+        // PAGE A FAIRE
+        header("Location : php/error_page.php");
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,22 +22,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
-    <script src="/js/side_navbar.js" defer></script>
-    <script src="/js/order.js" defer></script>
+    <link href="/css/styles_contact.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <?php 
-        include "php/misc.php";
+        include("misc.php");
         headerHTML();
     ?>
     <main>
-        <?php sideBarHTML(); ?>
-        <!-- Contenu principal de la page -->
-        <div id="page-content">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, odio repellendus. Aut, doloribus? Laudantium
-            error atque obcaecati consequuntur quibusdam doloremque consectetur quas nemo nisi! Magnam adipisci alias
-            odio totam ab.
+        <div id="page_content">
+            <?php
+                echo $_SESSION['cDate']." ";
+                echo $_SESSION['fName']." ";
+                echo $_SESSION['lName']." ";
+                echo $_SESSION['email']." ";
+                echo $_SESSION['genre']." ";
+                echo $_SESSION['bDate']." ";
+                echo $_SESSION['job']." ";
+                echo $_SESSION['object']." ";
+                echo $_SESSION['content']." ";
+            ?>
         </div>
     </main>
     <?php footerHTML(); ?>

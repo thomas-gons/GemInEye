@@ -27,7 +27,7 @@
 
 <body>
     <?php 
-        include "misc.php";
+        include "php/misc.php";
         headerHTML();
     ?>
     <main>
@@ -50,7 +50,7 @@
                             <div id='gem-data'>
                                 <p class='gem-name'>".$data[$gemIndexInJSON]["name"]."</p>
                                 <p>Origin:</p>
-                                <p>".$data[$gemIndexInJSON]["origin"]."</p>
+                                <p class='gem-origin'>".$data[$gemIndexInJSON]["origin"]."</p>
                                 <div id='gem-info'>
                                     <span>Price : </span>
                                     <span class='gem-price'>$".$data[$gemIndexInJSON]["price"]."</span>
@@ -75,7 +75,7 @@
                                             <i style='width: 70%; text-align: center' id='info-quantity'></i>
                                         </div>
                                     </div>
-                                    <form method='post' action='/order.php' onSubmit='return check()'>
+                                    <form method='post' action='/php/order.php' onSubmit='return check()'>
                                         <input type='hidden' id='cartContent' name='cartContent'>
                                         <input type='submit' onclick='addCart()'id='add-to-cart' value='Add to Cart'>
                                     </form>
@@ -92,3 +92,5 @@
     </main>
     <?php footerHTML(); ?>
 </body>
+
+</html>

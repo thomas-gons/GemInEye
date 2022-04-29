@@ -1,12 +1,10 @@
 let quantity = document.getElementById('quantity-span');
 
-
 document.getElementById('quantity-less').addEventListener('click', () => {
-    if (quantity.textContent > 0){
+    if (quantity.textContent > 0) {
         quantity.textContent = Number(quantity.textContent) - 1;
         document.getElementById('info-quantity').textContent = "";
-    }   
-    else
+    } else
         document.getElementById('info-quantity').textContent = "The quantity is already null";
 })
 
@@ -14,11 +12,9 @@ document.getElementById('quantity-more').addEventListener('click', () => {
     if (quantity.textContent < document.getElementById('stock').value) {
         quantity.textContent = Number(quantity.textContent) + 1;
         document.getElementById('info-quantity').textContent = "";
-    }
-    else
+    } else
         document.getElementById('info-quantity').textContent = "Maximum quantity available";
 })
-
 
 function addCart(){
     cartContent = document.querySelector("#cartContent").value = ""+

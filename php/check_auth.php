@@ -22,8 +22,6 @@
         echo $_SESSION['referrer'];
         header("Location: ".$_SESSION["referrer"]);
     } else {
-        header("Location: /sign_in.php");
+        header("Location: /sign.php?page=signin");
     }
-    
-   
 ?>

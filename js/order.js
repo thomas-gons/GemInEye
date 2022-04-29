@@ -7,3 +7,8 @@ cart_img.addEventListener('mouseover', () => {
 cart_img.addEventListener('mouseout', () => {
     document.getElementById('cart-items').style.visibility = 'hidden';
 })
+
+cart_img.addEventListener('click', () => {
+    if (document.getElementById('cart-items') != undefined)
+        window.location.href = 'cart.php';
+})

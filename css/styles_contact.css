@@ -1,9 +1,74 @@
-.FormContact {
-    margin: 0 auto;
-    margin-top: 15%;
-    width: 30%;
+#container {
+    display: flex;   
+    flex-direction: column;
+    width: 100vw;
+    min-width: min-content;
+    justify-content: center;
+    padding: 0 180px;
+    align-items: center;
 }
-
+#contact-title {
+    margin: 20px auto;    
+    min-width: 450px;
+    max-width: 450px;   
+    text-align: justify;
+    color: #ffffff;
+}
+#contact-title>h1 {
+    padding: 40px;
+    font-size: 300%;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+}
+.FormContact {
+    margin: 50px auto;
+    min-width: 350px;
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 30px 50px;
+    background-color: rgba(0, 0, 0, 0.562);
+    color: white;
+}
 .formContactError {
     color: red;
+}
+.form-input{
+    margin: 10px;
+}
+.real-input{
+    width: 350px;
+    min-height: 35px;
+    padding-left: 5px;
+    margin-top: 7px;
+    border:2px solid transparent;
+    border-radius: 5px;
+    outline-style: none;
+    outline: none;
+}
+#submitContact{
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-color: #00aee7;
+}
+#submitContact:hover{
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: #056e91;    
+}
+.real-input:focus{
+    border-color:#00bfff ;
+    box-shadow: 0px 0px 5px #00bfff;
+    outline-style: none;
+    outline: none;
+}
+.real-input::placeholder{
+    border: none;   
+}
+textarea{
+    resize: none;
+    height: 150px;
+    padding: 5px;
 }

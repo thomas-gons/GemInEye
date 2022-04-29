@@ -49,6 +49,7 @@ const validContactDate = function(inputCDate) {
         small.innerHTML = "Enter a valid date";
         return false;
     } else {
+        inputCDate.style.border = "none";
         small.innerHTML = "";
         return true;
     }
@@ -63,6 +64,7 @@ const validBirthDate = function(inputBDate) {
         small.innerHTML = "Enter a date";
         return false;
     } else {
+        inputBDate.style.border = "none";
         small.innerHTML = "";
         return true;
     }
@@ -76,6 +78,7 @@ const validLastName = function(inputLName) {
         small.innerHTML = 'Enter a correct firstName (no number allowed)';
         return false;
     } else {
+        inputLName.style.border = "none";
         small.innerHTML = "";
         return true;
     }
@@ -88,7 +91,8 @@ const validFirstName = function(inputFName) {
         inputFName.style.border = "solid 1px red";
         small.innerHTML = 'Enter a correct lastName (no number allowed)';
         return false;
-    } else {    
+    } else {   
+        inputFName.style.border = "none";
         small.innerHTML = "";
         return true;
     }
@@ -101,6 +105,7 @@ const validEmail = function(inputEmail) {
         small.innerHTML = 'Enter a valid Email (example@gmail.com)';
         return false;
     } else {
+        inputEmail.style.border = "none";
         small.innerHTML = "";
         return true;
     }
@@ -113,6 +118,7 @@ const validObject = function(inputObject) {
         small.innerHTML = 'Enter the mail object';
         return false;
     } else {
+        inputObject.style.border = "none";
         small.innerHTML = "";
         return true;
     }
@@ -125,6 +131,7 @@ const validContent = function(inputContent) {
         small.innerHTML = 'Enter the mail object';
         return false;
     } else {
+        inputContent.style.border = "none";
         small.innerHTML = "";
         return true;
     }

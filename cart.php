@@ -29,11 +29,6 @@
     <main>
         <?php sideBarHTML(); ?>
         <!-- Contenu principal de la page -->
-        <div id="page-content">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, odio repellendus. Aut, doloribus? Laudantium
-            error atque obcaecati consequuntur quibusdam doloremque consectetur quas nemo nisi! Magnam adipisci alias
-            odio totam ab.
-        </div>
     </main>
     <?php footerHTML(); ?>
 </body>

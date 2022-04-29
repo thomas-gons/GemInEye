@@ -16,11 +16,11 @@
                 </div>
                 <div id='header-log-cart'>
                     <div id='header-log'>";
-                        if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
-                            echo "<a href='log_out.php' class='log-btn'>Log out</a>";
+                        if (!empty($_SESSION["login"]) && $_SESSION["login"] === true){
+                            echo "<a href='/php/log_out.php' class='log-btn'>Log out</a>";
                         } else {
-                            echo "<a href='sign_in.php' class='log-btn'>Sign in</a>
-                                  <a href='sign_up.php' class='log-btn'>Sign up</a>";
+                            echo "<a href='/sign.php?page=signin' class='log-btn'>Sign in</a>
+                                  <a href='/sign.php?page=signup' class='log-btn'>Sign up</a>";
                         }
                     echo "</div>
                     <div id='header-cart'>

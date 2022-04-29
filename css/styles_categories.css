@@ -1,3 +1,8 @@
+.content-title p {
+    text-align: justify;
+    font-size: 120%;
+    padding: 40px 100px 5px 0;
+}
 #gems {
     display: flex;
     flex-wrap: wrap;
@@ -8,10 +13,18 @@
     padding-right: 20px;
 }
 .gem {
+    min-width: 300px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     text-align: center;
     margin: 40px 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #292929;
+}
+.gem>a{
+    text-decoration: none;
 }
 .gem-name {
     color: #ffffff;
@@ -19,11 +32,16 @@
     font-size: 1.3rem;
     padding: 10px 0;
 }
-.gem img {
-    border-radius: 10px;
-    transition: 0.2s ease-in;
+.gem-origin{
+    color:white;
 }
-.gem img:hover {
-    transform: scale(1.06);
-    filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.384));
+.gem img  {
+    border-radius: 20px;
+    width: 250px;
+}
+.gem:hover {
+    cursor: pointer;
+    transition: 0.3s ease-in;
+    transform: scale(1.01);
+    filter: drop-shadow(0px 0px 10px #00ade788);
 }
