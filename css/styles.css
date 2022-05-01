@@ -136,7 +136,8 @@ header {
 #cart-items-nb {
     width: 22px;
     height: 22px;
-    margin-left: 20px;
+    margin-left: 25px;
+    top: -22px;
     position: relative;
     display: flex;
     align-items: center;

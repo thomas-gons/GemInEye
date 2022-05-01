@@ -4,24 +4,24 @@
     $xml = simplexml_load_file("../data/customers.xml");
     
     $check = false;
-    $id = $_POST["username-email"];
+    $username_email = $_POST["username-email"];
     $pswd = $_POST["password"];
 
-    echo $id." ".$pswd;
-
     foreach($xml->children() as $customer){
-        if (($customer->login == $id ||
-         $customer->email == $id) && 
-         $customer->password == $pswd)
+        if ((strval($customer->login) == $username_email ||
+         strval($customer->email) == $username_email) && 
+         strval($customer->password) == $pswd) {
             $check = true;
+            $id = strval($customer->id);
+            break;
+        }
     }
-    echo $_SESSION['referrer'];
     
     if ($check){
         $_SESSION["login"] = true;
-        echo $_SESSION['referrer'];
+        $_SESSION["customerID"] = $id;
         header("Location: ".$_SESSION["referrer"]);
-    } else {
+    }   else {
         header("Location: /sign.php?page=signin");
     }
 ?>

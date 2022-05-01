@@ -23,14 +23,17 @@
 
 <body>
     <?php 
-        include "php/misc.php";
-        headerHTML();
+        include "php/header.php";
     ?>
     <main>
-        <?php sideBarHTML(); ?>
+        <?php
+            include "php/side_bar.php";
+        ?>
         <!-- Contenu principal de la page -->
     </main>
-    <?php footerHTML(); ?>
+    <?php
+        include "commons/footer.html"
+    ?>
 </body>
 
 </html>

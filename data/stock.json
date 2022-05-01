@@ -1,182 +1,182 @@
 { 
-    "geodes": [{
+    "G": [{
+            "id": "G1",
             "name": "Celestine",
             "description": "Classic, gem gray-blue celestine crystals fill a geode on this large specimen from the classic locale at Sakoany. The freestanding crystal with the classic chisel termination is about 5.5 cm long and the large crystal attached to the walls is about 7.0 cm long. Sakoany celestines are the world's finest and this is a large richly filled geode. Weighs 2420 grams or 5.3 pounds. Ex Paul Zerfass Collection.",
             "origin": "Boeny, Madagascar",
-            "category": 1,
             "img": "/img/geodes/celestine.png",
             "url": "https://www.mindat.org/photo-885484.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "G2",
             "name": "Chalcedony - Quartz",
             "description": "One of the best non-typical Oco agates I have seen in any size.",
             "origin": "Rio Grande do Sul, Brazil",
-            "category": 1,
             "img": "/img/geodes/chalcedony.png",
             "url": "https://www.mindat.org/photo-1192495.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "G3",
             "name": "Kutnohorite - Aragonite",
             "description": "Self collected in 2005, very nice and almost perfectly round geode.",
             "origin": "Tuscany, Italy",
-            "category": 1,
             "img": "/img/geodes/kutnohorite.png",
             "url": "https://www.mindat.org/photo-728904.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "G4",
             "name": "Quartz",
             "description": "Half geode of the so called 'Pink Amethyst' from the Choique Mine in Argentina. These were first brought to market a few years ago, and are quite unique in their coloration. This one is vibrant pink with lavender undertones, and has a striking double terminated crystal 2cm long perched in the middle. I have seen them in every color from clear to pink to red. They sometimes occur with calcite and other accessory minerals. I purchased several flats from Gruta Minerals at the 2022 Tucson show, and kept just this one piece.",
             "origin": "Neuquén Province, Argentina",
-            "category": 1,
             "img": "/img/geodes/quartz.png",
             "url" : "https://www.mindat.org/photo-1200431.html",
             "quantity": 5,
             "price": 0
         }
     ],
-    "rough_gems": [
+    "R": [
         {
+            "id": "R1",
             "name": "Azurite - Goethite - Limonite",
             "description": "An intergrown aggregate of very sharp, dark midnight blue Azurite crystals covers all sides of a small amount of dark brown Limonite/Goethite gossan matrix.",
             "origin": "Arizona, USA",
-            "category": 2,
             "img": "/img/rough_gems/azurite.png",
             "url": "https://www.mindat.org/photo-1205531.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "R2",
             "name": "Fluorapatite - Muscovite - Calcite - Pyrite",
             "description":"Group of eight intergrown, tabular, light lavender color hexagonal Fluorapatite crystals on crystallized Muscovite matrix. The largest Fluorapatite crystal is 1.3 cm across. Tabular, micro white Calcite crystals are also present, along with scattered micro Pyrite crystals.",
             "origin": "Castelo Branco, Portugal",
-            "category": 2,
             "img": "/img/rough_gems/fluorapatite.png",
             "url": "https://www.mindat.org/photo-1207092.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "R3",
             "name": "Malachite",
             "description": "This is a very rare cabinet sized example of what some refer to as 'latticework' malachite pseudomorphs after azurite, from Tsumeb. They only came out once in this quality, I am not sure when - and they are today as rare as hen's teeth, especially at size. This is one of the better examples I have seen of the material, with sharp crystals of excellent color, individually reaching 6 cm in length. The piece is a complete floater, complete all around. All major crystals are either terminated sharply and only in a few cases, are some minor crystals in the spray a little rough on the tips due to odd growth features, but still complete nonetheless. This is a superb specimen, a rare style, and a beautiful geometry. Ex Allen Dillwith Collection (he sold off his Tsumeb suite to focus on other suites).",
             "origin": "Oshikoto Region, Namibia",
-            "category": 2,
             "img": "/img/rough_gems/malachite.png",
             "url": "https://www.mindat.org/photo-1200169.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "R4",
             "name": "Opal",
             "description": "Oregon Contra Luz Opal with botryoidal Jasper inclusions.",
             "origin": "Oregon, USA",
-            "category": 2,
             "img": "/img/rough_gems/opal.png",
             "url": "https://www.geologyin.com/2016/06/types-of-opal-with-photos.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "R5",
             "name": "Prehnite - Epidote",
             "description": "Intergrown, light pistachio-green, translucent prehnite botryoids with nubby bladed surfaces nearly envelope lustrous, partially translucent olive-green epidote crystals on this sculptural and rich combination from 1990s to early 2000s finds in Mali. Fine prehnites from Mali, most often associated with deep green epidote crystals, are instantly recognizable to most collectors. See the 2011 Mineralogical Record article in Vol. 42, No. 3. A fine, representative small cabinet combination.",
             "origin": "Kayes Region, Mali",
-            "category": 2,
             "img": "/img/rough_gems/prehnite.png",
             "url": "https://www.mindat.org/photo-1200044.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "R6",
             "name": "Pyrite",
             "description": "This pyrite cluster is from the world famous sharpest-of-sharp pyrite locality in Spain. These have been the gateway into collecting minerals for so many people over the decades since they started mining here for specimens, including Jack himself. The cubic crystals are well-formed and sharp. The satiny luster is quite good, and the faces have slight undulations that add definite character to the crystals. The largest pyrite crystal is 4.6 cm on edge and the piece is 600 grams in a small volume area, which is quite substantial. The quality of this small cabinet cluster are quite good, and it well-represents the family of great Spanish Pyrites. Jack obtained it from the great old Spanish dealer, Luis Leite (leitite). There are numerous references to Jack and his collection in print, but perhaps a good tour of the collection and its history will help give perspective on just how good, and important, this collection is: " ,
             "origin": "La Rioja, Spain",
-            "category": 2,
             "img": "/img/rough_gems/pyrite.png",
             "url": "https://www.mindat.org/photo-1205950.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "R7",
             "name": "Ruby (Corundum)",
             "description": "Gorgeous blood-red, partially gemmy ruby crystals on this remarkable, extremely rich small cabinet specimen from Jegdalek. The beautiful, lustrous stepped-growth crystals are set on all sides of the spare marble matrix. The striking, large, sharp, pseudo-octahedral crystal on the bottom is 2.6 cm, very large for the locale. Ex Chet Lemanski Collection. This is a classic, important and exceptionally rich small cabinet ruby specimen with fine color and a large crystal from the locale. It simply looks 'ruby' for color and luster, in a way that many specimens simply cannot do with impact. Cherry-red fluorescence. The fluorescence is simply breathtaking, as a bonus. NOTE: In LED lights, these look more pink-red. In room fluorescents, more classical red. In sunlight, sort of in between. Ruby like this has different color in different warmth of lighting.",
             "origin": "Kabul, Afghanistan",
-            "category": 2,
             "img": "/img/rough_gems/ruby.png",
             "url": "https://www.mindat.org/photo-1124235.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "R8",
             "name": "Wulfenite",
             "description": "Impressive opposing tabular wulfenite crystals atop highlight this classic, older, rich and aesthetic small cabinet triangular plate covered with classic 'sandwich' style crystals from the renowned Erupcion Mine at Los Lamentos. The richly colored zoned prisms, to 2.0 cm, are translucent to opaque, adding character. It is starkly geometric, and this is a style known for its shape rather than its color - but unique to this day. The striking pair atop look like pages of an open book or wings of a bird or butterfly. Read about the famed locale in the 2003 Mineralogical Record article in Vol. 34, No. 6. Ex Bill Panczner Collection, of which Mexico was the primary specialty. Bill was the first Curator of Earth Science at the Arizona Sonora Desert Museum in 1974 and the author of the 1987 book Minerals of Mexico. It is the most thorough summary of the subject.",
             "origin": "Chihuahua, Mexico",
-            "category": 2,
             "img": "/img/rough_gems/wulfenite.png",
             "url": "https://www.mindat.org/photo-1153791.html",
             "quantity": 5,
             "price": 0
         }
     ],
-    "crystals": [{
+    "C": [{
+            "id": "C1",
             "name": "Aquamarine",
             "description": "Etched, gemmy, light blue aquamarine crystal.",
             "origin": "New South Wales, Australia",
-            "category": 3,
             "img": "/img/crystals/aquamarine.png",
             "url": "https://www.mindat.org/photo-965056.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "C2",
             "name": "Diamond",
             "description": "Octahedral white diamond with triangular surface patterns. 2.46 ct, 8 x 7 x 7 mm. RFC T1937. ",
             "origin": "Sakha Republic, Russia",
-            "category": 3,
             "img": "/img/crystals/diamond.png",
             "url": "https://www.mindat.org/photo-176404.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "C3",
             "name": "Peridot (Forsterite) - Ludwigite",
             "description": "Peridote with ludwigite needles, Sapat Gali (Soppat; Suppat; Sumpat), Manshera, Naran-Kagan Valley, Pakistan",
             "origin": "Khyber Pakhtunkhwa Province, Pakistan",
-            "category": 3,
             "img": "/img/crystals/peridot.png",
             "url": "https://www.mindat.org/photo-223326.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "C4",
             "name": "Spinel",
             "description": "Deep red colour spinel crystals cluster, from Mogok, Sagaing District, Mandalay Division, Burma",
             "origin": "Mandalay Region, Myanmar",
-            "category": 3,
             "img": "/img/crystals/spinel.png",
             "url": "https://www.mindat.org/photo-363617.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "C5",
             "name": "Tanzanite (Zoisite)",
             "description": "Beside the deep blue saturated color, the strong glassy luster and the striation at the left side of the crystal parallel to the c-axis, I especially liked the sharp elongated and well defined shape of this very elegant Tanzanite.",
             "origin": "Manyara Region, Tanzania",
-            "category": 3,
             "img": "/img/crystals/tanzanite.png",
             "url": "https://www.mindat.org/photo-633254.html",
             "quantity": 5,
             "price": 0
         },
         {
+            "id": "C6",
             "name": "Topaz",
             "description": "Glassy water clear gem quality transparent single terminated loose matrix-less topaz crystal measuring 3.8 x 2.7 x 2.4 cm in size. Complete all around and without damage. Ex Lloyd Tate collection.",
             "origin": "Erongo Region, Namibia",
-            "category": 3,
             "img": "/img/crystals/topaz.png",
             "url": "https://www.mindat.org/photo-299074.html",
             "quantity": 5,

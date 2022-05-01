@@ -1,6 +1,6 @@
-<!-- pattern for customers data -->
 <customers-list>
     <customer>
+        <id>1</id>
         <login>Thomas</login>
         <password>a</password>
         <firstname></firstname>
@@ -12,6 +12,7 @@
         <job></job>
     </customer>
     <customer>
+        <id>2</id>
         <login>Maxime</login>
         <password>b</password>
         <firstname></firstname>
@@ -23,6 +24,7 @@
         <job></job>
     </customer>
     <customer>
+        <id>3</id>
         <login>Lucas</login>
         <password>c</password>
         <firstname></firstname>
@@ -34,6 +36,7 @@
         <job></job>
     </customer>
     <customer>
+        <id>4</id>
         <login>Raphael</login>
         <password>d</password>
         <firstname></firstname>

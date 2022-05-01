@@ -61,12 +61,12 @@
     <link href="/css/styles_contact.css" rel="stylesheet" type="text/css">
     <script src="/js/side_navbar.js" defer></script>
     <script src="/js/form_verif.js" defer></script>
+    <script src="/js/order.js" defer></script>
 </head>
 
 <body>
     <?php 
-        include "php/misc.php";
-        headerHTML();
+        include "php/header.php";
     ?>
     <main>
         <!-- Contenu principal de la page -->
@@ -153,7 +153,9 @@
             </div>
         </div>
     </main>
-    <?php footerHTML(); ?>
+    <?php
+        include "commons/footer.html"
+    ?>
 </body>
 
 </html>

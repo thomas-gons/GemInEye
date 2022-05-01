@@ -26,38 +26,38 @@
 </head>
 
 <body>
-    <?php 
-        include "php/misc.php";
-        headerHTML();
+    <?php
+        include "php/header.php";
     ?>
     <main>
-        <?php sideBarHTML(); ?>
+        <?php
+            include "php/side_bar.php";
+        ?>
         <!-- Contenu principal de la page -->
         <div id="page-content">
             <div id="gem">
                 <?php 
-                    $indexAmpersand = strpos($_SERVER["REQUEST_URI"], "&");
-                    $gem = urldecode(substr($_SERVER["REQUEST_URI"], $indexAmpersand + 1));
+                    $catID = $_GET['cat'];
+                    $itemIndexInJSON = intVal($_GET['item']) - 1;
                     
                     $jsonStr = file_get_contents("data/stock.json");
-                    $data = json_decode($jsonStr, true)[$_SESSION["category"]];
-
-                    $gemIndexInJSON = array_search($gem, array_column($data, "name"));
-
-                    $gemName = strtolower(explode(" ", trim($data[$gemIndexInJSON]["name"]))[0]);
+                    $data = json_decode($jsonStr, true)[$catID];
+                    
+                    // get the first component name of the gem
+                    $itemName = strtolower(explode(" ", trim($data[$itemIndexInJSON]["name"]))[0]);
                     echo "<div id='gem-container'>
-                            <img src='/img/".$_SESSION['category']."/".$gemName.".png' id='gem-img' width=375 height=375/>
+                            <img src=".$data[$itemIndexInJSON]['img']." id='gem-img' width=375 height=375ph/>
                             <div id='gem-data'>
-                                <p class='gem-name'>".$data[$gemIndexInJSON]["name"]."</p>
+                                <p class='gem-name'>".$data[$itemIndexInJSON]["name"]."</p>
                                 <p>Origin:</p>
-                                <p class='gem-origin'>".$data[$gemIndexInJSON]["origin"]."</p>
+                                <p class='gem-origin'>".$data[$itemIndexInJSON]["origin"]."</p>
                                 <div id='gem-info'>
                                     <span>Price : </span>
-                                    <span class='gem-price'>$".$data[$gemIndexInJSON]["price"]."</span>
+                                    <span class='gem-price'>$".$data[$itemIndexInJSON]["price"]."</span>
                                 </div>
                                 <div id='gem-buy'>
-                                    <input type='hidden' id='stock' value=".$data[$gemIndexInJSON]["quantity"].">";
-                    if (intval($data[$gemIndexInJSON]["quantity"]) === 0) {
+                                    <input type='hidden' id='stock' value=".$data[$itemIndexInJSON]["quantity"].">";
+                    if (intval($data[$itemIndexInJSON]["quantity"]) === 0) {
                         echo "<p class='not-available'>Out of Stock</p>";
                     } else {
                         echo "<p class='available'>In Stock</p>";
@@ -84,13 +84,15 @@
                         </div>
                         <div id='gem-descr'>
                             <p>Description:</p>
-                            <p>".$data[$gemIndexInJSON]["description"]."</p>
+                            <p>".$data[$itemIndexInJSON]["description"]."</p>
                         </div>";
                 ?>
             </div>
         </div>
     </main>
-    <?php footerHTML(); ?>
+    <?php
+        include "commons/footer.html"
+    ?>
 </body>
 
 </html>

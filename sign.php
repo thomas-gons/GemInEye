@@ -12,12 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <link href="/css/styles_log.css" rel="stylesheet" type="text/css">
+    <script src="/js/order.js" defer></script>
     <title>Log In</title>
 </head>
 <body>
     <?php 
-        include "php/misc.php";
-        headerHTML();
+        include "php/header.php";
     ?>
     <main>
         <?php
@@ -52,7 +52,9 @@
             }
         ?>
     </main>
-    <?php footerHTML(); ?>
+    <?php
+        include "commons/footer.html"
+    ?>
 </body>
 
 </html>

@@ -1,5 +1,10 @@
 <?php
     session_start();
+    if (!isset($_SESSION['login'])){
+        $xml = simplexml_load_file("data/customers.xml");
+        $_SESSION['customerID'] = $xml != null ? $xml->children()[count($xml->children()) - 1]->id + 1: 1; 
+    }
+
     $current_uri = $_SERVER["REQUEST_URI"];
     if (!isset($_SESSION['referrer'])) {
         $_SESSION['referrer'] = $current_uri;
@@ -23,11 +28,12 @@
 
 <body>
     <?php 
-        include "php/misc.php";
-        headerHTML();
+        include "php/header.php";
     ?>
     <main>
-        <?php sideBarHTML(); ?>
+        <?php
+            include "php/side_bar.php";
+        ?>
         <!-- Contenu principal de la page -->
         <div id="page-content">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, odio repellendus. Aut, doloribus? Laudantium
@@ -35,7 +41,9 @@
             odio totam ab.
         </div>
     </main>
-    <?php footerHTML(); ?>
+    <?php
+        include "commons/footer.html"
+    ?>
 </body>
 
 </html>

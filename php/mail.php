@@ -27,8 +27,7 @@
 
 <body>
     <?php 
-        include("misc.php");
-        headerHTML();
+        include("header.php");
     ?>
     <main>
         <div id="page_content">
@@ -45,7 +44,9 @@
             ?>
         </div>
     </main>
-    <?php footerHTML(); ?>
+    <?php
+        include "commons/footer.html";
+    ?>
 </body>
 
 </html>
