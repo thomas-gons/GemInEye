@@ -1,3 +1,12 @@
+#page-content {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#page-content > * {
+    color: white;
+}
+
 #gem {
     display: flex;
     flex-direction: column;
@@ -8,34 +17,72 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    margin: 20px;
-    width: 50%;
+    margin: 20px 0 50px 18%;
+    width: 100%;
     min-width: min-content;
 }
-#gem-container img {
-    margin: 10px;
-    margin-right: 40px;
-    border-radius: 10px;
+#gem-descr {
+    width: 30%;
+    padding: 30px 60px;
+    margin-right: 4%;
 }
+
 #gem-data {
+    min-width: max-content;
+    margin: 0 5%;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #323232;
+    box-shadow: 5px 18px 15px rgba(0, 0, 0, 0.25);
+}
+
+#gem-data > div {
+    align-items: center;
+    padding: 5px;
+}
+
+.data-name {
+    display: inline;
+    padding-right: 5px;
+    color: #EB7F2D;
+}
+.data-value{
+    display: inline;
+    color: white;
+}
+#gem-img-general {
+    display: flex;
+    flex-direction: row;
+}
+
+#gem-container img {
+    margin: 10px 40px 10px 40px;
+    border-radius: 10px;
+    
+}
+#gem-general {
     display: flex;
     flex-direction: column;
     width: 350px;
     padding: 10px 20px;
     border-radius: 10px;
 }
+#gem-origin {
+    margin-left: 20px;
+    text-align: left;
+}
+#gem-origin span{
+    font-size: 1.15rem;
+}
 #gem-info {
     font-size: 1.2rem;
-    font-weight: 700;
     margin-top: 20px;
     padding: 20px;
     border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
 }
-span {
-    font-size: 1rem;
-    font-weight: 600;
+#gem-info span{
+    font-size: 1.15rem;
 }
 .gem-price {
     font-size: 1.3rem;
@@ -43,13 +90,13 @@ span {
     color: #ff2600;
 }
 #gem-buy {
-    padding: 20px 10px;
+    padding: 20px 20px;
 }
 .available {
     font-size: 1.2rem;
     font-weight: 600;
     color: #25b873;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .not-available {
     font-size: 1.2rem;
@@ -61,8 +108,17 @@ span {
     margin: 5px;
     padding: 5px 0;
 }
+
+#select-quantity div {
+    margin-bottom: 8px;
+}
+#select-quantity div span{
+    font-size: 1.15rem;
+}
+
 #quantity-span {
     margin-right: 5px;
+
 }
 .quantity-btn {
     width: 30px;
@@ -88,8 +144,8 @@ span {
     font-size: 1rem;
     font-weight: 600;
     width: 100%;
-    border: 1px solid #292929;
-    background-color: #ff9239;
+    border: none;
+    background: linear-gradient(to right, #f16711, #f5af19);
     color: #ffffff;
     border-radius: 5px;
     padding: 5px;
@@ -102,12 +158,20 @@ span {
 #add-to-cart:active {
     transform: scale(0.96);
 }
-#gem-descr {
-    width: 65%;
+#gem-descr-container {
+    width: 70%;
     margin: auto;
-    padding: 30px 60px;
+}
+#gem-descr {
+    min-width: fit-content;
+    margin: auto;
+    padding: 30px 30px;
+    border: solid 1px black;
+    border-bottom: none;
+    border-radius: 15px;
+    color: #ffffff;
 }
 p {
-    text-align: justify;
-    font-weight: 600;
+    padding-left: 30px;
+    text-align: left;
 }

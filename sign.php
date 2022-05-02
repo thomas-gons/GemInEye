@@ -42,7 +42,7 @@
                     <div id='sign-up-container'>
                         <br>
                         <span>New to Gem In Eye ?</span>
-                        <a href='/sign.php?page=signup'> Create an account</a>
+                        <a id='sign-up-link' href='/sign.php?page=signup'> Create an account</a>
                     </div>
                 </div>
             </div>";
