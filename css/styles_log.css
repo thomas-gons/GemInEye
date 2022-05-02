@@ -1,4 +1,4 @@
-#container {
+.container {
     display: flex;   
     flex-direction: column;
     width: 100vw;
@@ -12,7 +12,7 @@
 #top-title {
     margin: 30px auto;
 }
-#auth-container {
+.auth-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,7 +31,7 @@ form {
     padding: 20px 40px 30px 40px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
 }
-#username-email-container, #password-container {
+.contain {
     display: flex;
     flex-direction: column;
     padding: 10px 0;
@@ -47,21 +47,21 @@ input {
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
     margin: 5px 0;
+    padding-left: 5px ;
 }
-#sign-in {
+
+input:focus{
+    outline-style: none;
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);;
+}
+
+.sign-button {
     color: #ffffff;
     background-color: #179c31;
 }
-#sign-in:hover {
+.sign-button:hover {
+    transition:0.1s;
+    cursor: pointer;
     background-color: #238636;
-}
-#sign-up-container {
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-}
-#sign-up-container a{
-    text-decoration: none;
-    color: #00aee7;
-    margin: 5px;
 }

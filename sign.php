@@ -23,32 +23,65 @@
         <?php
             $page = $_GET['page'];
             if ($page === "signin") {
-                echo "<div id='container'>
+                echo "<div class='container'>
                 <div id='top-title'>
                     <h1>Sign in to Gem In Eye</h1>    
                 </div>
-                <div id='auth-container'>
+                <div class='auth-container'>
                     <form method='post' action='/php/check_auth.php'>
-                        <div id='username-email-container'>
+                        <div class='contain' id='username-email-container'>
                             <label for='username-email'>Username or email address</label>
                             <input type='text' name=username-email>
                         </div>
-                        <div id='password-container'>
+                        <div class='contain' id='password-container'>
                             <label for='password'>Password</label>
-                            <input type='text' name=password>
+                            <input type='password' name=password>
                         </div>
-                        <input type='submit' id='sign-in' value='Sign in'>
-                        <br><br>
+                        <input type='submit' class='sign-button' value='Sign in'>
                     </form>
                     <div id='sign-up-container'>
+                        <br>
                         <span>New to Gem In Eye ?</span>
                         <a href='/sign.php?page=signup'> Create an account</a>
                     </div>
                 </div>
             </div>";
             }
+
+
+
+            #Page d'inscription
             elseif ($page === "signup") {
-                //
+                echo "<div class='container'>
+                <div id='top-title'>
+                    <h1>Sign up to Gem In Eye</h1>    
+                </div>
+                <div class='auth-container'>
+                    <form method='post' action=''>
+                        <div class='contain' id='username-container'>
+                            <label for='username'>Username</label>
+                            <input type='text' name=username-email>
+                        </div>
+
+                        <div class='contain' id='email-container'>
+                            <label for='email'>Email address</label>
+                            <input type='text' name=username-email>
+                        </div>
+
+                        <div class='contain' id='password-container'>
+                            <label for='password'>Password</label>
+                            <input type='password' name=password>
+                        </div>
+                        <div class='contain' id='password-verif-container'>
+                            <label for='password'>Confirm password</label>
+                            <input type='password' name=password>
+                        </div>
+                        <input type='submit' class='sign-button' value='Sign up'>
+                    </form>
+                    </div>
+                </div>
+            </div>";
+                
             }
         ?>
     </main>

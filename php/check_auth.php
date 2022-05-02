@@ -19,6 +19,20 @@
     
     if ($check){
         $_SESSION["login"] = true;
+        $data = file_get_contents('../data/order.json');
+        $orderNotLoggedInCustomer = json_decode($data, true)[$_SESSION["customerID"]];
+        if ($orderNotLoggedInCustomer != array()){
+            include "order.php";
+            foreach($orderNotLoggedInCustomer as $item)
+                addToCart($item, $id);
+            
+            $orders = file_get_contents('../data/order.json');
+            $orders = json_decode($orders, true);
+            unset($orders[$_SESSION['customerID']]);
+            $jsonData = json_encode($orders, JSON_PRETTY_PRINT);
+            file_put_contents("../data/order.json", $jsonData);
+        }
+
         $_SESSION["customerID"] = $id;
         header("Location: ".$_SESSION["referrer"]);
     }   else {
