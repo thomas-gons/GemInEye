@@ -44,7 +44,7 @@
                     $data = json_decode($jsonStr, true)[$catID];
                     
                     // get the first component name of the gem
-                    $itemName = strtolower(explode(" ", trim($data[$itemIndexInJSON]["name"]))[0]);
+                    $itemID = strtolower(explode(" ", trim($data[$itemIndexInJSON]["name"]))[0]);
                     echo "<div id='gem-container'>
                             <img src=".$data[$itemIndexInJSON]['img']." id='gem-img' width=375 height=375ph/>
                             <div id='gem-data'>
