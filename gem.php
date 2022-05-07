@@ -13,14 +13,14 @@
 <html lang="en">
 
 <head>
-    <title>Gem In Eye</title>
+    <title>Gem In Eye - Product</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <link href="/css/styles_gem.css" rel="stylesheet" type="text/css">
     <link href="/css/styles_categories.css" rel="stylesheet" type="text/css">
-    <script src="/js/side_navbar.js" defer></script>
+    <script src="/js/navbar.js" defer></script>
     <script src="/js/stock.js" defer></script>
     <script src='/js/order.js' defer></script>
 </head>
@@ -98,7 +98,7 @@
                                     </div>
                                     <div id='gem-info'>
                                         <span>Price : </span>
-                                        <span class='gem-price'>$".$data[$itemIndexInJSON]["price"]."</span>
+                                        <span id='gem-price'>$".$data[$itemIndexInJSON]["price"]."</span>
                                     </div>
                                     <div id='gem-buy'>
                                         <input type='hidden' id='stock' value=".$data[$itemIndexInJSON]["quantity"].">";

@@ -71,7 +71,7 @@
     margin-left: 20px;
     text-align: left;
 }
-#gem-origin span{
+#gem-origin span {
     font-size: 1.15rem;
 }
 #gem-info {
@@ -81,10 +81,10 @@
     border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
 }
-#gem-info span{
+#gem-info span {
     font-size: 1.15rem;
 }
-.gem-price {
+#gem-price {
     font-size: 1.3rem;
     margin: 5px;
     color: #ff2600;

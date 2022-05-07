@@ -1,10 +1,10 @@
 #container {
     display: flex;   
-    flex-direction: column;
-    width: 100vw;
+    flex-direction: row;
+    width: 92vw;
     min-width: min-content;
-    justify-content: center;
-    padding: 0 180px;
+    flex-wrap: wrap;
+    padding: 0 100px;
     align-items: center;
 }
 #contact-title {
@@ -15,11 +15,15 @@
     color: #ffffff;
 }
 #contact-title>h1 {
-    padding: 40px;
+    padding: 40px 0;
     font-size: 300%;
     color: #ffffff;
     font-weight: 700;
     text-align: center;
+    text-decoration: underline #00aee7;
+}
+#contact-title>p>a {
+    color: #00aee7;
 }
 .FormContact {
     margin: 50px auto;
@@ -27,16 +31,16 @@
     max-width: 500px;
     border-radius: 10px;
     padding: 30px 50px;
-    background-color: rgba(0, 0, 0, 0.562);
+    background-color: #292929;
     color: white;
 }
 .formContactError {
     color: red;
 }
-.form-input{
+.form-input {
     margin: 10px;
 }
-.real-input{
+.real-input {
     width: 350px;
     min-height: 35px;
     padding-left: 5px;
@@ -46,28 +50,28 @@
     outline-style: none;
     outline: none;
 }
-#submitContact{
+#submitContact {
     width: 100px;
     height: 35px;
     border-radius: 5px;
     border: none;
     background-color: #00aee7;
+    transition: 0.3s ease;
 }
-#submitContact:hover{
-    transition: 0.2s;
+#submitContact:hover {
+    transform: scale(1.04);
     cursor: pointer;
-    background-color: #056e91;    
 }
-.real-input:focus{
+.real-input:focus {
     border-color:#00bfff ;
     box-shadow: 0px 0px 5px #00bfff;
     outline-style: none;
     outline: none;
 }
-.real-input::placeholder{
+.real-input::placeholder {
     border: none;   
 }
-textarea{
+textarea {
     resize: none;
     height: 150px;
     padding: 5px;

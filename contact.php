@@ -53,13 +53,13 @@
 <html lang="en">
 
 <head>
-    <title>Gem In Eye</title>
+    <title>Gem In Eye - Contact</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <link href="/css/styles_contact.css" rel="stylesheet" type="text/css">
-    <script src="/js/side_navbar.js" defer></script>
+    <script src="/js/navbar.js" defer></script>
     <script src="/js/form_verif.js" defer></script>
     <script src="/js/order.js" defer></script>
 </head>
@@ -69,18 +69,22 @@
         include "php/header.php";
     ?>
     <main>
+        <?php 
+            include "php/side_bar.php";
+        ?>
         <!-- Contenu principal de la page -->
         <div id="container">
             <div id="contact-title">
                 <h1>Contact information</h1>
                 <p>You may also email us by using the form on this page. We enjoy answering questions and talking with our customers. We hope to hear from you soon!</p>
+                <p>Do you want to discover Gem In Eye ? Click <a href="/about.php">here</a></p>
             </div>
             <div class="FormContact">
                 <!-- Formulaire de Contact -->
                 <form method="post" id="contactForm">
                     <div class="form-input">
                     <label for="ContactDate">Contact date :     </label><br>
-                    <input type="date" class="real-input" name="ContactDate" id="ContactDate" placeholder="dd/mm/yyyy" required/>
+                    <input type="date" class="real-input" name="ContactDate" id="ContactDate" required/>
                     <small class="formContactError"></small> 
                     </div>
 
@@ -119,7 +123,7 @@
                     
                     <div class="form-input">
                         <label for="BirthDate">Birth date :     </label><br>
-                        <input class="real-input" type="date" name="BirthDate" id="BirthDate" placeholder="dd/mm/yyyy" required/> 
+                        <input class="real-input" type="date" name="BirthDate" id="BirthDate" required/> 
                         <small class="formContactError"></small> 
                     </div>
 
@@ -143,7 +147,7 @@
 
                     <div class="form-input">
                         <label for="Content">Content :     </label><br>
-                        <textarea class="real-input" name="Content" id="Content" row="10" cols="33" placeholder="Enter mail content" required></textarea>
+                        <textarea class="real-input" name="Content" id="Content" cols="33" placeholder="Enter mail content" required></textarea>
                         <small class="formContactError"></small>  
                     </div>
                     <div class="form-input">

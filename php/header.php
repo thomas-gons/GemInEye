@@ -16,10 +16,14 @@
                 <div id='header-log'>
                     <?php 
                     if (!empty($_SESSION["login"]) && $_SESSION["login"] === true){
-                    echo "<a href='/php/log_out.php' class='log-btn'>Log out</a>";
+                        echo "<a href='/php/log_out.php' class='log-btn'>Log out</a>
+                        <div id='connected'>
+                            <img id='connected-img' src='/img/user.png' alt='user_logo'>
+                            <div id='circle'></div>
+                        </div>";
                     } else {
-                    echo "<a href='/sign.php?page=signin' class='log-btn'>Sign in</a>
-                    <a href='/sign.php?page=signup' class='log-btn'>Sign up</a>";
+                        echo "<a href='/sign.php?page=signin' class='log-btn'>Sign in</a>
+                        <a href='/sign.php?page=signup' class='log-btn'>Sign up</a>";
                     } ?>
                 </div>
                 <div id='header-cart'>
@@ -28,14 +32,14 @@
                             <img id='cart-img' src='/img/cart.png' alt='cart_image'>
                             <div id='cart-content'>"
                                 <?php $jsonStock = file_get_contents("data/order.json");
-                                if ($jsonStock != null){
+                                if ($jsonStock != null) {
                                     $data = json_decode($jsonStock, true);
-                                    if (array_key_exists($_SESSION['customerID'], $data) != false){
+                                    if (array_key_exists($_SESSION['customerID'], $data) != false) {
                                         $data = $data[$_SESSION['customerID']];
                                         echo "<div id='cart-items-nb'>".count($data)."</div>
-                                        <div id=cart-items>";
+                                            <div id=cart-items>";
                                         for ($i = 0; $i < count($data); $i++) {
-                                            if ($i < 5){ 
+                                            if ($i < 5) { 
                                                 echo "<div class='cart-item'>
                                                         <img src=" .$data[$i]["img"]." alt=".$data[$i]["name"]."
                                                         width=80 height=80>
@@ -63,7 +67,7 @@
             <ul id='head-list'>
                 <li class='li-elem'><a href='/index.php'>Home</a></li>
                 <li class='li-elem'><a href='/category.php'>Products</a></li>
-                <li class='li-elem'><a href=''>About</a></li>
+                <li class='li-elem'><a href='/about.php'>About</a></li>
                 <li class='li-elem'><a href='/contact.php'>Contact</a></li>
             </ul>
         </nav>

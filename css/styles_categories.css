@@ -1,4 +1,14 @@
-.content-title p {
+.content-title {
+    margin: 40px auto 40px 60px;
+    padding: 20px;
+    color: #ffffff;
+}
+.content-title h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-decoration: underline #00aee7;
+}
+.content-title>p {
     text-align: justify;
     font-size: 120%;
     padding: 40px 100px 5px 0;
@@ -6,10 +16,11 @@
 #gems {
     display: flex;
     flex-wrap: wrap;
+    min-width: 690px;
     height: min-content;
-    align-content: space-evenly;
-    justify-content: space-evenly;
-    margin: auto auto;
+    align-content: space-around;
+    justify-content: space-around;
+    margin: auto auto 40px auto;
     padding-right: 20px;
 }
 .gem {
@@ -23,7 +34,7 @@
     border-radius: 20px;
     background-color: #292929;
 }
-.gem>a{
+.gem>a {
     text-decoration: none;
 }
 .gem-name {
@@ -32,8 +43,12 @@
     font-size: 1.3rem;
     padding: 10px 0;
 }
-.gem-origin{
+.gem-origin {
     color:white;
+}
+.gem-price {
+    color: #00aee7;
+    padding: 7px 0;
 }
 .gem img  {
     border-radius: 20px;
@@ -44,4 +59,52 @@
     transition: 0.3s ease-in;
     transform: scale(1.01);
     filter: drop-shadow(0px 0px 10px #00ade788);
+}
+#geode-img {
+    background-image: url("/img/indeximg1.jpg");
+}
+#rough-gems-img {
+    background-image: url("/img/indeximg2.jpg");
+}
+#crystals-img {
+    background-image: url("/img/indeximg3.jpg");
+}
+.categ-img {
+    width: 100vw;
+    height: 600px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.index-img-button {
+    width: 300px;
+    height: 50px;
+    margin-left: 20%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+.index-img-button>a {
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: 600;
+    font-size: x-large;
+    text-decoration: none;
+    padding: 10px 0;
+    transition: 0.3s ease;
+}
+.index-img-button>a:hover {
+    color:black;
+}
+.index-img-button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transform: scale(1.05);
 }

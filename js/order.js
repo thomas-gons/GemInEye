@@ -1,14 +1,24 @@
+//Display preview of cart
 let cart_img = document.getElementById('cart-img-div');
 
 cart_img.addEventListener('mouseover', () => {
-    document.getElementById('cart-items').style.visibility = 'visible';
+    if (document.getElementById('cart-items') !== null)
+        document.getElementById('cart-items').style.visibility = 'visible';
 })
-
 cart_img.addEventListener('mouseout', () => {
-    document.getElementById('cart-items').style.visibility = 'hidden';
+    if (document.getElementById('cart-items') !== null)
+        document.getElementById('cart-items').style.visibility = 'hidden';
+})
+cart_img.addEventListener('click', () => {
+    window.location.href = 'cart.php';
 })
 
-cart_img.addEventListener('click', () => {
-    if (document.getElementById('cart-items') != undefined)
-        window.location.href = 'cart.php';
-})
+//Change flex direction of log buttons
+function flexDirChange() {
+    let logDiv = document.getElementById('header-log');
+    if (window.innerWidth <= 900)
+        logDiv.style.flexDirection = "column-reverse";
+    else
+        logDiv.style.flexDirection = "row";
+}
+window.addEventListener("resize", flexDirChange);
