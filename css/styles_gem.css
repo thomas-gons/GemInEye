@@ -151,10 +151,10 @@
     padding: 5px;
     margin: 10px 0;
 }
-#add-to-cart:hover {
+/* #add-to-cart:hover {
     background-color: #e46701;
     color: #ffffff;
-}
+} */
 #add-to-cart:active {
     transform: scale(0.96);
 }

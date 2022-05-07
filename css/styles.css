@@ -201,7 +201,6 @@ header {
     text-align: center;
     font-weight: 700;
 }
-
 .cart-item-name {
     font-size: 1rem;
     max-width: 150px;
@@ -338,19 +337,19 @@ main {
     font-weight: 300;
     font-size: 600%;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.384));
+    filter: drop-shadow(0px 0px 5px rgba(0, 174, 231, 0.5));
 }
 #div-btn-journey {
     text-align: center;
     font-size: 120%;
     font-weight: 400;
-    padding: 20px;
+    padding: 20px 0;
     border: solid 2px #ffffff;
     background-color: rgba(255, 255, 255, 0.05);
     transition: 0.3s ease;
 }
 #div-btn-journey>a{
-    padding: 20px;
+    padding: 20px 40px;
     color: #ffffff;
     text-decoration: none;
 }

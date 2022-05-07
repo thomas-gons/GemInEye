@@ -136,7 +136,7 @@
                         <p>".$data[$itemIndexInJSON]["description"]."</p>
                         </div>
                     </div>";
-                    ?>
+                ?>
         </div>
     </main>
     <?php

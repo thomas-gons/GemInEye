@@ -21,7 +21,7 @@
     align-content: space-around;
     justify-content: space-around;
     margin: auto auto 40px auto;
-    padding-right: 20px;
+    padding: 0 20px 0 30px;
 }
 .gem {
     min-width: 300px;
@@ -47,7 +47,7 @@
     color:white;
 }
 .gem-price {
-    color: #00aee7;
+    color: #eb7f2d;
     padding: 7px 0;
 }
 .gem img  {
@@ -97,7 +97,7 @@
     font-weight: 600;
     font-size: x-large;
     text-decoration: none;
-    padding: 10px 0;
+    padding: 10px;
     transition: 0.3s ease;
 }
 .index-img-button>a:hover {

@@ -31,7 +31,6 @@
         if (empty($_POST['Content'])) {
             $errors['content'] = ' ';
         }
-
         if(empty($errors)) {
             $_SESSION['cDate'] = $_POST['ContactDate'];
             $_SESSION['fName'] = $_POST['firstName'];
@@ -45,7 +44,6 @@
             header("Location: php/mail.php");
             die();
         }
-
     }
 ?>
 
@@ -87,25 +85,21 @@
                     <input type="date" class="real-input" name="ContactDate" id="ContactDate" required/>
                     <small class="formContactError"></small> 
                     </div>
-
                     <div class="form-input">
                     <label for="firstName">First name :     </label><br>
                     <input type="text" class="real-input" name="firstName" id="firstName" placeholder="Enter your firstname"  minlength="1" maxlength="25" required/> 
                     <small class="formContactError"></small> 
                     </div>
-
                     <div class="form-input">
                     <label for="lastName">Last name :     </label><br>
                     <input type="text" class="real-input" name="lastName" id="lastName" placeholder="Enter your lastname" minlength="1" maxlength="25" required/> 
                     <small class="formContactError"></small> 
                     </div>
-
                     <div class="form-input">
                     <label for="Email">Email :     </label><br>
                     <input type="text" class="real-input" name="Email" id="Email" placeholder="Enter your email" required/>
                     <small class="formContactError"></small> 
                     </div>
-                    
                     <div class="form-input">
                         <div class="Gender">
                             <div> <label>Gender :     </label> </div>
@@ -120,13 +114,11 @@
                         </div>
                         <small id="GenderError" class="formContactError"></small> 
                     </div>
-                    
                     <div class="form-input">
                         <label for="BirthDate">Birth date :     </label><br>
                         <input class="real-input" type="date" name="BirthDate" id="BirthDate" required/> 
                         <small class="formContactError"></small> 
                     </div>
-
                     <div class="form-input">
                         <label for="job">Job :     </label><br>
                         <select class="real-input" name="job" id="job" required>
@@ -138,13 +130,11 @@
                             <option value="Student">Student</option>
                         </select>
                     </div>
-
                     <div class="form-input">
                         <label for="Object">Object :     </label><br>
                         <input  type="text" class="real-input" name="Object" id="Object" placeholder="Enter the mail object" minlength="1" maxlength="50" required/>
                         <small class="formContactError"></small>  
                     </div>
-
                     <div class="form-input">
                         <label for="Content">Content :     </label><br>
                         <textarea class="real-input" name="Content" id="Content" cols="33" placeholder="Enter mail content" required></textarea>
