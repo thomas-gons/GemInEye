@@ -23,6 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <script src="/js/navbar.js" defer></script>
+    <script src="/js/connected.js" defer></script>
     <script src="/js/order.js" defer></script>
 </head>
 
@@ -31,6 +32,9 @@
         include "php/header.php";
     ?>
     <main>
+        <?php
+            include "php/side_bar.php"
+        ?>
         <!-- Contenu principal de la page -->
         <div id="page-content">
             <div class="black-bg-div">

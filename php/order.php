@@ -3,8 +3,10 @@
     $input = explode(",", $_POST["cartContent"]);
     $data = array(
         "img" => $input[0],
-        "name" => $input[1],
-        "quantity" => intval($input[2])
+        "id" => $input[1],
+        "name" => $input[2],
+        "quantity" => intval($input[3]),
+        "price" => intval($input[4])
     );
 
     addToCart($data, $_SESSION['customerID']);

@@ -15,6 +15,7 @@
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <link href="/css/styles_log.css" rel="stylesheet" type="text/css">
     <script src="/js/order.js" defer></script>
+    <script src="/js/connected.js" defer></script>
 </head>
 <body>
     <?php 

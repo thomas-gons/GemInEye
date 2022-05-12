@@ -20,6 +20,7 @@
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <link href="/css/styles_about.css" rel="stylesheet" type="text/css">
     <script src="/js/navbar.js" defer></script>
+    <script src="/js/connected.js" defer></script>
     <script src="/js/order.js" defer></script>
 </head>
 <body>

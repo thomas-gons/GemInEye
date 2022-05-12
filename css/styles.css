@@ -55,7 +55,6 @@ header {
     flex: 80%;
     padding: 0.4rem;
     align-self: center;
-    min-width: min-content;
 }
 #header-title h1 {
     text-align: start;
@@ -114,6 +113,18 @@ header {
     background-color: limegreen;
     border: solid 1px black;
     transform: translate(220%, -100%);
+}
+#connected-login {
+    position: absolute;
+    right: 100px;
+    top: 90px;
+    padding: 5px;
+    background-color: #3a3a3a;
+    border-radius: 5px;
+    text-align: center;
+    visibility: hidden;
+    opacity:0;
+    transition: visibility 0.2s linear, opacity 0.2s linear;
 }
 #header-cart {
     flex:5%;
@@ -266,28 +277,47 @@ main {
     width: 100vw;
     min-width: min-content;
 }
+main aside {
+    background-color: #292929;
+}
 #side-nav {
     display: flex;
+    position: sticky;
     flex-direction: column;
-    width: 11vw;
-    min-width: max-content;
+    width: 65px;
+    min-width: 35px;
+    top: 10px;
+    height: 100vh;
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: #292929;
-    box-shadow: 5px 18px 15px rgba(0, 0, 0, 0.25);
+    transition: width 400ms ease-in-out;
 }
-#side-nav>a, .dropdown-btn, .dropdown-container>a {
-    display: block;
-    width: 100%;
+#side-nav.active {
+    width: 180px;
+}
+#side-nav-menu-img {
+    margin-left: 18px;
+    margin-bottom: 20px;
+}
+#side-nav a, .dropdown-btn, .dropdown-container>a {
+    display: flex;
+    justify-content: left;
+    align-items: center;
     text-align: left;
     font-size: 1.3rem;
     font-weight: 400;
     color: #c9c9c9;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border: none;
     background: none;
     text-decoration: none;
     transition: 0.2s ;
+}
+
+#side-nav a span, .dropdown-btn span {
+    margin-left: 20px;
+    min-width: max-content;
 }
 #side-nav>a:hover, .dropdown-btn:hover, .dropdown-container>a:hover {
     background-color: #3f3f3f;
@@ -295,6 +325,10 @@ main {
     border-left: 4px solid #00aee7; 
     color: #ffffff;
 }
+#side-nav-log-out {
+    margin-left: 5px;
+}
+
 .active {
     background-color: #3d3d3d;
     font-weight: 600;

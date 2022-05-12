@@ -17,8 +17,12 @@
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="/css/styles_cart.css" rel="stylesheet" type="text/css">
     <script src="/js/navbar.js" defer></script>
+    <script src="/js/connected.js" defer></script>
     <script src="/js/order.js" defer></script>
+    <script src="/js/cart.js" defer></script>
+
 </head>
 
 <body>
@@ -28,8 +32,56 @@
     <main>
         <?php
             include "php/side_bar.php";
+            echo "<div id='order-content'>";
+            $jsonOrder = file_get_contents("data/order.json");
+            $order = json_decode($jsonOrder, true)[$_SESSION['customerID']];
+            if ($order != array()){
+                $jsonStock = file_get_contents("data/stock.json");
+                $stock = json_decode($jsonStock, true);
+                echo "<table>
+                        <thead>
+                            <th>Photo</th>
+                            <th>Name</th>
+                            <th>Quantity</th>";
+                if (isset($_SESSION['admin']) && $_SESSION['admin'])
+                    echo "<th>Stock</th>";
+                else 
+                    echo "<th style='display: none;'>Stock</th>";
+                echo "<th>Price</th>
+                        </thead>
+                        <tbody>";
+                $ids = explode(" ", $_GET['id']);
+                for($i = 0; $i < count($order); $i++){
+                    foreach($stock[strval($ids[$i][0])] as $item){
+                        if ($item['id'] == $ids[$i])
+                            $stock = $item['quantity'];
+                    }
+                    echo " <tr>
+                                <td style='width: 30%;'><img style='padding: 5px 0;' src='".$order[$i]['img']."' width='225' height='225'></td>
+                                <td style='width: 35%;'>".$order[$i]['name']."</td>
+                                <td style='width: 25%;' class='quantity'>
+                                    <div class='quantity-div'>
+                                        <div>".$order[$i]['quantity']."</div>
+                                        <button class='quantity-btn quantity-less'>-</button>
+                                        <button class='quantity-btn quantity-more'>+</button>
+                                    </div>
+                                    <button class='remove-item'>Remove item</button>
+                                </td>";
+                        if (isset($_SESSION['admin']) && $_SESSION['admin'])
+                            echo "<td class='stock'>".$stock."</td>";
+                        else 
+                            echo "<td class='stock' style='display: none'>".$stock."</td>";
+                        echo "    <td style='width: 20%;'>$ ".$order[$i]['price']."</td>
+                            </tr>";
+                }
+                echo "  </tbody>
+                    </table>";
+            } else {
+                echo "<h1 style='margin: 10% auto;'>Your cart is empty</h1>";
+            }
         ?>
-        <!-- Contenu principal de la page -->
+        <button id='remove-order'>Remove Order</button>
+        </div>
     </main>
     <?php
         include "commons/footer.html"

@@ -1,6 +1,7 @@
 <customers-list>
     <customer>
         <id>1</id>
+        <admin>1</admin>
         <login>Thomas</login>
         <password>a</password>
         <firstname></firstname>
@@ -13,6 +14,7 @@
     </customer>
     <customer>
         <id>2</id>
+        <admin>1</admin>
         <login>Maxime</login>
         <password>b</password>
         <firstname></firstname>
@@ -25,6 +27,7 @@
     </customer>
     <customer>
         <id>3</id>
+        <admin>1</admin>
         <login>Lucas</login>
         <password>c</password>
         <firstname></firstname>
@@ -37,6 +40,7 @@
     </customer>
     <customer>
         <id>4</id>
+        <admin>1</admin>
         <login>Raphael</login>
         <password>d</password>
         <firstname></firstname>

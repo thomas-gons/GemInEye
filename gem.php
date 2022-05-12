@@ -22,6 +22,7 @@
     <link href="/css/styles_categories.css" rel="stylesheet" type="text/css">
     <script src="/js/navbar.js" defer></script>
     <script src="/js/stock.js" defer></script>
+    <script src="/js/connected.js" defer></script>
     <script src='/js/order.js' defer></script>
 </head>
 
@@ -92,6 +93,7 @@
                                 <img src=".$data[$itemIndexInJSON]['img']." id='gem-img' width=375 height=375ph/>
                                 <div id='gem-general'>
                                     <p class='gem-name'>".$data[$itemIndexInJSON]["name"]."</p><br>
+                                    <p class='gem-id' style='visibility: hidden;'>".$data[$itemIndexInJSON]["id"]."</p><br>
                                     <div id='gem-origin'>
                                         <span>Origin : </span>
                                         <span>".$data[$itemIndexInJSON]["origin"]."</span>

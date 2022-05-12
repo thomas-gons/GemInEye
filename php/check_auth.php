@@ -13,6 +13,7 @@
          strval($customer->password) == $pswd) {
             $check = true;
             $id = strval($customer->id);
+            $_SESSION["admin"] = intval($customer->admin);
             $_SESSION["connect_error"] = "";
             break;
         }
@@ -26,7 +27,7 @@
         $data = file_get_contents('../data/order.json');
         $orderNotLoggedInCustomer = json_decode($data, true)[$_SESSION["customerID"]];
         if ($orderNotLoggedInCustomer != array()){
-            include "php/order.php";
+            include "order.php";
             foreach($orderNotLoggedInCustomer as $item)
                 addToCart($item, $id);
             
@@ -36,7 +37,6 @@
             $jsonData = json_encode($orders, JSON_PRETTY_PRINT);
             file_put_contents("../data/order.json", $jsonData);
         }
-
         $_SESSION["customerID"] = $id;
         header("Location: ".$_SESSION["referrer"]);
     } else {

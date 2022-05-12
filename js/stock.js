@@ -19,8 +19,10 @@ document.getElementById('quantity-more').addEventListener('click', () => {
 function addCart(){
     cartContent = document.querySelector("#cartContent").value = ""+
         document.getElementById('gem-img').attributes[0].nodeValue+","+
+        document.querySelector('.gem-id').textContent+","+
         document.querySelector('.gem-name').textContent+","+
-        quantity.textContent+"";
+        quantity.textContent+","+
+        document.querySelector('#gem-price').textContent+",";
 }
 
 function check(){

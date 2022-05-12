@@ -12,3 +12,13 @@ for (let i = 0; i < dropdown.length; i++) {
         }
     });
 }
+
+let sideBar = document.querySelector('#side-nav');
+let menu = document.querySelector("#side-nav-menu-img");
+let logOut = document.querySelector("#side-nav-log-out");
+
+
+
+menu.addEventListener("click", () => {
+    sideBar.classList.toggle("active");
+});

@@ -16,7 +16,7 @@
 			"luster": "Waxy",
             "img": "/img/geodes/agate_kaolinite.png",
             "url": "https://www.mindat.org/photo-937759.html",
-            "quantity": 5,
+            "quantity": 28,
             "price": 0
         },
         {
@@ -35,7 +35,7 @@
 			"luster": "Waxy",
             "img": "/img/geodes/agate_quartz.png",
             "url": "https://www.mindat.org/photo-1192495.html",
-            "quantity": 5,
+            "quantity": 35,
             "price": 0
         },
         {
@@ -54,7 +54,7 @@
 			"luster": "Vitreous/glassy",
             "img": "/img/geodes/amethyst.png",
             "url": "https://www.mindat.org/photo-799655.html",
-            "quantity": 5,
+            "quantity": 41,
             "price": 0
         },
         {
@@ -73,7 +73,7 @@
 			"luster": "Vitreous",
             "img": "/img/geodes/azurite.png",
             "url": "https://www.mindat.org/photo-944476.html",
-            "quantity": 5,
+            "quantity": 34,
             "price": 0
         },
         {
@@ -92,7 +92,7 @@
 			"luster": "Vitreous to pearly on cleavage surfaces",
             "img": "/img/geodes/calcite.png",
             "url": "https://www.mindat.org/photo-956540.html",
-            "quantity": 5,
+            "quantity": 46,
             "price": 0
         },
         {
@@ -111,7 +111,7 @@
 			"luster": "Vitreous",
             "img": "/img/geodes/celestine.png",
             "url": "https://www.mindat.org/photo-885484.html",
-            "quantity": 5,
+            "quantity": 50,
             "price": 0
         },
         {
@@ -130,7 +130,7 @@
 			"luster": "Vitreous to dull",
             "img": "/img/geodes/kutnohorite.png",
             "url": "https://www.mindat.org/photo-728904.html",
-            "quantity": 5,
+            "quantity": 40,
             "price": 0
         },
         {
@@ -149,7 +149,7 @@
             "luster": "Vitreous",
             "img": "/img/geodes/quartz.png",
             "url" : "https://www.mindat.org/photo-1163174.html",
-            "quantity": 5,
+            "quantity": 14,
             "price": 0
         }
     ],
@@ -170,7 +170,7 @@
 			"luster": "Vitreous",
             "img": "/img/rough_gems/azurite.png",
             "url": "https://www.mindat.org/photo-1205531.html",
-            "quantity": 5,
+            "quantity": 37,
             "price": 0
         },
         {
@@ -189,7 +189,7 @@
 			"luster": "Vitreous",
             "img": "/img/rough_gems/fluorapatite.png",
             "url": "https://www.mindat.org/photo-1207092.html",
-            "quantity": 5,
+            "quantity": 20,
             "price": 0
         },
         {
@@ -208,7 +208,7 @@
 			"luster": "Adamantine to vitreous",
             "img": "/img/rough_gems/malachite.png",
             "url": "https://www.mindat.org/photo-1200169.html",
-            "quantity": 5,
+            "quantity": 4,
             "price": 0
         },
         {
@@ -227,7 +227,7 @@
 			"luster": "Subvitreous to waxy",
             "img": "/img/rough_gems/opal.png",
             "url": "https://www.geologyin.com/2016/06/types-of-opal-with-photos.html",
-            "quantity": 5,
+            "quantity": 2,
             "price": 0
         },
         {
@@ -246,7 +246,7 @@
 			"luster": "Vitreous - pearly",
             "img": "/img/rough_gems/prehnite.png",
             "url": "https://www.mindat.org/photo-1200044.html",
-            "quantity": 5,
+            "quantity": 50,
             "price": 0
         },
         {
@@ -265,7 +265,7 @@
             "origin": "La Rioja, Spain",
             "img": "/img/rough_gems/pyrite.png",
             "url": "https://www.mindat.org/photo-1205950.html",
-            "quantity": 5,
+            "quantity": 31,
             "price": 0
         },
         {
@@ -284,7 +284,7 @@
             "luster": "Subadamantine, vitreous, pearly (on partings)",
             "img": "/img/rough_gems/ruby.png",
             "url": "https://www.mindat.org/photo-1124235.html",
-            "quantity": 5,
+            "quantity": 34,
             "price": 0
         },
         {
@@ -303,7 +303,7 @@
             "luster": "Adamantine, resinous",
             "img": "/img/rough_gems/wulfenite.png",
             "url": "https://www.mindat.org/photo-1153791.html",
-            "quantity": 5,
+            "quantity": 38,
             "price": 0
         }
     ],
@@ -323,7 +323,7 @@
             "luster": "Vitreous",
             "img": "/img/crystals/aquamarine.png",
             "url": "https://www.mindat.org/photo-965056.html",
-            "quantity": 5,
+            "quantity": 10,
             "price": 0
         },
         {
@@ -342,7 +342,7 @@
             "luster": "Vitreous – waxy to dull when massive",
             "img": "/img/crystals/citrine.png",
             "url": "https://www.mindat.org/photo-962992.html",
-            "quantity": 5,
+            "quantity": 8,
             "price": 0
         },
         {
@@ -361,7 +361,7 @@
             "luster": "Adamantine",
             "img": "/img/crystals/diamond.png",
             "url": "https://www.mindat.org/photo-883308.html",
-            "quantity": 5,
+            "quantity": 50,
             "price": 0
         },
         {
@@ -380,7 +380,7 @@
             "luster": "Vitreous",
             "img": "/img/crystals/emerald.png",
             "url": "https://www.mindat.org/photo-1013754.html",
-            "quantity": 5,
+            "quantity": 31,
             "price": 0
         },
         {
@@ -399,7 +399,7 @@
             "luster": "Vitreous to oily",
             "img": "/img/crystals/peridot.png",
             "url": "https://www.mindat.org/photo-223326.html",
-            "quantity": 5,
+            "quantity": 20,
             "price": 0
         },
         {
@@ -418,7 +418,7 @@
             "luster": "Vitreous",
             "img": "/img/crystals/spinel.png",
             "url": "https://www.mindat.org/photo-363617.html",
-            "quantity": 5,
+            "quantity": 7,
             "price": 0
         },
         {
@@ -437,7 +437,7 @@
             "luster": "Vitreous, pearly on cleavage surfaces",
             "img": "/img/crystals/tanzanite.png",
             "url": "https://www.mindat.org/photo-633254.html",
-            "quantity": 5,
+            "quantity": 45,
             "price": 0
         },
         {
@@ -456,7 +456,7 @@
             "luster": "Vitreous",
             "img": "/img/crystals/topaz.png",
             "url": "https://www.mindat.org/photo-299074.html",
-            "quantity": 5,
+            "quantity": 26,
             "price": 0
         }
     ]

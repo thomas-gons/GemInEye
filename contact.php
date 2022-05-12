@@ -59,6 +59,7 @@
     <link href="/css/styles_contact.css" rel="stylesheet" type="text/css">
     <script src="/js/navbar.js" defer></script>
     <script src="/js/form_verif.js" defer></script>
+    <script src="/js/connected.js" defer></script>
     <script src="/js/order.js" defer></script>
 </head>
 
