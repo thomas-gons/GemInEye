@@ -21,8 +21,8 @@
     <link href="/css/styles_categories.css" rel="stylesheet" type="text/css">
     <script src="/js/navbar.js" defer></script>
     <script src="/js/connected.js" defer></script>
-    <script src="/js/connected.js" defer></script>
     <script src='/js/order.js' defer></script>
+    <script src='/js/category.js' defer></script>
 </head>
 
 <body>

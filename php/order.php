@@ -15,11 +15,14 @@
         $prev_data = file_get_contents('../data/order.json');
 
         $orders = json_decode($prev_data, true);
+        // if json file is empty
         if ($prev_data != ""){
             $orders = json_decode($prev_data, true);
+            // if the customer has already done an order
             if (array_key_exists($customerID, $orders) != false) {
                 $customerOrder = $orders[$customerID];
                 $gemIndexInJSON = array_search($data["name"], array_column($customerOrder, "name"));
+                // if the customer has already ordered this item
                 if ($gemIndexInJSON != "")
                     $orders[$customerID][$gemIndexInJSON]["quantity"] += $data["quantity"];
                 else
@@ -29,8 +32,7 @@
             } else {
                 $orders = $orders + array($customerID => array($data));
                 $jsonData = json_encode($orders, JSON_PRETTY_PRINT);
-            } 
-
+            }
         } else {
             $order = array();
             array_push($order, $data);

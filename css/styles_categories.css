@@ -4,12 +4,15 @@
     color: #ffffff;
 }
 .content-title h1 {
+    text-align: center;
     font-size: 3rem;
-    font-weight: 900;
-    text-decoration: underline #00aee7;
+    font-weight: 700;
+    /* text-decoration: underline #00aee7; */
 }
 .content-title>p {
-    text-align: justify;
+    text-align: center;
+    font-style: italic;
+    font-weight: 300;
     font-size: 120%;
     padding: 40px 100px 5px 0;
 }

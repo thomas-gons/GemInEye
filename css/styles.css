@@ -294,10 +294,10 @@ main aside {
     transition: width 400ms ease-in-out;
 }
 #side-nav.active {
-    width: 180px;
+    width: 215px;
 }
 #side-nav-menu-img {
-    margin-left: 18px;
+    margin-left: 20px;
     margin-bottom: 20px;
 }
 #side-nav a, .dropdown-btn, .dropdown-container>a {
@@ -340,8 +340,13 @@ main aside {
     color: #181818;
     padding-left: 15px;
 }
+.dropdown-container.active {
+    display: flex;
+}
 .dropdown-container a {
     font-size: 1rem;
+    min-width: max-content;
+    margin-left: 35px;
 }
 #page-content {
     width: 89vw;

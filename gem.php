@@ -43,9 +43,7 @@
                     
                     $jsonStr = file_get_contents("data/stock.json");
                     $data = json_decode($jsonStr, true)[$catID];
-                    
-                    // get the first component name of the gem
-                    $itemID = strtolower(explode(" ", trim($data[$itemIndexInJSON]["name"]))[0]);
+    
                     echo "<div id='gem-container'>
                             <div id='gem-data'>
                                 <div>
@@ -111,7 +109,7 @@
                         }
                         echo "          <div id='select-quantity'>
                                             <div style='width:100%;'>
-                                                <span>Quantity : </span><span id='quantity-span'>0</span>
+                                                <span>Quantity : </span><span id='quantity-span'>1</span>
                                                 
                                             </div>
                                             <div style='width:80%; display: flex; flex-direction: row'>

@@ -10,13 +10,13 @@
         </div>
         <div id='header-container'>
             <?php
-                if ($_SERVER["REQUEST_URI"] == "/index.php"){
-                    include "commons/title.html";
-                } else {
+                // if ($_SERVER["REQUEST_URI"] == "/index.php" || $_SERVER["REQUEST_URI"] == '/'){
+                //     include "commons/title.html";
+                // } else {
                     echo "<div id='header-title'>
                             <h1>Gem In Eye</h1>
                           </div>";
-                }
+                // }
             ?>
             
             <div id='header-log-cart'>
