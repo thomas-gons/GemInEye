@@ -1,15 +1,17 @@
 let quantity = document.getElementById('quantity-span');
 
 document.getElementById('quantity-less').addEventListener('click', () => {
-    if (quantity.textContent > 0) {
+    if (quantity.textContent > 1) {
+        changeStock((quantity.textContent == 2) ? -2: -1);
         quantity.textContent = Number(quantity.textContent) - 1;
         document.getElementById('info-quantity').textContent = "";
     } else
-        document.getElementById('info-quantity').textContent = "The quantity is already null";
+        document.getElementById('info-quantity').textContent = "The quantity cannot be null";
 })
 
 document.getElementById('quantity-more').addEventListener('click', () => {
-    if (quantity.textContent < document.getElementById('stock').value) {
+    if (Number(quantity.textContent) < Number(document.getElementById('stock').value)) {
+        changeStock((quantity.textContent == 1) ? 2: 1);
         quantity.textContent = Number(quantity.textContent) + 1;
         document.getElementById('info-quantity').textContent = "";
     } else
@@ -26,22 +28,17 @@ function addCart(){
 }
 
 function check(){
-    if (quantity.textContent == 0){
-        // add warning message
-        return false;
+    if (quantity.textContent == 1){
+        changeStock(1);
     }
     return true
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // AJAX stock gestion 
 
 let xhr;
 
-function makeRequest (url, data) {
+function changeStock (dQuant) {
     xhr = new XMLHttpRequest();
     if (!xhr) {
         alert("Abort: Unable to create an instance of XMLHTTP");
@@ -52,7 +49,25 @@ function makeRequest (url, data) {
             // ...
         }
     }
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded=utf-8'),
-    xhr.send(data);
+    xhr.open('POST', "../php/modify_stock.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(formatData({id: getGemID(), quantity: dQuant}));
+}
+
+function getGemID() {
+    let url = window.location.href;
+    let id = url.match(/gem\.php\?cat=(\w)&item=(\d)/);
+    return id[1] + id[2];
+}
+
+function formatData(data){
+    let formatedData = "";
+    let lastElement = Object.keys(data).pop();
+    
+    for (let key in data){
+        formatedData += key + "=" + data[key];
+        if (key != lastElement)
+            formatedData += "&";
+    }
+    return formatedData;
 }
