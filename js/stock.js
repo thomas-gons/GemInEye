@@ -39,20 +39,20 @@ function sleep(ms) {
 
 // AJAX stock gestion 
 
-let httpRequest;
+let xhr;
 
 function makeRequest (url, data) {
-    httpRequest = new XMLHttpRequest();
-    if (!httpRequest) {
+    xhr = new XMLHttpRequest();
+    if (!xhr) {
         alert("Abort: Unable to create an instance of XMLHTTP");
         return false;
     }
-    httpRequest.onreadystatechange = function () {
-        if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200){
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
             // ...
         }
     }
-    httpRequest.open("POST", url, true);
-    httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded=utf-8'),
-    httpRequest.send(data);
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded=utf-8'),
+    xhr.send(data);
 }

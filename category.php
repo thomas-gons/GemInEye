@@ -45,7 +45,7 @@
                 // parse CSV file ==> result: an array of the file lines
                 // get the elements of the columns (separated by commas ==> 'str_getcsv')
                 $csv = array_map('str_getcsv', file("data/categories.csv"));
-                for ($i = 0; $i < count($csv); $i++){
+                for ($i = 1; $i < count($csv); $i++){
                     if ($csv[$i][1] == $categoryID){
                         $categoryIndex = $i;
                         break;

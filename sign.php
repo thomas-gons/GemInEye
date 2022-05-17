@@ -37,13 +37,18 @@
                         </div>
                         <div class='contain' id='password-container'>
                             <label for='password'>Password</label>
-                            <input type='password' name=password>
+                            <input type='password' id='password' name='password'>
                         </div>
                         <input type='submit' class='sign-button' value='Sign in'>";
                 if (isset($_SESSION["connect_error"]) && $_SESSION["connect_error"] != ""){
                     echo "<p style='color:red'>"; echo $_SESSION['connect_error'] ; echo "</p>";
                     $_SESSION["connect_error"] = "";
                 }
+                if (isset($_SESSION['success_sign_up']) && $_SESSION['success_sign_up'] != ""){
+                    echo "<p style='color:red'>"; echo $_SESSION['success_sign_up'] ; echo "</p>";
+                    $_SESSION['success_sign_up'] = "";
+                }
+
                 echo "    
                     </form>
                     <div id='sign-up-container'>

@@ -43,11 +43,6 @@
                     <div class="main-content-text">
                         Discover our selection of the best quality geodes, rough gemstones and crystals, at the best price. 
                     </div>
-                </div>
-            </div>
-            <div class="black-bg-div">
-                <div class="main-container">
-                    <div class="main-title">Gemstones to Heal the Mind</div>
                     <div id="div-btn-journey">
                         <a href="/category.php">START YOUR JOURNEY</a>
                     </div>
@@ -55,6 +50,7 @@
             </div>
             <div class="black-bg-div">
                 <div class="main-container">
+                    <div class="main-title">Gemstones to Heal the Mind</div>
                     <p class="main-content-subtitle">HEALING THROUGH GEMSTONES</p>
                     <div class="main-content-text">
                         Gem In Eye is providing all individuals worldwide an healthy solution to master their emotions and heal their mind through the usage of healing gemstones.

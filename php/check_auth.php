@@ -5,12 +5,13 @@
     
     $check = false;
     $username_email = $_POST["username-email"];
-    $pswd = $_POST["password"];
+    // crypting password
+    $pswd = hash("sha256", $_POST["password"]);
 
     foreach($xml->children() as $customer){
         if ((strval($customer->login) == $username_email ||
          strval($customer->email) == $username_email) && 
-         strval($customer->password) == $pswd) {
+         $customer->password == $pswd) {
             $check = true;
             $id = strval($customer->id);
             $_SESSION["admin"] = intval($customer->admin);

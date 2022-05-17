@@ -314,7 +314,6 @@ main aside {
     text-decoration: none;
     transition: 0.2s ;
 }
-
 #side-nav a span, .dropdown-btn span {
     margin-left: 20px;
     min-width: max-content;
@@ -328,7 +327,6 @@ main aside {
 #side-nav-log-out {
     margin-left: 5px;
 }
-
 .active {
     background-color: #3d3d3d;
     font-weight: 600;
@@ -349,10 +347,11 @@ main aside {
     margin-left: 35px;
 }
 #page-content {
-    width: 89vw;
+    width: 91vw;
     min-width: min-content;
     height: min-content;
     text-align: justify;
+    transition: width 0.3s ease-in;
 }
 .black-bg-div {
     width: 100vw;

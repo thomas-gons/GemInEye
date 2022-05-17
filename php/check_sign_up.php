@@ -37,4 +37,34 @@
     if($error === true){
         header("Location: /sign.php?page=signup");
     }
+    else{
+        $xml2 = new DOMDocument();
+        // pretty print for XML file
+        $xml2->formatOutput = true;
+        $xml2->preserveWhiteSpace = false;
+        
+        $xml2->load("../data/customers.xml");
+        $cust = $xml2->firstChild;
+        $newcust = $xml2->createElement("customer");
+        
+        $admin = $xml2->createElement("admin",'0');
+        $login = $xml2->createElement("login",$username);
+        $password = $xml2->createElement("password", hash('sha256', $password));
+        $firstname = $xml2->createElement("firstname",$name);
+        $lastname = $xml2->createElement("lastname",$lastname);
+        $email = $xml2->createElement("email",$email);
+        
+        $newcust->appendChild($admin);
+        $newcust->appendChild($login);
+        $newcust->appendChild($password);
+        $newcust->appendChild($firstname);
+        $newcust->appendChild($lastname);
+        $newcust->appendChild($email);
+        
+    
+        $cust->appendChild($newcust);
+        $xml2->save("../data/customers.xml");
+        $_SESSION['success_sign_up'] = "Sign up success";
+        header("Location: /sign.php?page=signin");
+    }
 ?>
