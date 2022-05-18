@@ -120,7 +120,7 @@
                                                 <i style='width: 70%; text-align: center' id='info-quantity'></i>
                                             </div>
                                         </div>
-                                        <form method='post' action='/php/order.php' onSubmit='return check()'>
+                                        <form method='post' action='/php/order.php'>
                                             <input type='hidden' id='cartContent' name='cartContent'>
                                             <input type='submit' onclick='addCart()'id='add-to-cart' value='Add to Cart'>
                                         </form>

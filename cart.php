@@ -22,7 +22,6 @@
     <script src="/js/connected.js" defer></script>
     <script src="/js/order.js" defer></script>
     <script src="/js/cart.js" defer></script>
-
 </head>
 
 <body>
@@ -35,6 +34,7 @@
             echo "<div id='order-content'>";
             $jsonOrder = file_get_contents("data/order.json");
             $order = json_decode($jsonOrder, true)[$_SESSION['customerID']];
+            // empty cart if order.json is empty
             if ($order != array()){
                 $jsonStock = file_get_contents("data/stock.json");
                 $stock = json_decode($jsonStock, true);
@@ -43,6 +43,7 @@
                             <th>Photo</th>
                             <th>Name</th>
                             <th>Quantity</th>";
+                // display stock if customer is an admin
                 if (isset($_SESSION['admin']) && $_SESSION['admin'])
                     echo "<th>Stock</th>";
                 else 
@@ -50,6 +51,7 @@
                 echo "<th>Price</th>
                         </thead>
                         <tbody>";
+                // search main data about each item (img path, name, quantity)
                 $ids = explode(" ", $_GET['id']);
                 for($i = 0; $i < count($order); $i++){
                     foreach($stock[strval($ids[$i][0])] as $item){
@@ -75,12 +77,12 @@
                             </tr>";
                 }
                 echo "  </tbody>
-                    </table>";
+                    </table>
+                    <button id='remove-order'>Remove Order</button>";
             } else {
                 echo "<h1 style='margin: 10% auto;'>Your cart is empty</h1>";
             }
         ?>
-        <button id='remove-order'>Remove Order</button>
         </div>
     </main>
     <?php

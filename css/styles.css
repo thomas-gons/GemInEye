@@ -273,9 +273,8 @@ header {
 }
 main {
     display: flex;
-    flex: 1;
     width: 100vw;
-    min-width: min-content;
+    min-width: 100vw;
 }
 main aside {
     background-color: #292929;
@@ -294,7 +293,7 @@ main aside {
     transition: width 400ms ease-in-out;
 }
 #side-nav.active {
-    width: 215px;
+    width: 210px;
 }
 #side-nav-menu-img {
     margin-left: 20px;
@@ -347,14 +346,17 @@ main aside {
     margin-left: 35px;
 }
 #page-content {
-    width: 91vw;
-    min-width: min-content;
+    width: 96vw;
     height: min-content;
     text-align: justify;
-    transition: width 0.3s ease-in;
+    transition: width 0.4s ease;
+}
+.resize {
+    width: 86vw;
+    transition: width 0.4s ease;
 }
 .black-bg-div {
-    width: 100vw;
+    width: 100%;
     height: 83vh;
     color: #ffffff;
     background-color: #141414;

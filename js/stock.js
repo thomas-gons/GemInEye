@@ -2,7 +2,6 @@ let quantity = document.getElementById('quantity-span');
 
 document.getElementById('quantity-less').addEventListener('click', () => {
     if (quantity.textContent > 1) {
-        changeStock((quantity.textContent == 2) ? -2: -1);
         quantity.textContent = Number(quantity.textContent) - 1;
         document.getElementById('info-quantity').textContent = "";
     } else
@@ -11,7 +10,6 @@ document.getElementById('quantity-less').addEventListener('click', () => {
 
 document.getElementById('quantity-more').addEventListener('click', () => {
     if (Number(quantity.textContent) < Number(document.getElementById('stock').value)) {
-        changeStock((quantity.textContent == 1) ? 2: 1);
         quantity.textContent = Number(quantity.textContent) + 1;
         document.getElementById('info-quantity').textContent = "";
     } else
@@ -20,38 +18,33 @@ document.getElementById('quantity-more').addEventListener('click', () => {
 
 function addCart(){
     cartContent = document.querySelector("#cartContent").value = ""+
-        document.getElementById('gem-img').attributes[0].nodeValue+","+ // get image path from DOM
         document.querySelector('.gem-id').textContent+","+
+        document.getElementById('gem-img').attributes[0].nodeValue+","+ // get image path from DOM
         document.querySelector('.gem-name').textContent+","+
         quantity.textContent+","+
         document.querySelector('#gem-price').textContent+",";
-}
-
-function check(){
-    if (quantity.textContent == 1){
-        changeStock(1);
+    
+    changeStock({id: getGemID(), quantity: Number(quantity.textContent) * (-1)});
     }
-    return true
-}
 
 // AJAX stock gestion 
 
 let xhr;
 
-function changeStock (dQuant) {
+function changeStock (data) {
     xhr = new XMLHttpRequest();
     if (!xhr) {
-        alert("Abort: Unable to create an instance of XMLHTTP");
+        console.log("Abort: Unable to create an instance of XMLHTTP");
         return false;
     }
     xhr.onreadystatechange = function () {
         if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
             // ...
-        }
+        } else (xhr.status == 404)
     }
     xhr.open('POST', "../php/modify_stock.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send(formatData({id: getGemID(), quantity: dQuant}));
+    xhr.send(formatData(data));
 }
 
 function getGemID() {

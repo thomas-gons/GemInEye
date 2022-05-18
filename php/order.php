@@ -2,8 +2,8 @@
     session_start();
     $input = explode(",", $_POST["cartContent"]);
     $data = array(
-        "img" => $input[0],
-        "id" => $input[1],
+        "id" => $input[0],
+        "img" => $input[1],
         "name" => $input[2],
         "quantity" => intval($input[3]),
         "price" => intval($input[4])

@@ -1,7 +1,6 @@
 function resizePageContent(mode) {
     let pageContent = document.getElementById('page-content');
-    console.log(pageContent);
-    pageContent.style.width = (mode === true) ? '87vw': '91vw';
+    (mode === true) ? pageContent.classList.add("resize") : pageContent.classList.remove("resize");
 }
 
 
