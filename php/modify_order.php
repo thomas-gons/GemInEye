@@ -20,7 +20,9 @@
                 } else {
                     $data = (object) null;
                 }
-            } else
+                $response = "quantity null";
+            } else {
+                $response = "quantity ";
                 if ($data[strval($customer_id)][$i]["quantity"] + $quantity > 0){
                     $data[strval($customer_id)][$i]["quantity"] += $quantity;
                 }
@@ -29,9 +31,11 @@
                     // transform the associative array into an array
                     $data[strval($customer_id)] = array_values($data[strval($customer_id)]);
                 }
+            }
             break;
         }
     }
     $jsonData = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents("../data/order.json", $jsonData);
+    echo $response;
 ?>

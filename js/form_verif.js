@@ -33,7 +33,6 @@ form.Content.addEventListener('change', function(){
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     if(validContent(form.Content) && validEmail(form.Email) && validFirstName(form.firstName) && validLastName(form.lastName) && validObject(form.Object) && validBirthDate(form.BirthDate) && validContactDate(form.ContactDate)) {
-        console.log("oui");
         form.submit();
     }
 })

@@ -1,0 +1,36 @@
+#page-content {
+    display: flex;   
+    flex-direction: column;
+    margin: 5% 17%;
+    padding: 60px 80px;
+    text-align: center;
+    background-color: #292929;
+    color: white;
+    border-radius: 10px;
+}
+#page-content h2, #page-content h1 {
+    color: #d19017;
+}
+.paragraph {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+.lign {
+    background-color: #505050; 
+    height: 3px; 
+    border: 3px;
+    border-radius: 10px;
+    margin: 0 20%;
+}
+li {
+    list-style: none;
+}
+
+#page-content a {
+    padding-left: 5px;
+    text-decoration: none;
+    color: #00aee7;
+}
+#page-content a:visited {
+    color: #00aee7;
+}

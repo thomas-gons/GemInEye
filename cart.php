@@ -33,7 +33,7 @@
             include "php/side_bar.php";
             echo "<div id='order-content'>";
             $jsonOrder = file_get_contents("data/order.json");
-            $order = json_decode($jsonOrder, true)[$_SESSION['customerID']];
+            $order = json_decode($jsonOrder, true)[strval($_SESSION['customerID'])];
             // empty cart if order.json is empty
             if ($order != array()){
                 $jsonStock = file_get_contents("data/stock.json");
@@ -41,6 +41,7 @@
                 echo "<table>
                         <thead>
                             <th>Photo</th>
+                            <th style='display: none'>Id</th>
                             <th>Name</th>
                             <th>Quantity</th>";
                 // display stock if customer is an admin
@@ -52,14 +53,12 @@
                         </thead>
                         <tbody>";
                 // search main data about each item (img path, name, quantity)
-                $ids = explode(" ", $_GET['id']);
                 for($i = 0; $i < count($order); $i++){
-                    foreach($stock[strval($ids[$i][0])] as $item){
-                        if ($item['id'] == $ids[$i])
-                            $stock = $item['quantity'];
-                    }
+                    $id = $order[$i]["id"];
+                    $stockQuantity = $stock[strval($id[0])][$id[1] - 1]["quantity"];
                     echo " <tr>
                                 <td style='width: 30%;'><img style='padding: 5px 0;' src='".$order[$i]['img']."' width='225' height='225'></td>
+                                <td style='display: none' class='gem-id'>".$order[$i]['id']."</td>
                                 <td style='width: 35%;'>".$order[$i]['name']."</td>
                                 <td style='width: 25%;' class='quantity'>
                                     <div class='quantity-div'>
@@ -70,9 +69,9 @@
                                     <button class='remove-item'>Remove item</button>
                                 </td>";
                         if (isset($_SESSION['admin']) && $_SESSION['admin'])
-                            echo "<td class='stock'>".$stock."</td>";
+                            echo "<td class='stock'>".$stockQuantity."</td>";
                         else 
-                            echo "<td class='stock' style='display: none'>".$stock."</td>";
+                            echo "<td class='stock' style='display: none'>".$stockQuantity."</td>";
                         echo "    <td style='width: 20%;'>$ ".$order[$i]['price']."</td>
                             </tr>";
                 }

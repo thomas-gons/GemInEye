@@ -11,11 +11,11 @@
         <div id='header-container'>
             <?php
                 // if ($_SERVER["REQUEST_URI"] == "/index.php" || $_SERVER["REQUEST_URI"] == '/'){
-                //     include "commons/title.html";
+                //    include "commons/title.html";
                 // } else {
                     echo "<div id='header-title'>
                             <h1>Gem In Eye</h1>
-                          </div>";
+                        </div>";
                 // }
             ?>
             
@@ -57,21 +57,23 @@
                                         echo "<div id='cart-items-nb'>".count($data)."</div>
                                             <div id=cart-items>";
                                             for ($i = 0; $i < count($data); $i++) {
-                                            if ($i < 5) { 
-                                                echo "<div class='cart-item'>
+                                                echo "<div class='cart-item'";
+                                                if ($i >= 5) 
+                                                    echo "style='display: none'";
+                                                
+                                                echo ">
                                                         <img src=" .$data[$i]["img"]." alt=".$data[$i]["name"]."
                                                         width=80 height=80>
                                                         <div class='cart-item-id' style='display: none;''>".$data[$i]["id"]."</div>
                                                         <div class='cart-item-name'>".$data[$i]["name"]."</div>
                                                         <div class='cart-item-quantity'>".$data[$i]["quantity"]."</div>
                                                     </div>";
-                                            } else {
-                                                echo "<div>. . .</div>";
-                                                break;
                                             }
+                                            if ($i >= 5)
+                                                echo "<div>...</div>"; 
                                         }
                                     }
-                                } ?>
+                                    ?>
                                 </div>
                             </div>
                         </div>

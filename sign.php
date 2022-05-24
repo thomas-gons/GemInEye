@@ -12,6 +12,9 @@
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <link href="/css/styles_log.css" rel="stylesheet" type="text/css">
     <script src="/js/order.js" defer></script>
@@ -41,11 +44,11 @@
                         </div>
                         <input type='submit' class='sign-button' value='Sign in'>";
                 if (isset($_SESSION["connect_error"]) && $_SESSION["connect_error"] != ""){
-                    echo "<p style='color:red'>"; echo $_SESSION['connect_error'] ; echo "</p>";
+                    echo "<p style='color:red; padding-top: 15px'>"; echo $_SESSION['connect_error'] ; echo "</p>";
                     $_SESSION["connect_error"] = "";
                 }
                 if (isset($_SESSION['success_sign_up']) && $_SESSION['success_sign_up'] != ""){
-                    echo "<p style='color:red'>"; echo $_SESSION['success_sign_up'] ; echo "</p>";
+                    echo "<p style='color:red; padding-top: 15px;'>"; echo $_SESSION['success_sign_up'] ; echo "</p>";
                     $_SESSION['success_sign_up'] = "";
                 }
 

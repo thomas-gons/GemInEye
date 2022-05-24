@@ -9,13 +9,9 @@ cart_img.addEventListener('mouseout', () => {
     if (document.getElementById('cart-items') !== null)
         document.getElementById('cart-items').style.visibility = 'hidden';
 })
+
 cart_img.addEventListener('click', () => {
-    url = 'cart.php?id=';
-    itemsID = document.querySelectorAll(".cart-item-id")
-    for (let i = 0; i < itemsID.length - 1; i++)
-        url += itemsID[i].textContent + "+";
-    url += itemsID[itemsID.length - 1].textContent;
-    window.location.href = url;
+    document.location.href = "cart.php";
 })
 
 //Change flex direction of log buttons

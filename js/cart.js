@@ -1,7 +1,10 @@
-let url = window.location.href;
-let gemIDs = url.split('=');
-let gemIds = gemIDs[1].split('+');
-
+let gemIdsDiv = document.querySelectorAll('.gem-id');
+let gemIds = [];
+gemIdsDiv.forEach(id => {
+    gemIds.push(id.textContent);
+})
+let rows = document.querySelectorAll('tr');
+rows = Array.prototype.slice.call(rows);
 
 let quantityLess = document.querySelectorAll(".quantity-less");
 
@@ -12,18 +15,11 @@ if (quantityLess != undefined) {
             // get index row of the specific tr
             let indexRow = element.parentElement.parentElement.parentElement.sectionRowIndex;
             let quant = Number(quantityDiv.textContent);
-            changeJSONfile({id: gemIds[indexRow], quantity: -1}, "../php/modify_order.php");
-            changeJSONfile({id: gemIds[indexRow], quantity: 1}, "../php/modify_stock.php");
-            if (quant > 1)
-                quant -= 1;
-            else {
-                if (gemIds.length != 0) {
-                    gemIds.splice(indexRow, 1);
-                    window.history.pushState("", "Gem In Eye - Cart", "cart.php?id=" + gemIds.join("+"));
-                    location.reload(true);
-                } else
-                    window.location.href = "index.php";
-            }
+            makeRequest({id: gemIds[indexRow], quantity: -1}, "../php/modify_order.php");
+            makeRequest({id: gemIds[indexRow], quantity: 1}, "../php/modify_stock.php");
+            if (rows.length == 1)
+                 clearTable();
+            quant -= 1;
             quantityDiv.textContent = quant;
         })
     })
@@ -42,8 +38,8 @@ if (quantityMore != undefined) {
             let quant = Number(quantityDiv.textContent);
             if (quant < stockQuantity) {
                 quant += 1;
-                changeJSONfile({id: gemIds[indexRow], quantity: 1}, "../php/modify_order.php");
-                changeJSONfile({id: gemIds[indexRow], quantity: -1}, "../php/modify_stock.php");
+                makeRequest({id: gemIds[indexRow], quantity: 1}, "../php/modify_order.php");
+                makeRequest({id: gemIds[indexRow], quantity: -1}, "../php/modify_stock.php");
             }
             quantityDiv.textContent = quant;            
         })    
@@ -57,18 +53,13 @@ if (removeItem != undefined) {
         element.addEventListener('click', () => {
             let quantityDiv = element.previousElementSibling.firstElementChild;
             let row = element.parentElement.parentElement;
-            console.log(row);
             // get index row of the specific tr
             let indexRow = row.sectionRowIndex;
             let quant = Number(quantityDiv.textContent);
-            changeJSONfile({id: gemIds[indexRow], quantity: quant * (-1)}, "../php/modify_order.php");
-            changeJSONfile({id: gemIds[indexRow], quantity: quant}, "../php/modify_stock.php");
-            gemIds.splice(indexRow, 1);
-            if (gemIds.length != 0) {
-                window.history.pushState("", "Gem In Eye - Cart", "cart.php?id=" + gemIds.join("+"));
-                location.reload(true);
-            } else
-                window.location.href = "index.php";
+            makeRequest({id: gemIds[indexRow], quantity: quant * (-1)}, "../php/modify_order.php");
+            makeRequest({id: gemIds[indexRow], quantity: quant}, "../php/modify_stock.php");
+            if (rows.length == 1)
+                clearTable();
         })
     })
 }
@@ -77,26 +68,36 @@ let removeOrder = document.querySelector('#remove-order');
 
 if (removeOrder != undefined) {
     removeOrder.addEventListener('click', () => {
-        let lastRemoveItem = removeItem[removeItem.length - 1];
         removeItem.forEach(element => {
             let quantityDiv = element.previousElementSibling.firstElementChild;
             // get index row of the specific tr
             let quant = Number(quantityDiv.textContent);
-            changeJSONfile({id: gemIds[0], quantity: quant * (-1)}, "../php/modify_order.php");
-            changeJSONfile({id: gemIds[0], quantity: quant}, "../php/modify_stock.php");
-            if (element != lastRemoveItem){
-                gemIds.splice(0, 1);
-                window.history.pushState("", "Gem In Eye - Cart", "cart.php?id=" + gemIds.join("+"));
-            } else 
-                window.location.href = "index.php";
+            makeRequest({id: gemIds[0], quantity: quant * (-1)}, "../php/modify_order.php");
+            makeRequest({id: gemIds[0], quantity: quant}, "../php/modify_stock.php");
         })
+        clearTable();
     })
 }
+
+let cartItems = document.querySelectorAll('.cart-item');
+
+function clearTable() {
+    document.getElementById('cart-items-nb').remove();
+    cartItems.innerHTML = "";
+    let orderContent = document.getElementById("order-content");
+    orderContent.innerHTML = "";
+    let empty = document.createElement("h1");
+    empty.setAttribute("style", 'margin: 10% auto');
+    empty.textContent = "Your cart is empty";
+    orderContent.appendChild(empty);
+}
+
+
 // AJAX stock gestion 
 
 let xhr;
 
-function changeJSONfile (data, file) {
+function makeRequest(data, file) {
     xhr = new XMLHttpRequest();
     if (!xhr) {
         console.log("Abort: Unable to create an instance of XMLHTTP");
@@ -104,10 +105,21 @@ function changeJSONfile (data, file) {
     }
     xhr.onreadystatechange = function () {
         if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
-            // ...
+            if (file == "../php/modify_order.php" && xhr.responseText == "quantity null"){
+                document.getElementById('cart-items-nb').textContent -= 1;
+                cartItems.forEach(itemDiv => {
+                    if (itemDiv.children[1].textContent == data['id']){
+                        $gemIdIndex = gemIds.indexOf((data["id"]));
+                        itemDiv.remove();
+                        rows[$gemIdIndex + 1].remove();
+                        rows.splice($gemIdIndex, 1)
+                        gemIds.splice($gemIdIndex, 1);
+                    }
+                })
+            }
         } else (xhr.status == 404)
     }
-    xhr.open('POST', file, true);
+    xhr.open('POST', file, false);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send(formatData(data));
 }

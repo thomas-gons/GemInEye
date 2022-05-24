@@ -17,6 +17,9 @@
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <link href="/css/styles_about.css" rel="stylesheet" type="text/css">
     <script src="/js/navbar.js" defer></script>
@@ -51,7 +54,7 @@
                             <p>
                                 Our head office is located in France, more particularly in Méry sur Oise. 
                                 You can come during our opening hours from Monday to Friday from 10 a.m. to 12 a.m. and 2 p.m. to 4.30 p.m., 
-                                at the following address:  <u>12 rue Antoine de St-Exupery</u>   
+                                at the following address:  <i>12 rue Antoine de St-Exupery</i>   
                             </p> 
                         </div>
                     </div>
@@ -60,7 +63,7 @@
                         <h1 class="Titre">How to contact us ?</h1>
                         <div class="ContactUs">
                             <p>
-                                You can contact us with our contact page, or you can call us at <u>02 21 12 45 65</u> or you can contact our mail support on <u>gemineye@support.com</u>
+                                You can contact us with our contact page, or you can call us at <i>02.21.12.45.65</i> or you can contact our mail support on <i>gemineye@support.com</i>
                             </p>
                         </div>
                     </div>

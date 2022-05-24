@@ -76,3 +76,26 @@ textarea {
     height: 150px;
     padding: 5px;
 }
+
+/* ------------------ mail.php --------------------------- */
+
+#mail {
+    display: flex;
+    flex-direction: column;
+    background-color: #303030;
+    margin: 2% auto;
+    min-height: 60vh;
+    min-width: max-content;
+    width: 40%;
+    color: white;
+    border: solid 3px #252525;
+    border-radius: 10px;
+}
+
+#to {
+    align-items: left;
+}
+
+#mailContent {
+    margin-top: 3%;
+}

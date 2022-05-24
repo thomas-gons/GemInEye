@@ -17,7 +17,7 @@
 <html lang="en">
 
 <head>
-    <title>Gem In Eye - Contact</title>
+    <title>Gem In Eye - Mail</title>
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,25 +27,25 @@
 
 <body>
     <?php 
-        include "php/header.php";
+        include "header.php";
     ?>
     <main>
-        <div id="page_content">
-            <?php
-                echo $_SESSION['cDate']." ";
-                echo $_SESSION['fName']." ";
-                echo $_SESSION['lName']." ";
-                echo $_SESSION['email']." ";
-                echo $_SESSION['genre']." ";
-                echo $_SESSION['bDate']." ";
-                echo $_SESSION['job']." ";
-                echo $_SESSION['object']." ";
-                echo $_SESSION['content']." ";
-            ?>
+        <?php 
+            include "side_bar.php";
+        ?> 
+        <div id="mail">
+            <div id="to">
+                <div>To: "GemInEye" &lsaquo;gemineye@support.com.&rsaquo;<br></div>
+                <div>From: <?php echo '"'.$_SESSION['fName'].' '.$_SESSION['lName'].'" '.'&lsaquo;'.$_SESSION['email'].'&rsaquo;';?> <br></div>
+                <div>Subject: <?php echo $_SESSION['object'];?><br></div>
+            </div>
+            <div id="mailContent">
+                <div><p> <?php echo nl2br(htmlspecialchars($_SESSION['content']));?></p></div>
+            </div>
         </div>
     </main>
     <?php
-        include "commons/footer.html";
+        include "../commons/footer.html";
     ?>
 </body>
 

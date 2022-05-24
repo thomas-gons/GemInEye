@@ -4,6 +4,7 @@
     $jsonStock = $jsonStr = file_get_contents("../data/stock.json");
     $data = json_decode($jsonStr, true);
     $gems = $data[strval($id[0])];
+    $data[strval($id[0])][intval($id[1]) - 1]["id"];
     for ($i = 0; $i < count($gems); $i++){
         if ($gems[$i]["id"] == $id){
             $data[$id[0]][$i]["quantity"] += $quantity;
