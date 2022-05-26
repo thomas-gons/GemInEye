@@ -22,7 +22,7 @@
             ?>
         </div>
         <?php 
-            if (isset($_SESSION["login"]))
+            if (isset($_SESSION["login"])) // seulement si admin => backoffice page
                 echo "<a href='/user.php'>
                         <img class='side-nav-img' src='/img/sideBar/userBW.png' style='width:30px'>
                         <span>User</span>

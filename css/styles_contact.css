@@ -1,10 +1,10 @@
 #container {
     display: flex;   
     flex-direction: row;
-    width: 92vw;
+    width: 100%;
     min-width: min-content;
     flex-wrap: wrap;
-    padding: 0 100px;
+    padding: 0 50px;
     align-items: center;
 }
 #contact-title {

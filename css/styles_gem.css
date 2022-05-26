@@ -2,11 +2,9 @@
     margin-bottom: 0;
     padding-bottom: 0;
 }
-
 #page-content > * {
     color: white;
 }
-
 #gem {
     display: flex;
     flex-direction: column;
@@ -26,7 +24,6 @@
     padding: 30px 60px;
     margin-right: 4%;
 }
-
 #gem-data {
     min-width: max-content;
     margin: 0 5%;
@@ -35,12 +32,10 @@
     background-color: #323232;
     box-shadow: 5px 18px 15px rgba(0, 0, 0, 0.25);
 }
-
 #gem-data > div {
     align-items: center;
     padding: 5px;
 }
-
 .data-name {
     display: inline;
     padding-right: 5px;
@@ -54,11 +49,9 @@
     display: flex;
     flex-direction: row;
 }
-
 #gem-container img {
     margin: 10px 40px 10px 40px;
     border-radius: 10px;
-    
 }
 #gem-general {
     display: flex;
@@ -108,17 +101,14 @@
     margin: 5px;
     padding: 5px 0;
 }
-
 #select-quantity div {
     margin-bottom: 8px;
 }
 #select-quantity div span{
     font-size: 1.15rem;
 }
-
 #quantity-span {
     margin-right: 5px;
-
 }
 .quantity-btn {
     width: 30px;
@@ -151,10 +141,6 @@
     padding: 5px;
     margin: 10px 0;
 }
-/* #add-to-cart:hover {
-    background-color: #e46701;
-    color: #ffffff;
-} */
 #add-to-cart:active {
     transform: scale(0.96);
 }
