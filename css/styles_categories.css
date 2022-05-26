@@ -1,6 +1,6 @@
 .content-title {
     min-width: 555px;
-    margin: 40px auto 40px 60px;
+    margin: 40px;
     padding: 20px;
     color: var(--bg-color-black);
 }
@@ -26,7 +26,7 @@
     height: min-content;
     align-content: space-around;
     justify-content: space-around;
-    padding: 0 20px 0 30px;
+    padding: 0 20px 30px 20px;
 }
 .gem {
     min-width: 300px;
@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 40px 20px;
+    margin: 40px;
     padding: 20px;
     border-radius: 20px;
     background-color: #292929;

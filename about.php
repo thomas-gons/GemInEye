@@ -35,10 +35,10 @@
             include "php/side_bar.php";
         ?>
         <div id="page-content">
-            <div id="AllContent">
-                <div id="Descriptif">
-                    <div class="Part1">
-                        <h1 class="Titre">Who are we ?</h1>
+            <div id="container">
+                <div id="description">
+                    <div class="part1">
+                        <h1 class="title">Who are we ?</h1>
                         <p>
                             GemInEye is based on four student that wanted to develop a business that no one could ever thought of. 
                             We are engineers, innovators and above all a team. We work together to provide you the best Gem, you can ever find in 
@@ -47,9 +47,9 @@
                             of the environment during the extraction of gems. 
                         </p>
                     </div>
-                    <hr class="Lign">
-                    <div class="Part1">
-                        <h1 class="Titre">Where are we ?</h1>
+                    <hr class="lign">
+                    <div class="part1">
+                        <h1 class="title">Where are we ?</h1>
                         <div class="Adresse">  
                             <p>
                                 Our head office is located in France, more particularly in Méry sur Oise. 
@@ -58,9 +58,9 @@
                             </p> 
                         </div>
                     </div>
-                    <hr class="Lign">
-                    <div class="Part1">
-                        <h1 class="Titre">How to contact us ?</h1>
+                    <hr class="lign">
+                    <div class="part1">
+                        <h1 class="title">How to contact us ?</h1>
                         <div class="ContactUs">
                             <p>
                                 You can contact us with our contact page, or you can call us at <i>02.21.12.45.65</i> or you can contact our mail support on <i>gemineye@support.com</i>
@@ -68,25 +68,25 @@
                         </div>
                     </div>
                 </div>
-                <hr class="Lign">
-                <div class="Part2">
-                    <h1 class="Titre">More About the CEOs</h1>
-                    <div class="aboutUs">
-                        <div class="Ceo">
-                            <div class="Nom">Causse Raphael </div> <br>
-                            <p> CyTech Student, I am someone who like to play with computer </p>
+                <hr class="lign">
+                <div class="part2">
+                    <h1 class="title">More About the CEOs</h1>
+                    <div class="about-us">
+                        <div class="ceo">
+                            <div class="name">Causse Raphael </div> <br>
+                            <p> I'm a student at CY Tech Engineer school ! Love all the work I've learn in IT and I'm proud of presenting to you our first web site !</p>
                         </div>
-                        <div class="Ceo">
-                            <div class="Nom">Gons Thomas </div> <br>
-                            <p> CyTech Student, I am someone who like to play with computer </p>
+                        <div class="ceo">
+                            <div class="name">Gons Thomas </div> <br>
+                            <p>I am someone who like to code stuff on a computer since I'm very young. I'm also happy to be able to show my skills by building this site with my team.</p>
                         </div>
-                        <div class="Ceo">
-                            <div class="Nom">Cotot Lucas </div> <br>
-                            <p> CyTech Student, I am someone who like to play with computer </p>
+                        <div class="ceo">
+                            <div class="name">Cotot Lucas </div> <br>
+                            <p>I love drawing and designing stuff on a computer. If you like our logo, thank you cause it's all me !</p>
                         </div>
-                        <div class="Ceo">
-                            <div class="Nom">Alzoubaidy Maxime </div> <br>
-                            <p> Student at CyTech. </p>
+                        <div class="ceo">
+                            <div class="name">Alzoubaidy Maxime </div> <br>
+                            <p>So glad to work with my friends, I've learn a lot and I'm proud of myself for my contribution to this huge project !</p>
                         </div>
                     </div>
                 </div>

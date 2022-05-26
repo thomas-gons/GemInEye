@@ -14,10 +14,10 @@ cart_img.addEventListener('click', () => {
     document.location.href = "cart.php";
 })
 
-//Change flex direction of log buttons
+//Change flex direction of log buttons on rezise window
 function flexDirChange() {
     let logDiv = document.getElementById('header-log');
-    if (window.innerWidth <= 900)
+    if (window.innerWidth <= 890)
         logDiv.style.flexDirection = "column-reverse";
     else
         logDiv.style.flexDirection = "row";

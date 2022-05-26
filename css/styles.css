@@ -7,10 +7,11 @@
     src: url(/fonts/Quicksand-Bold.ttf);
 }
 :root {
-    --bg-color-cream: #ebd5bd;
-    --bg-color-black: #292929;
-    --bg-color-grey: #3f3f3f;
-    --bg-color-lightgrey: #505050;
+    --color-white: #ffffff;
+    --color-cream: #ebd5bd;
+    --color-black: #292929;
+    --color-grey: #3f3f3f;
+    --color-lightgrey: #505050;
     --color-blue: #00aee7;
 }
 *, *::before, *::after {
@@ -26,7 +27,7 @@ body {
     overflow-x: hidden;
     height: 100vh;
     min-width: fit-content;
-    background-color: var(--bg-color-cream);
+    background-color: var(--color-cream);
 }
 header {
     display: flex;
@@ -38,8 +39,8 @@ header {
 #top-container {
     display: flex;
     height: 120px;
-    color: #ffffff;   
-    background-color: var(--bg-color-black);
+    color: var(--color-white);   
+    background-color: var(--color-black);
 }
 #top-logo-content {
     align-self: center;
@@ -55,7 +56,7 @@ header {
     width: 100%;
     height: 100%;
     transition: 0.3s;
-    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.384));
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));
 }
 #top-logo:hover {
     filter: drop-shadow(1px 1px 8px rgba(255, 255, 255, 0.6));
@@ -92,21 +93,22 @@ header {
     margin-right: 20px;
 }
 .log-btn {
-    width: 70px;
+    width: 75px;
     margin: 10px 5px;
-    padding: 6px;
+    padding: 7px;
     text-align: center;
     text-decoration: none;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
-    transition: 0.3s ease-in;
-    color: #ffffff;
-    background-color: var(--bg-color-grey);
+    transition: 0.2s ease-in;
+    color: var(--color-white);
+    border: 1px solid var(--color-cream);
+    background-color: var(--color-grey);
 }
 .log-btn:hover {
-    color: c;
     border: 1px solid var(--color-blue);
+    background-color: var(--color-lightgrey);
     cursor:pointer;
 }
 #connected {
@@ -133,13 +135,15 @@ header {
     position: absolute;
     right: 100px;
     top: 90px;
-    padding: 5px;
-    background-color: #3a3a3a;
+    padding: 8px;
+    color: var(--color-black);
+    background-color: var(--color-cream);
     border-radius: 5px;
     text-align: center;
     visibility: hidden;
-    opacity:0;
-    transition: visibility 0.2s linear, opacity 0.2s linear;
+    opacity: 0;
+    filter: drop-shadow(1px 1px 8px rgba(255, 255, 255, 0.3));
+    transition: visibility 0.2s ease, opacity 0.2s ease;
 }
 #header-cart {
     flex:5%;
@@ -164,7 +168,7 @@ header {
     border: 2px solid transparent;
 }
 #cart-img-div:hover {
-    background-color: var(--bg-color-grey);
+    background-color: var(--color-grey);
     border: 2px solid var(--color-blue);
     cursor: pointer;
 }
@@ -223,7 +227,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: #ffffff;
+    border-bottom: var(--color-white);
     text-align: center;
     font-weight: 700;
 }
@@ -242,8 +246,7 @@ header {
     min-width: fit-content;
     height: 50px;
     font-size: 1.3rem;
-    background-color: var(--bg-color-grey);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: var(--color-grey);
 }
 #head-nav {
     width: 60%;
@@ -278,7 +281,7 @@ header {
     color: rgb(255, 255, 255);
 }
 .li-elem:hover {
-    background-color: var(--bg-color-lightgrey);
+    background-color: var(--color-lightgrey);
     cursor: pointer;
     border-bottom: 5px solid var(--color-blue);
 }
@@ -288,7 +291,7 @@ main {
     min-width: 100vw;
 }
 main aside {
-    background-color: var(--bg-color-grey);
+    background-color: var(--color-grey);
 }
 #side-nav {
     display: flex;
@@ -299,7 +302,7 @@ main aside {
     top: 10px;
     height: 100vh;
     overflow: hidden;
-    background-color: var(--bg-color-grey);
+    background-color: var(--color-grey);
     transition: width 0.4s ease-in-out;
 }
 #side-nav.active {
@@ -307,6 +310,11 @@ main aside {
 }
 #side-nav-menu-img {
     margin: 10px 0 20px 20px;
+    transition: 0.2s ease;
+}
+#side-nav-menu-img:hover {
+    filter:contrast(200%);
+    cursor: pointer;
 }
 #side-nav a, .dropdown-btn, .dropdown-container>a {
     display: flex;
@@ -315,22 +323,22 @@ main aside {
     text-align: left;
     font-size: 1.3rem;
     font-weight: 400;
-    color: #ffffff;
+    color: var(--color-white);
     padding: 15px 20px;
     border: none;
     background: none;
     text-decoration: none;
-    transition: 0.2s ;
+    transition: 0.2s ease;
 }
 #side-nav a span, .dropdown-btn span {
     margin-left: 20px;
     min-width: max-content;
 }
 #side-nav>a:hover, .dropdown-btn:hover, .dropdown-container>a:hover {
-    background-color: var(--bg-color-lightgrey);
+    background-color: var(--color-lightgrey);
     cursor: pointer;
     border-left: 4px solid var(--color-blue); 
-    color: #ffffff;
+    color: var(--color-white);
 }
 #side-nav-log-out {
     margin-left: 5px;
@@ -338,13 +346,13 @@ main aside {
 .dropdown-container {
     display: none;
     flex-direction: column;
-    background-color: var(--bg-color-lightgrey);
+    background-color: var(--color-lightgrey);
     color: #181818;
     padding-left: 15px;
 }
 .dropdown-container.active {
     display: flex;
-    background-color: var(--bg-color-lightgrey);
+    background-color: var(--color-lightgrey);
 }
 .dropdown-container a {
     font-size: 1rem;
@@ -352,10 +360,11 @@ main aside {
     margin-left: 35px;
 }
 .dropdown-container>a:hover {
-    background-color: var(--bg-color-lightgrey);
+    background-color: var(--color-lightgrey);
 }
 #page-content {
     width: 96vw;
+    min-width: 760px;
     height: min-content;
     text-align: justify;
     transition: width 0.4s ease;
@@ -367,8 +376,8 @@ main aside {
 .black-bg-div {
     width: 100%;
     height: 83vh;
-    color: #141414;
-    background-color: var(--bg-color-cream);
+    color: #181818;
+    background-color: var(--color-cream);
     border-bottom: solid 2px #adb1b5
 }
 .main-container {
@@ -426,11 +435,9 @@ footer {
     width: 100vw;
     min-width: fit-content;
     padding: 40px 230px;
-    background-color: var(--bg-color-black);
-    color: #aaaaaa;
+    background-color: var(--color-black);
     cursor: pointer;
     box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.25);
-    border-top: solid 4px #1d1d1d ;
 }
 #footer-container {
     width: max-content;
@@ -449,7 +456,7 @@ footer {
 }
 .footer-list-item a {
     font-weight: 600;
-    color: #ebd5bd;
+    color: var(--color-cream);
     text-decoration:none;
     transition: 0.3s ease-in;
 }
@@ -477,5 +484,5 @@ footer {
     font-size: 140%;
     font-weight: 700;
     text-align: center;
-    color: #ffffff;
+    color: var(--color-white);
 }

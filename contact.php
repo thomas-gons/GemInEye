@@ -146,7 +146,8 @@
                             <small class="formContactError"></small>  
                         </div>
                         <div class="form-input">
-                            <input type="submit" name="submitContact" id="submitContact" value="Send Email"/>
+                            <input type="submit" name="submitContact" class="contact-btn" value="Send Email"/>
+                            <input type="reset" name="resetContact" class="contact-btn" value="Reset Email" style="background-color: red; margin-left:10px"/>
                         </div>
                     </form>
                 </div>

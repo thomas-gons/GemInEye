@@ -1,55 +1,57 @@
-#AllContent {
-    width: 50%;
-    min-width: 320px;
-    margin: 40px auto;
-    background-color: var(--bg-color-black);
-    padding: 20px 40px;
+#container {
+    display: flex;   
+    flex-direction: column;
+    margin: 5% 17%;
+    padding: 60px 80px;
+    text-align: center;
+    background-color: var(--color-black);
+    color: white;
     border-radius: 10px;
 }
-#Descriptif {
+#description {
     display: flex;
     margin: 3% auto 0;
     flex-direction: column;
     text-align: center;
 }
-.Lign {
-    background-color: var(--bg-color-lightgrey); 
+.lign {
+    background-color: var(--color-lightgrey); 
     height: 3px; 
     border: 3px;
     border-radius: 10px;
     margin: 0 20%;
 }
-.Titre {
+.title {
     color: #d19017;
     margin-bottom: 20px;
 }
-.Part1 {
+.part1 {
     min-width: fit-content;
     margin-bottom: 30px;
 }
-.Part1 p {
+.part1 p {
     color: white;
     text-align: justify;
 }
-.Part2 {
+.part2 {
     padding: 3%;
 }
 h1 {
     text-align: center;
     padding: 20px 0;
 }
-.aboutUs {
+.about-us {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(100px, auto);
     grid-gap: 50px;
 }
-.Nom {
+.name {
     color: #d19017;
     font-weight: 450;
     font-size: 20px;
 }
-.Ceo {
+.ceo {
     color: white;
     text-align: center;
     border: solid 2pt #292929;
@@ -59,4 +61,19 @@ h1 {
 }
 i {
     color: #00aee7;
+}
+#container a {
+    padding-left: 5px;
+    text-decoration: none;
+    color: var(--color-blue);
+}
+#container a:visited {
+    color: var(--color-blue);
+}
+li {
+    list-style: none;
+}
+.paragraph {
+    padding: 40px 0;
+    text-align: justify
 }
