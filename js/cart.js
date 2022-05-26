@@ -83,7 +83,7 @@ let cartItems = document.querySelectorAll('.cart-item');
 
 function clearTable() {
     document.getElementById('cart-items-nb').remove();
-    cartItems.innerHTML = "";
+    document.getElementById('cart-content').innerHTML = '';
     let orderContent = document.getElementById("order-content");
     orderContent.innerHTML = "";
     let empty = document.createElement("h1");

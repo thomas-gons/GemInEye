@@ -14,13 +14,13 @@
     $lastname = $_POST["lastname"];
 
     //vérifie si tout les champs sont rempli
-    if($username === "" || $email === "" || $password === "" || $c_password === "" || $name === "" || $lastname === ""){
+    if ($username === "" || $email === "" || $password === "" || $c_password === "" || $name === "" || $lastname === ""){
         $_SESSION["empty_error"] = "One or more fields are not filled in.";
         $error = true;
     }
     
     //vérifie si le compte existe déjà
-    foreach($xml->children() as $customer){
+    foreach ($xml->children() as $customer){
         if ((strval($customer->login) === $username ||
          strval($customer->email) === $email)) {
             $_SESSION["already_exist_error"] = "This email or username already exist.";
@@ -29,15 +29,15 @@
     }
 
     //vérifie si la confirmation du mdp est bon
-    if($password !== $c_password){
+    if ($password !== $c_password){
         $_SESSION['mdp_error'] = "Passwords are not the same.";
         $error = true;
     }
 
-    if($error === true){
+    if ($error === true){
         header("Location: /sign.php?page=signup");
     }
-    else{
+    else {
         $xml2 = new DOMDocument();
         // pretty print for XML file
         $xml2->formatOutput = true;

@@ -1,0 +1,14 @@
+#modifyItemsStep2 {
+    visibility: hidden;
+}
+#securityModify {
+    visibility: hidden;
+}
+#property {
+    visibility: hidden;
+    background-color: white;
+}
+
+#property.active {
+    visibility: visible;
+}

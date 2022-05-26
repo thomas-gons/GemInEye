@@ -36,7 +36,7 @@
     <gender>male</gender>
     <email>cotot.lucas@gmail.com</email>
     <birthdate>18/03/2002</birthdate>
-   <address>Paris</address>
+    <address>Paris</address>
     <job>Developper</job>
   </customer>
   <customer>

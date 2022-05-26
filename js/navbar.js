@@ -38,4 +38,3 @@ dropdown.addEventListener("click", () => {
         dropdownContainer.classList.add('active');
     }
 })
-
