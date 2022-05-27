@@ -25,7 +25,7 @@ function addCart(){
         document.querySelector('#gem-price').textContent+",";
     
     changeStock({id: getGemID(), quantity: Number(quantity.textContent) * (-1)});
-    }
+}
 
 // AJAX stock gestion 
 

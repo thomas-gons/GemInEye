@@ -1,21 +1,22 @@
 .container {
     display: flex;   
     flex-direction: column;
-    width: 100vw;
-    min-width: min-content;
-    height: 80vh;
-    justify-content: center;
+    width: 100%;
+    min-width: fit-content;
+    justify-content: flex-start;
     align-items: center;
-    padding: 0 200px;
-    color: #ffffff;
+    height: 120vh;
+    color: var(--color-white);
+    padding: 40px 0;
 }
 #top-title {
+    color: var(--color-black);
     margin: 30px auto;
 }
 .auth-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     min-width: 400px;
     max-width: 400px;
@@ -26,7 +27,7 @@ form {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    background-color: #323232;
+    background-color: var(--color-black);
     border-radius: 10px;
     padding: 20px 40px 30px 40px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
@@ -42,33 +43,33 @@ label {
     margin-bottom: 10px;
 }
 input {
-    height: 1.5rem;
+    height: 25px;
     border: none;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
     margin: 5px 0;
     padding-left: 5px ;
 }
 input:focus {
     outline-style: none;
     outline: none;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);;
 }
 .sign-button {
-    color: #ffffff;
-    background-color: #179c31;
+    color: var(--color-white);
+    background-color: var(--color-green);
 }
 .sign-button:hover {
     transition:0.1s;
     cursor: pointer;
-    background-color: #238636;
+    background-color: var(--color-lightgreen);
 }
 #sign-up-container {
     margin-top: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 100%;
-    background-color: #323232;
+    background-color: var(--color-black);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
     text-align: center;
     padding-bottom: 20px;
@@ -76,8 +77,8 @@ input:focus {
 #sign-up-link {
     padding-left: 5px;
     text-decoration: none;
-    color: rgb(134, 172, 254);
+    color: var(--color-blue);
 }
 #sign-up-link:visited {
-    color: rgb(134, 172, 254);
+    color: var(--color-blue);
 }

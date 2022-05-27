@@ -11,7 +11,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Gem In Eye - Product</title>
     <meta charset="UTF-8">
@@ -28,22 +27,16 @@
     <script src="/js/connected.js" defer></script>
     <script src='/js/order.js' defer></script>
 </head>
-
 <body>
-    <?php
-        include "php/header.php";
-    ?>
+    <?php include "php/header.php"; ?>
     <main>
-        <?php
-            include "php/side_bar.php";
-        ?>
+        <?php include "php/side_bar.php"; ?>
         <!-- Contenu principal de la page -->
         <div id="page-content">
             <div id="gem">
                 <?php 
                     $catID = $_GET['cat'];
                     $itemIndexInJSON = intVal($_GET['item']) - 1;
-                    
                     $jsonStr = file_get_contents("data/stock.json");
                     $data = json_decode($jsonStr, true)[$catID]; ?>
                     <div id='gem-container'>
@@ -142,9 +135,6 @@
             </div>
         </div>
     </main>
-    <?php
-        include "commons/footer.html"
-    ?>
+    <?php include "commons/footer.html"; ?>
 </body>
-
 </html>

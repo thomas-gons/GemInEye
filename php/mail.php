@@ -15,7 +15,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Gem In Eye - Mail</title>
     <meta charset="UTF-8">
@@ -24,15 +23,10 @@
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <link href="/css/styles_contact.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-    <?php 
-        include "header.php";
-    ?>
+    <?php include "header.php"; ?>
     <main>
-        <?php 
-            include "side_bar.php";
-        ?> 
+        <?php include "side_bar.php"; ?> 
         <div id="mail">
             <div id="to">
                 <div>To: "GemInEye" &lsaquo;gemineye@support.com.&rsaquo;<br></div>
@@ -44,9 +38,6 @@
             </div>
         </div>
     </main>
-    <?php
-        include "../commons/footer.html";
-    ?>
+    <?php include "../commons/footer.html"; ?>
 </body>
-
 </html>

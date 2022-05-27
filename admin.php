@@ -1,7 +1,5 @@
 <?php
     session_start();
-    
-
     $current_uri = $_SERVER["REQUEST_URI"];
     if (!isset($_SESSION['referrer'])) {
         $_SESSION['referrer'] = $current_uri;
@@ -12,9 +10,8 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Gem In Eye - Home</title>
+    <title>Gem In Eye - Admin</title>
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,17 +22,11 @@
     <script src="/js/order.js" defer></script>
     <script src="/js/admin.js" defer></script>
 </head>
-
 <body>
-    <?php 
-        include "php/header.php";
-    ?>
+    <?php include "php/header.php"; ?>
     <main>
-        <?php
-            include "php/side_bar.php"
-        ?>
+        <?php include "php/side_bar.php"; ?>
         <div class="content">
-
             <select name="items" id="items">
                 <?php 
                     if(!empty($_POST["id"])) {
@@ -108,7 +99,6 @@
                         <option class="optionCustomer" value='<?=$customerId?>'><?=$customerLogin?></option>
                     <?php
                 }
-            
             ?>
             <input type="button" id="modifyCustomer" value="modify Customer"/>
             <select name="customerChange" id="customerChange">
@@ -125,11 +115,7 @@
                 <option class="changeCustOption" value='job'>Job</option>
             </select>
         </div>
-    
     </main>
-    <?php
-        include "commons/footer.html";
-    ?>
+    <?php include "commons/footer.html"; ?>
 </body>
-
 </html>

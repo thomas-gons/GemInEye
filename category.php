@@ -11,7 +11,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Gem In Eye - Categories</title>
     <meta charset="UTF-8">
@@ -26,13 +25,10 @@
     <script src="/js/connected.js" defer></script>
     <script src='/js/order.js' defer></script>
 </head>
-
 <body>
     <?php include "php/header.php"; ?>
     <main>
-        <?php 
-            if (!empty($_GET))
-                include "php/side_bar.php"; ?>
+        <?php include "php/side_bar.php"; ?>
         <!-- Contenu principal de la page -->
         <div id='page-content'>
         <?php 

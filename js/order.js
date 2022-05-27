@@ -17,7 +17,7 @@ cart_img.addEventListener('click', () => {
 //Change flex direction of log buttons
 function flexDirChange() {
     let logDiv = document.getElementById('header-log');
-    if (window.innerWidth <= 900)
+    if (window.innerWidth <= 890)
         logDiv.style.flexDirection = "column-reverse";
     else
         logDiv.style.flexDirection = "row";

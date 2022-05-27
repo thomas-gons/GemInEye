@@ -6,7 +6,6 @@ if (connected != null){
         connectedLogin.style.visibility = 'visible';
         connectedLogin.style.opacity = 1;
     })
-
     connected.addEventListener('mouseout', () => {
         connectedLogin.style.visibility = 'hidden';
         connectedLogin.style.opacity = 0;

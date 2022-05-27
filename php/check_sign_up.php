@@ -18,7 +18,6 @@
         $_SESSION["empty_error"] = "One or more fields are not filled in.";
         $error = true;
     }
-    
     //vérifie si le compte existe déjà
     foreach ($xml->children() as $customer){
         if ((strval($customer->login) === $username ||
@@ -27,13 +26,11 @@
             $error = true;
          }
     }
-
     //vérifie si la confirmation du mdp est bon
     if ($password !== $c_password){
         $_SESSION['mdp_error'] = "Passwords are not the same.";
         $error = true;
     }
-
     if ($error === true){
         header("Location: /sign.php?page=signup");
     }

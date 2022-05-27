@@ -2,7 +2,6 @@
     session_start();
     
     // modify quantity of an item in a json file
-    
     $customer_id = $_SESSION['customerID'];
     $id = $_POST['id'];
     $quantity = $_POST['quantity'];

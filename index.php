@@ -16,7 +16,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Gem In Eye - Home</title>
     <meta charset="UTF-8">
@@ -30,15 +29,10 @@
     <script src="/js/connected.js" defer></script>
     <script src="/js/order.js" defer></script>
 </head>
-
 <body>
-    <?php 
-        include "php/header.php";
-    ?>
+    <?php include "php/header.php"; ?>
     <main>
-        <?php
-            include "php/side_bar.php"
-        ?>
+        <?php include "php/side_bar.php"; ?>
         <!-- Contenu principal de la page -->
         <div id="page-content">
             <div class="black-bg-div">
@@ -63,9 +57,6 @@
             </div>
         </div>
     </main>
-    <?php
-        include "commons/footer.html";
-    ?>
+    <?php include "commons/footer.html"; ?>
 </body>
-
 </html>

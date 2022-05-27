@@ -1,5 +1,25 @@
+@font-face {
+    font-family: "Quicksand";
+    src: url(/fonts/Quicksand-Medium.ttf);
+}
+@font-face {
+    font-family: "Quicksand-bold";
+    src: url(/fonts/Quicksand-Bold.ttf);
+}
+:root {
+    --color-white: #ffffff;
+    --color-cream: #ebd5bd;
+    --color-black: #292929;
+    --color-grey: #3f3f3f;
+    --color-lightgrey: #505050;
+    --color-lightgreen: #25b873;
+    --color-green: #179c31;
+    --color-blue: #00aee7;
+    --color-orange: #eb7f2d;
+    --color-red: #ff2600;
+}
 *, *::before, *::after {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Quicksand";
     font-weight: 400;
     box-sizing: border-box;
     padding: 0;
@@ -11,20 +31,20 @@ body {
     overflow-x: hidden;
     height: 100vh;
     min-width: fit-content;
-    background-color: #3a3a3a;
+    background-color: var(--color-cream);
 }
 header {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: fit-content;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
 #top-container {
     display: flex;
+    min-width: 800px;
     height: 120px;
-    color: #ffffff;   
-    background-color: #141414;
+    color: var(--color-white);   
+    background-color: var(--color-black);
 }
 #top-logo-content {
     align-self: center;
@@ -40,7 +60,7 @@ header {
     width: 100%;
     height: 100%;
     transition: 0.3s;
-    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.384));
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));
 }
 #top-logo:hover {
     filter: drop-shadow(1px 1px 8px rgba(255, 255, 255, 0.6));
@@ -60,7 +80,7 @@ header {
     text-align: start;
     white-space: nowrap;
     font-size: 60px;
-    font-weight: 900;
+    font-weight: bolder;
     padding: 0 30px 0 50px;
 }
 #header-log-cart {
@@ -77,21 +97,22 @@ header {
     margin-right: 20px;
 }
 .log-btn {
-    width: 70px;
+    width: 75px;
     margin: 10px 5px;
-    padding: 5px;
+    padding: 7px;
     text-align: center;
     text-decoration: none;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
-    transition: 0.3s ease-in;
-    color: #ffffff;
-    background-color: #414141;
+    transition: 0.2s ease-in;
+    color: var(--color-white);
+    border: 1px solid var(--color-cream);
+    background-color: var(--color-grey);
 }
 .log-btn:hover {
-    color: #00aee7;
-    border: 1px solid #00aee7;
+    border: 1px solid var(--color-blue);
+    background-color: var(--color-lightgrey);
     cursor:pointer;
 }
 #connected {
@@ -99,7 +120,7 @@ header {
     height: 40px;
     margin: 10px 10px;
     border-radius: 50%;
-    border: 1px solid #00aee7;
+    border: 1px solid var(--color-blue);
 }
 #connected-img {
     width: 100%;
@@ -118,13 +139,15 @@ header {
     position: absolute;
     right: 100px;
     top: 90px;
-    padding: 5px;
-    background-color: #3a3a3a;
+    padding: 8px;
+    color: var(--color-black);
+    background-color: var(--color-cream);
     border-radius: 5px;
     text-align: center;
     visibility: hidden;
-    opacity:0;
-    transition: visibility 0.3s linear, opacity 0.2s linear;
+    opacity: 0;
+    filter: drop-shadow(1px 1px 8px rgba(255, 255, 255, 0.3));
+    transition: visibility 0.2s ease, opacity 0.2s ease;
 }
 #header-cart {
     flex:5%;
@@ -142,21 +165,21 @@ header {
     width: 100%;
     height: 80%;
     border-radius: 5px;
-    padding: 10px;
+    padding: 0 10px;
     text-align: center;
     align-self: center;
     transition: 0.3s ease-in;
     border: 2px solid transparent;
 }
 #cart-img-div:hover {
-    background-color: #414141;
-    border: 2px solid #00aee7;
+    background-color: var(--color-grey);
+    border: 2px solid var(--color-blue);
     cursor: pointer;
 }
 #cart-img {
     width: 50px;
     height: 50px;
-    margin: auto;
+    margin: auto 3px auto auto;
 }
 #cart-content {
     width: 325px;
@@ -169,7 +192,7 @@ header {
     width: 22px;
     height: 22px;
     margin-left: 25px;
-    top: -5px;
+    top: 7px;
     position: relative;
     display: flex;
     align-items: center;
@@ -208,7 +231,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: #ffffff;
+    border-bottom: var(--color-white);
     text-align: center;
     font-weight: 700;
 }
@@ -224,16 +247,16 @@ header {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
-    min-width: fit-content;
+    min-width: 800px;
     height: 50px;
     font-size: 1.3rem;
-    background-color: #292929;
+    background-color: var(--color-grey);
 }
 #head-nav {
     width: 60%;
     min-width: min-content;
     height: 100%;
-    padding: 0 150px;
+    padding: 0 100px;
 }
 #head-list {
     width: 100%;
@@ -249,27 +272,22 @@ header {
     flex: auto;
     height: 100%;
     transition: 0.2s;
-    border-bottom: 1px solid #00aee7;
+    border-bottom: 1px solid var(--color-blue);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .li-elem>a {
     text-align: center;
-    padding: 15px 30px;
+    padding: 13px 40px;
     text-decoration: none;
     font-weight: 400;
     color: rgb(255, 255, 255);
 }
 .li-elem:hover {
-    background-color: #474747;
+    background-color: var(--color-lightgrey);
     cursor: pointer;
-    border-bottom: 5px solid #00aee7;
-}
-.li-line {
-    width: 2px;
-    height: 100%;
-    background-color: #ffffff;
+    border-bottom: 5px solid var(--color-blue);
 }
 main {
     display: flex;
@@ -277,7 +295,7 @@ main {
     min-width: 100vw;
 }
 main aside {
-    background-color: #292929;
+    background-color: var(--color-grey);
 }
 #side-nav {
     display: flex;
@@ -287,17 +305,20 @@ main aside {
     min-width: 35px;
     top: 10px;
     height: 100vh;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    background-color: #292929;
-    transition: width 400ms ease-in-out;
+    overflow: hidden;
+    background-color: var(--color-grey);
+    transition: width 0.4s ease-in-out;
 }
 #side-nav.active {
-    width: 210px;
+    width: 200px;
 }
 #side-nav-menu-img {
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin: 10px 0 20px 20px;
+    transition: 0.2s ease;
+}
+#side-nav-menu-img:hover {
+    filter:contrast(200%);
+    cursor: pointer;
 }
 #side-nav a, .dropdown-btn, .dropdown-container>a {
     display: flex;
@@ -306,50 +327,51 @@ main aside {
     text-align: left;
     font-size: 1.3rem;
     font-weight: 400;
-    color: #c9c9c9;
+    color: var(--color-white);
     padding: 15px 20px;
     border: none;
     background: none;
     text-decoration: none;
-    transition: 0.2s ;
+    transition: 0.2s ease;
 }
 #side-nav a span, .dropdown-btn span {
     margin-left: 20px;
     min-width: max-content;
 }
 #side-nav>a:hover, .dropdown-btn:hover, .dropdown-container>a:hover {
-    background-color: #3f3f3f;
+    background-color: var(--color-lightgrey);
     cursor: pointer;
-    border-left: 4px solid #00aee7; 
-    color: #ffffff;
+    border-left: 4px solid var(--color-blue); 
+    color: var(--color-white);
 }
 #side-nav-log-out {
     margin-left: 5px;
 }
-.active {
-    background-color: #3d3d3d;
-    font-weight: 600;
-}
 .dropdown-container {
     display: none;
     flex-direction: column;
-    background-color: #3d3d3d;
-    color: #181818;
+    background-color: var(--color-lightgrey);
     padding-left: 15px;
 }
 .dropdown-container.active {
     display: flex;
+    background-color: var(--color-lightgrey);
 }
 .dropdown-container a {
     font-size: 1rem;
     min-width: max-content;
-    margin-left: 35px;
+    margin-left: 30px;
+}
+.dropdown-container>a:hover {
+    background-color: var(--color-lightgrey);
 }
 #page-content {
     width: 96vw;
+    min-width: 735px;
     height: min-content;
     text-align: justify;
     transition: width 0.4s ease;
+    transition-delay: width 0.4s ease;
 }
 .resize {
     width: 86vw;
@@ -358,60 +380,55 @@ main aside {
 .black-bg-div {
     width: 100%;
     height: 83vh;
-    color: #ffffff;
-    background-color: #141414;
-    border-bottom: solid 3px #242424;
+    color: #181818;
+    background-color: var(--color-cream);
+    border-bottom: solid 2px #adb1b5
 }
 .main-container {
     width: 100%;
-    min-width: 820px;
+    min-width: 735px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    transition: width 0.4s ease;
 }
 .main-title {
-    padding-bottom: 60px;
+    padding: 0 50px 50px 50px;
     font-weight: 300;
     font-size: 600%;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    filter: drop-shadow(0px 0px 5px rgba(0, 174, 231, 0.5));
 }
 #div-btn-journey {
     text-align: center;
     font-size: 120%;
     font-weight: 400;
     padding: 20px 0;
-    border: solid 2px #ffffff;
+    border: solid 2px #000000;
     background-color: rgba(255, 255, 255, 0.05);
     transition: 0.3s ease;
 }
 #div-btn-journey>a{
     padding: 20px 40px;
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
 }
 #div-btn-journey:hover {
     cursor: pointer;
     transform: scale(1.05);
-    border-color:#00aee7;
-    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.3));
 }
 .main-content-subtitle {
-    color: #818181;
+    color: #726f6f;
 }
 .main-content-text {
     width: 60%;
     word-wrap: normal;
     font-size: 150%;
     font-weight: 500;
-    margin: 40px auto;
-    color: #ffffff;
+    margin: 50px auto;
     text-align: center;
 }
-
 footer {
     bottom: 0;
     left: 0;
@@ -423,11 +440,8 @@ footer {
     width: 100vw;
     min-width: fit-content;
     padding: 40px 230px;
-    background-color: #141414;
-    color: #aaaaaa;
+    background-color: var(--color-black);
     cursor: pointer;
-    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.25);
-    border-top: solid 4px #1d1d1d ;
 }
 #footer-container {
     width: max-content;
@@ -446,12 +460,13 @@ footer {
 }
 .footer-list-item a {
     font-weight: 600;
-    color: #adadad;
+    color: var(--color-cream);
     text-decoration:none;
     transition: 0.3s ease-in;
 }
 .footer-list-item a:hover {
-    color: #ffffff;
+    color: var(--color-blue);
+    transform: scale(1.02);
 }
 #footer-logo-img {
     min-width: 125px;
@@ -470,8 +485,8 @@ footer {
     filter: drop-shadow(1px 1px 14px rgba(255, 255, 255, 0.6));
 }
 #copyright {
-    font-size: 130%;
-    font-weight: 600;
+    font-size: 140%;
+    font-weight: 700;
     text-align: center;
-    color: #ffffff;
+    color: var(--color-white);
 }

@@ -25,7 +25,6 @@ if (quantityLess != undefined) {
     })
 }
 
-
 let quantityMore = document.querySelectorAll(".quantity-more");
 
 if (quantityMore != undefined) {

@@ -1,29 +1,29 @@
 #container {
     display: flex;   
     flex-direction: row;
-    width: 92vw;
-    min-width: min-content;
+    width: 100%;
+    min-width: fit-content;
     flex-wrap: wrap;
-    padding: 0 100px;
+    padding: 0 50px;
     align-items: center;
+    transition: width 0.4s ease;
 }
 #contact-title {
-    margin: 20px auto;    
+    margin: 20px auto;
+    padding: 0 20px;  
     min-width: 450px;
     max-width: 450px;   
     text-align: justify;
-    color: #ffffff;
+    color: var(--color-black);
 }
 #contact-title>h1 {
     padding: 40px 0;
     font-size: 300%;
-    color: #ffffff;
     font-weight: 700;
     text-align: center;
-    text-decoration: underline #00aee7;
 }
 #contact-title>p>a {
-    color: #00aee7;
+    color: var(--color-blue);
 }
 .FormContact {
     margin: 50px auto;
@@ -32,10 +32,10 @@
     border-radius: 10px;
     padding: 30px 50px;
     background-color: #292929;
-    color: white;
+    color: var(--color-white);
 }
 .formContactError {
-    color: red;
+    color: var(--color-red);
 }
 .form-input {
     margin: 10px;
@@ -50,26 +50,26 @@
     outline-style: none;
     outline: none;
 }
-#submitContact {
-    width: 100px;
-    height: 35px;
-    border-radius: 5px;
-    border: none;
-    background-color: #00aee7;
-    transition: 0.3s ease;
-}
-#submitContact:hover {
-    transform: scale(1.04);
-    cursor: pointer;
-}
 .real-input:focus {
-    border-color:#00bfff ;
-    box-shadow: 0px 0px 5px #00bfff;
+    border-color: var(--color-blue) ;
+    box-shadow: 0px 0px 5px  var(--color-blue);
     outline-style: none;
     outline: none;
 }
 .real-input::placeholder {
     border: none;   
+}
+.contact-btn {
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-blue);
+    transition: 0.3s ease;
+}
+.contact-btn:hover {
+    transform: scale(1.04);
+    cursor: pointer;
 }
 textarea {
     resize: none;
@@ -82,20 +82,17 @@ textarea {
 #mail {
     display: flex;
     flex-direction: column;
-    background-color: #303030;
+    background-color: var(--color-cream);
     margin: 2% auto;
     min-height: 60vh;
     min-width: max-content;
     width: 40%;
-    color: white;
-    border: solid 3px #252525;
+    color: var(--color-black);
     border-radius: 10px;
 }
-
 #to {
     align-items: left;
 }
-
 #mailContent {
     margin-top: 3%;
 }

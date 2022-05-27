@@ -1,12 +1,3 @@
-#page-content {
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-#page-content > * {
-    color: white;
-}
-
 #gem {
     display: flex;
     flex-direction: column;
@@ -26,39 +17,34 @@
     padding: 30px 60px;
     margin-right: 4%;
 }
-
 #gem-data {
     min-width: max-content;
     margin: 0 5%;
     border-radius: 5px;
     padding: 10px 20px;
-    background-color: #323232;
+    background-color: var(--color-black);
     box-shadow: 5px 18px 15px rgba(0, 0, 0, 0.25);
 }
-
 #gem-data > div {
     align-items: center;
     padding: 5px;
 }
-
 .data-name {
     display: inline;
     padding-right: 5px;
-    color: #EB7F2D;
+    color: var(--color-orange);
 }
 .data-value{
     display: inline;
-    color: white;
+    color: var(--color-white);
 }
 #gem-img-general {
     display: flex;
     flex-direction: row;
 }
-
 #gem-container img {
     margin: 10px 40px 10px 40px;
     border-radius: 10px;
-    
 }
 #gem-general {
     display: flex;
@@ -78,8 +64,8 @@
     font-size: 1.2rem;
     margin-top: 20px;
     padding: 20px;
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid var(--color-white);
+    border-bottom: 1px solid var(--color-white);
 }
 #gem-info span {
     font-size: 1.15rem;
@@ -87,7 +73,7 @@
 #gem-price {
     font-size: 1.3rem;
     margin: 5px;
-    color: #ff2600;
+    color: var(--color-red);
 }
 #gem-buy {
     padding: 20px 20px;
@@ -95,35 +81,32 @@
 .available {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #25b873;
+    color: var(--color-lightgreen);
     margin-bottom: 15px;
 }
 .not-available {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #ff2600;
+    color: var(--color-red);
     margin-bottom: 10px;
 }
 #select-quantity {
     margin: 5px;
     padding: 5px 0;
 }
-
 #select-quantity div {
     margin-bottom: 8px;
 }
 #select-quantity div span{
     font-size: 1.15rem;
 }
-
 #quantity-span {
     margin-right: 5px;
-
 }
 .quantity-btn {
     width: 30px;
     border-radius: 5px;
-    border: 1px solid #292929;
+    border: 1px solid var(--color-black);
     margin: 5px;
     padding: 2px;
     font-weight: 600;
@@ -133,12 +116,12 @@
     transform: scale(0.95);
 }
 #quantity-less:hover {
-    background-color: #ff2600;
-    color: #ffffff;
+    background-color: var(--color-red);
+    color: var(--color-white);
 }
 #quantity-more:hover {
-    background-color: #25b873;
-    color: #ffffff;
+    background-color: var(--color-lightgreen);
+    color: var(--color-white);
 }
 #add-to-cart {
     font-size: 1rem;
@@ -146,15 +129,11 @@
     width: 100%;
     border: none;
     background: linear-gradient(to right, #f16711, #f5af19);
-    color: #ffffff;
+    color: var(--color-white);
     border-radius: 5px;
     padding: 5px;
     margin: 10px 0;
 }
-/* #add-to-cart:hover {
-    background-color: #e46701;
-    color: #ffffff;
-} */
 #add-to-cart:active {
     transform: scale(0.96);
 }
@@ -166,10 +145,10 @@
     min-width: fit-content;
     margin: auto;
     padding: 30px 30px;
-    border: solid 1px black;
+    border: solid 1px var(--color-black);
     border-bottom: none;
     border-radius: 15px;
-    color: #ffffff;
+    color: var(--color-white);
 }
 p {
     padding-left: 30px;

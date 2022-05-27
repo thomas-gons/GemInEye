@@ -2,7 +2,6 @@
     session_start();
 
     $xml = simplexml_load_file("../data/customers.xml");
-    
     $check = false;
     $username_email = $_POST["username-email"];
     // crypting password

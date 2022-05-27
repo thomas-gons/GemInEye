@@ -37,7 +37,6 @@ form.addEventListener('submit', function(e) {
     }
 })
 
-
 //Fonction de validation
 const validContactDate = function(inputCDate) {
     let small = inputCDate.nextElementSibling;
@@ -82,7 +81,6 @@ const validLastName = function(inputLName) {
         return true;
     }
 }
-
 const validFirstName = function(inputFName) {
     let nameRegex = /\d+/;
     let small = inputFName.nextElementSibling;
@@ -109,7 +107,6 @@ const validEmail = function(inputEmail) {
         return true;
     }
 }
-
 const validObject = function(inputObject) {
     let small = inputObject.nextElementSibling;
     if(inputObject.value == "") {
@@ -122,7 +119,6 @@ const validObject = function(inputObject) {
         return true;
     }
 }
-
 const validContent = function(inputContent) {
     let small = inputContent.nextElementSibling;
     if(inputContent.value == "") {
@@ -144,7 +140,6 @@ var years = today.getFullYear();
 
 if (day < 10) 
 	day = '0'+day;
-
 if (month < 10) 
 	month = '0'+month;
 
