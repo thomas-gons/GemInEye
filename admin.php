@@ -16,6 +16,9 @@
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <link href="/css/styles_admin.css" rel="stylesheet" type="text/css">
     <script src="/js/navbar.js" defer></script>
     <script src="/js/connected.js" defer></script>

@@ -9,7 +9,7 @@
     }
     if ($_SESSION['contact'] !== 'send') {
         // PAGE A FAIRE
-        header("Location : php/error_page.php");
+        header("Location: error_page.php");
     }
 ?>
 
@@ -20,6 +20,9 @@
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <link href="/css/styles_contact.css" rel="stylesheet" type="text/css">
 </head>

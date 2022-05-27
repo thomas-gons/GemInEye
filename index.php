@@ -1,6 +1,5 @@
 <?php
     session_start();
-    error_log($_SERVER['PHP_SELF']);
     if (!isset($_SESSION['login'])){
         $xml = simplexml_load_file("data/customers.xml");
         $_SESSION['customerID'] = ($xml != null) ? $xml->children()[count($xml->children()) - 1]->id + 1: 1; 

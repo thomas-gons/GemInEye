@@ -1,1 +1,11 @@
-{}
+{
+    "4": [
+        {
+            "id": "G2",
+            "img": "\/img\/geodes\/agate_quartz.png",
+            "name": "Agate (Chalcedony) - Quartz",
+            "quantity": 1,
+            "price": 0
+        }
+    ]
+}
