@@ -22,7 +22,7 @@ function addCart(){
         document.getElementById('gem-img').attributes[0].nodeValue+","+ // get image path from DOM
         document.querySelector('.gem-name').textContent+","+
         quantity.textContent+","+
-        document.querySelector('#gem-price').textContent+",";
+        document.getElementById('gem-price').textContent.substr(1);
     
     changeStock({id: getGemID(), quantity: Number(quantity.textContent) * (-1)});
 }

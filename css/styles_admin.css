@@ -1,5 +1,16 @@
+#itemRow, #categoryRow, #customerRow {
+    display: flex;
+    flex-direction: row;
+}
+
 #modifyItemsStep2 {
+    display: none;
+}
+#securityAdd {
     visibility: hidden;
+}
+#securityAdd.active {
+    visibility: visible;
 }
 #securityModify {
     visibility: hidden;
@@ -8,7 +19,28 @@
     visibility: hidden;
     background-color: white;
 }
-
 #property.active {
     visibility: visible;
+}
+#modifyCustomerStep2 {
+    visibility: hidden;
+}
+#customerChange {
+    visibility: hidden;
+    background-color: white;
+}
+
+#customerChange.active {
+    visibility: visible;
+}
+
+#addItems-popup {
+    display: none;
+    flex-direction: column;
+}
+#addItems-popup.active {
+    display: flex;
+}
+.addItems-input {
+    width: 200px;
 }

@@ -9,6 +9,8 @@
         "price" => intval($input[4])
     );
 
+    print_r($data);
+
     addToCart($data, $_SESSION['customerID']);
 
     function addToCart($data, $customerID){

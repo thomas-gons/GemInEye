@@ -35,4 +35,3 @@ nextBtn.forEach(btn => {
         moveSlide(slideCount);
     });
 });
-

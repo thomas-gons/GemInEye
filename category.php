@@ -56,7 +56,7 @@
                 <!-- Category homepage with a carousel to select the catergory -->
                 <div id="slider-container">
                     <div class="slider-btn">
-                        <img class="left-arrow"/ src="/img/slider_arrow.png" data-prev>
+                        <img class="left-arrow" src="/img/slider_arrow.png" data-prev>
                         <div class="extend-bg" data-prev></div>
                     </div>
                     <div id="slider-all">
@@ -65,15 +65,15 @@
                         for ($i = 1; $i < count($csv); $i++) { 
                             $categoryName = implode(' ', explode('_', $csv[$i][0]));
                             $categoryName = ucwords($categoryName); ?>
-                        <div class="slider-single-center-column <?php if ($i != 1) echo "disabled"; else echo "enabled" ?>" data-slide-<?=$i?>>
-                            <div class="slider-single-title">
-                                <img class='slider-single-title-img' src='/img/sideBar/product.png'>
-                                <div class="single-title"><?=$categoryName?></div>
+                            <div class="slider-single-center-column <?php if ($i != 1) echo "disabled"; else echo "enabled" ?>"data-slide-<?=$i?>>
+                                <div class="slider-single-title">
+                                    <img class='slider-single-title-img' src='/img/sideBar/product.png'>
+                                    <div class="single-title"><?=$categoryName?></div>
+                                </div>
+                                <div class="slider-single-img">
+                                    <a href='/category.php?cat=<?=$csv[$i][1]?>'><img class="single-img" src="/img/<?=$csv[$i][0]?>.jpg" alt="<?=$categoryName?>"></a>
+                                </div>
                             </div>
-                            <div class="slider-single-img">
-                                <a href='/category.php?cat=<?=$csv[$i][1]?>'><img class="single-img" src="/img/<?=$csv[$i][0]?>.jpg" alt="<?=$categoryName?>"></a>
-                            </div>
-                        </div>
                     <?php } ?>
                     </div>
                     <div class="slider-btn">
@@ -118,7 +118,7 @@
                         if ($stock !== 0) { ?>
                             <div class='gem'>
                                 <a href='/gem.php?cat=<?=$categoryID?>&item=<?=$gem["id"][1]?>'>
-                                    <img class='gem-img' src='<?=$gem["img"]?>' alt=".$first_word[0].">
+                                    <img class='gem-img' src='<?=$gem["img"]?>' alt="<?=$first_word[0]?>">
                                     <p class='gem-name'><?=$gem["name"]?></p>
                                     <i class='gem-origin'><?=$gem["origin"]?></i>
                                     <p class='gem-price'>$<?=$gem["price"]?></p>
