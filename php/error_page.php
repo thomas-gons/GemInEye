@@ -14,20 +14,14 @@
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
-        <h1>Error page</h1>
+    <header id="sorry">
+        <h1>Sorry !</h1>
     </header>
-    <p>Oops ! An error occured on <?=$_SESSION['referrer']?> !</p>
-    <?php
-        if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
-            echo "<form action='/php/log_out.php' method='post' style='margin-top: 2em;'>
-                    <button type='submit'>Home page</button>
-                </form>";
-        } else {
-            echo "<form action='/index.php' method='post' style='margin-top: 2em;'>
-                    <button type='submit'>Home page</button>
-                </form>";
-        }
-    ?>
+    <main id="error-content">
+        <p>Either you aren't cool enough to visit "<?=$_SESSION['referrer']?>" or it doesn't exists !</p>
+        <div id="div-btn-journey">
+            <a href="/category.php">Visit our Home Page</a>
+        </div>
+    </main>
 </body>
 </html>

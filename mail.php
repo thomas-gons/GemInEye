@@ -2,7 +2,8 @@
     session_start();
     //Check for valid access to page
     $current_uri = $_SERVER["REQUEST_URI"];
-    if (!empty($_SESSION['referrer']) && $_SESSION['referrer'] === '/contact.php' && !empty($_POST)) {
+    if (isset($_SESSION['referrer']) && ($_SESSION['referrer'] === '/contact.php' || $_SESSION['referrer'] === '/mail.php')
+    && isset($_POST)) {
         $previous_uri = $_SESSION['referrer'];
         $_SESSION['referrer'] = $current_uri;
     } else {
@@ -83,7 +84,13 @@
                     <div>Subject: <?php echo $_SESSION['object'];?><br></div>
                 </div>
                 <div id="mailContent">
+                    <div>Content</div>
                     <div><p> <?php echo nl2br(htmlspecialchars($_SESSION['content']));?></p></div>
+                </div>
+            </div>
+            <div id="back-to-home">
+                <div id="div-btn-journey">
+                    <a href="/category.php">Back to Home Page</a>
                 </div>
             </div>
         </div>

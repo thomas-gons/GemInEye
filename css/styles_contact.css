@@ -86,17 +86,28 @@ textarea {
 #mail {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-cream);
-    margin: 2% auto;
+    margin: 40px;
+    padding: 20px;
     min-height: 60vh;
-    min-width: max-content;
-    width: 40%;
+    min-width: fit-content;
     color: var(--color-black);
-    border-radius: 10px;
+    border-radius: 20px;
+    background-color: var(--color-white);
+    word-break: break-all;
 }
 #to {
     align-items: left;
+    margin: 10px 0;
 }
-#mailContent {
-    margin-top: 3%;
+#to div {
+    margin-bottom: 5px;
+    border-bottom: 1px solid var(--color-cream);
+}
+#mailContent div {
+    margin: 10px 0;
+}
+#back-to-home {
+    width: 400px;
+    min-width: fit-content;
+    margin: 40px auto;
 }

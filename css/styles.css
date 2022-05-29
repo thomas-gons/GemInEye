@@ -147,8 +147,8 @@ header {
     text-align: center;
     visibility: hidden;
     opacity: 0;
-    filter: drop-shadow(1px 1px 8px rgba(255, 255, 255, 0.3));
-    transition: visibility 0.2s ease, opacity 0.2s ease;
+    filter: drop-shadow(1px 1px 8px rgba(255, 255, 255, 0.2));
+    transition: all 0.2s ease;
 }
 #header-cart {
     flex:5%;
@@ -216,6 +216,8 @@ header {
     border-radius: 15px;
     padding: 10px;
     min-width: max-content;
+    filter: drop-shadow(1px 1px 8px rgba(255, 255, 255, 0.2));
+    transition: all 0.2s ease;
 }
 .cart-item {
     display: flex;
@@ -495,4 +497,32 @@ footer {
     font-weight: 700;
     text-align: center;
     color: var(--color-white);
+}
+
+/********* php/error_page.php ********/
+
+#sorry {
+    text-align: center;
+    padding: 40px;
+}
+#sorry h1 {
+    font-family: "Quicksand-bold";
+    font-weight: bolder;
+    font-size: 300%;
+}
+#error-content {
+    width: 100%;
+    min-width: fit-content;
+    height: 100vh;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px;
+}
+#error-content p {
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 40px;
 }

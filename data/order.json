@@ -1,1 +1,11 @@
-{}
+{
+    "4": [
+        {
+            "id": "G3",
+            "img": "\/img\/geodes\/amethyst.png",
+            "name": "Amethyst (Quartz) - Agate (Chalcedony)",
+            "quantity": 2,
+            "price": 28
+        }
+    ]
+}
