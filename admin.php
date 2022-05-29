@@ -1,17 +1,20 @@
 <?php
     session_start();
     $current_uri = $_SERVER["REQUEST_URI"];
-    if (!isset($_SESSION['referrer'])) {
-        $_SESSION['referrer'] = $current_uri;
+    // Authorize acces to only admins
+    if (!isset($_SESSION['referrer']) || empty($_SESSION['referrer']) || !isset($_SESSION["login"])
+    || empty($_SESSION["admin"]) || $_SESSION["admin"] === 0) {
+        header("Location: php/error_page.php");
     } else {
         $previous_uri = $_SESSION['referrer'];
         $_SESSION['referrer'] = $current_uri;
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gem In Eye - Admin</title>
+    <title>Admin - Gem In Eye</title>
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

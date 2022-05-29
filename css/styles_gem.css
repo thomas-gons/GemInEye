@@ -1,116 +1,142 @@
-#gem {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 #gem-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 20px 0 50px 18%;
     width: 100%;
-    min-width: min-content;
+    min-width: fit-content;
+    padding: 30px;
+    background-color: var(--color-cream);
 }
-#gem-descr {
-    width: 30%;
-    padding: 30px 60px;
-    margin-right: 4%;
+#top-gem-container {
+    width: 100%;
+    margin: 10px 10px;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: var(--color-white);
 }
-#gem-data {
-    min-width: max-content;
-    margin: 0 5%;
-    border-radius: 5px;
-    padding: 10px 20px;
-    background-color: var(--color-black);
-    box-shadow: 5px 18px 15px rgba(0, 0, 0, 0.25);
+#gem-header {
+    min-width: 100%;
+    height: auto;
+    max-width: max-content;
+    padding: 20px 30px;
+    margin: 0 0 10px 0;
+    border-bottom: 2px solid var(--color-cream)
 }
-#gem-data > div {
-    align-items: center;
-    padding: 5px;
+#gem-name {
+    color: var(--color-black);
+    font-family: "Quicksand-bold";
+    text-align: left;
+    word-wrap: normal;
+    padding: 0 0 10px 0;
 }
-.data-name {
-    display: inline;
-    padding-right: 5px;
-    color: var(--color-orange);
+#gem-header-origin {
+    font-style: italic;
+    color: var(--color-grey);
+    font-family: "Quicksand";
+    font-size: 1.3rem;
 }
-.data-value{
-    display: inline;
-    color: var(--color-white);
-}
-#gem-img-general {
+.flex-row-wrap-content {
+    width: 100%;
+    min-width: fit-content;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 0;
 }
-#gem-container img {
-    margin: 10px 40px 10px 40px;
-    border-radius: 10px;
-}
-#gem-general {
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-#gem-origin {
-    margin-left: 20px;
-    text-align: left;
-}
-#gem-origin span {
-    font-size: 1.15rem;
-}
-#gem-info {
-    font-size: 1.2rem;
-    margin-top: 20px;
+#gem-img-content {
+    width: 440px;
+    height: 440px;
     padding: 20px;
-    border-top: 1px solid var(--color-white);
-    border-bottom: 1px solid var(--color-white);
-}
-#gem-info span {
-    font-size: 1.15rem;
-}
-#gem-price {
-    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-start;
+    border-radius: 20px;
     margin: 5px;
-    color: var(--color-red);
+    background-color: var(--color-grey);
+    box-shadow: 0px 0px 12px var(--color-white);
 }
-#gem-buy {
-    padding: 20px 20px;
+#gem-img {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    transition-delay: 0.5s;
+    z-index: 2;
+    cursor: pointer;
+}
+#gem-img:hover {
+    width: 490px;
+    height: 490px;
+    box-shadow: 0px 0px 20px var(--color-white);
+}
+#gem-buy-content {
+    width: 440px;
+    height: 500px;
+    justify-self: flex-end;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 5px;
+}
+#gem-buy-content-price {
+    width: 100%;
+    height: min-content;
+    padding: 20px 10px;
+    border-bottom: 2px solid var(--color-cream);
+}
+#gem-buy-content-price h1 {
+    font-family: "Quicksand-bold";
+    color: var(--color-red);
+    font-weight: bolder;
+    font-size: 250%;
+    padding-bottom: 10px;
+}
+#gem-buy-content-stock {
+    padding: 20px 10px;
+    border-bottom: 2px solid var(--color-cream);
 }
 .available {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: "Quicksand-bold";
+    font-weight: bolder;
     color: var(--color-lightgreen);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .not-available {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: "Quicksand-bold";
+    font-weight: bolder;
     color: var(--color-red);
     margin-bottom: 10px;
 }
 #select-quantity {
-    margin: 5px;
-    padding: 5px 0;
+    width: 100%;
+    padding: 20px 0 10px 0;
 }
-#select-quantity div {
-    margin-bottom: 8px;
+#quantity-indicator span{
+    font-family: "Quicksand-bold";
+    font-weight: bolder;
 }
-#select-quantity div span{
-    font-size: 1.15rem;
+#quantity-selector {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
-#quantity-span {
-    margin-right: 5px;
+#quantity-selector-btns {
+    width: 25%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0 0 0;
 }
 .quantity-btn {
     width: 30px;
-    border-radius: 5px;
+    height: 25px;
+    background-color: var(--color-white);
+    border-radius: 7px;
     border: 1px solid var(--color-black);
-    margin: 5px;
-    padding: 2px;
     font-weight: 600;
     font-size: 1rem;
+    transition: all 0.4s ease;
 }
 .quantity-btn:active {
     transform: scale(0.95);
@@ -123,34 +149,83 @@
     background-color: var(--color-lightgreen);
     color: var(--color-white);
 }
-#add-to-cart {
+#status-quantity {
+    padding: 15px 0 0 20px;
+    text-align: center;
+    color: var(--color-black);
+}
+.cart-buy-btn {
     font-size: 1rem;
     font-weight: 600;
     width: 100%;
-    border: none;
-    background: linear-gradient(to right, #f16711, #f5af19);
-    color: var(--color-white);
-    border-radius: 5px;
+    border-radius: 7px;
     padding: 5px;
     margin: 10px 0;
+    transition: all 0.2s ease;
 }
-#add-to-cart:active {
+.cart-buy-btn:active {
     transform: scale(0.96);
 }
-#gem-descr-container {
-    width: 70%;
-    margin: auto;
+#add-to-cart {
+    color: var(--color-white);
+    background-color: var(--color-orange);
+    border: 1px solid var(--color-black);
+}
+#add-to-cart:hover {
+    background-color: #d15d05;
+}
+#buy-now {
+    color: var(--color-black);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+}
+#buy-now:hover {
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border: 1px solid var(--color-white);
+}
+#shipping {
+    padding: 20px 10px;
+}
+#bot-gem-container {
+    width: 100%;
+    margin: 10px 10px;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: var(--color-white);
+}
+#gem-description-content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
 }
 #gem-descr {
-    min-width: fit-content;
-    margin: auto;
-    padding: 30px 30px;
-    border: solid 1px var(--color-black);
-    border-bottom: none;
-    border-radius: 15px;
+    padding: 20px;
+}
+h2 {
+    font-family: "Quicksand-bold";
+    padding: 0 0 10px 0;
+}
+#gem-infobox {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--color-grey);
+}
+#gem-infobox h2 {
     color: var(--color-white);
 }
-p {
-    padding-left: 30px;
-    text-align: left;
+.spacer {
+    min-width: 150px;
+    padding: 10px 10px;
+}
+.data-name {
+    color: var(--color-blue);
+    font-family: "Quicksand-bold";
+    font-size: 1.2rem;
+    text-align: center;
+}
+.data-value {
+    text-align: center;
+    color: var(--color-white);
 }

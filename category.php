@@ -22,7 +22,7 @@
                 $redirect++;
             }
         }
-        //redirect to error_page if given unknown categoryID in url
+        // check for valid uri for category
         if ($redirect !== 0){
             header("Location: php/error_page.php");
         }
@@ -32,7 +32,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gem In Eye - Categories</title>
+    <title>Categories - Gem In Eye</title>
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +56,7 @@
                 <!-- Category homepage with a carousel to select the catergory -->
                 <div id="slider-container">
                     <div class="slider-btn">
-                        <img class="left-arrow" src="/img/slider_arrow.png" data-prev>
+                        <img class="arrow"/ src="/img/slider_arrow.png" data-prev>
                         <div class="extend-bg" data-prev></div>
                     </div>
                     <div id="slider-all">
@@ -77,7 +77,7 @@
                     <?php } ?>
                     </div>
                     <div class="slider-btn">
-                        <img class="right-arrow rotate180deg" src="/img/slider_arrow.png" data-next/>
+                        <img class="arrow rotate180deg" src="/img/slider_arrow.png" data-next/>
                         <div class="extend-bg" data-next></div>
                     </div>
                 </div>
@@ -132,5 +132,4 @@
     </main>
     <?php include "commons/footer.html"; ?>
 </body>
-
 </html>

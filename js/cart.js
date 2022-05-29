@@ -84,11 +84,10 @@ function clearTable() {
     document.getElementById('cart-items-nb').remove();
     document.getElementById('cart-content').innerHTML = '';
     let orderContent = document.getElementById("order-content");
-    orderContent.innerHTML = "";
-    let empty = document.createElement("h1");
-    empty.setAttribute("style", 'margin: 10% auto');
-    empty.textContent = "Your cart is empty";
-    orderContent.appendChild(empty);
+    orderContent.innerHTML = "<h1 style='margin: 8% auto;'>Your cart is empty</h1>"+
+    "<div id='div-btn-journey' style='margin-bottom: 40px'>"+
+        "<a href='/category.php'>Visit our shop !</a>"+
+    "</div>";
 }
 
 

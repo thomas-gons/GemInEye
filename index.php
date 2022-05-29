@@ -1,22 +1,24 @@
 <?php
     session_start();
-    if (!isset($_SESSION['login'])){
+    // Assign already existing on newly created customer ID
+    if (!isset($_SESSION['login'])) {
         $xml = simplexml_load_file("data/customers.xml");
-        $_SESSION['customerID'] = ($xml != null) ? $xml->children()[count($xml->children()) - 1]->id + 1: 1; 
+        $_SESSION['customerID'] = ($xml !== null) ? $xml->children()[count($xml->children()) - 1]->id + 1 : 1; 
     }
 
     $current_uri = $_SERVER["REQUEST_URI"];
-    if (!isset($_SESSION['referrer'])) {
+    if (!isset($_SESSION['referrer']) || empty($_SESSION['referrer'])) {
         $_SESSION['referrer'] = $current_uri;
     } else {
         $previous_uri = $_SESSION['referrer'];
         $_SESSION['referrer'] = $current_uri;
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gem In Eye - Home</title>
+    <title>Home - Gem In Eye</title>
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +36,7 @@
         <?php include "php/side_bar.php"; ?>
         <!-- Contenu principal de la page -->
         <div id="page-content">
-            <div class="black-bg-div">
+            <div class="black-div">
                 <div class="main-container">
                     <div class="main-title">Welcome to Gem In Eye !</div>
                     <div class="main-content-text">
@@ -45,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div class="black-bg-div">
+            <div class="black-div">
                 <div class="main-container">
                     <div class="main-title">Gemstones to Heal the Mind</div>
                     <p class="main-content-subtitle">HEALING THROUGH GEMSTONES</p>

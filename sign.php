@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gem In Eye - Sign</title>
+    <title><?php echo(($page === "signin") ? "Sign In": "Sign Up");?> - Gem In Eye</title>
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,8 @@
         <?php if ($page === "signin") { ?>
                 <div class='container'>
                     <div id='top-title'>
-                        <h1>Sign in to Gem In Eye</h1>    
+                        <h1>Sign in to Gem In Eye</h1>
+                        <h3><?php if ($_GET["status"] === "1") echo "You first need to be logged before buying on Gem In Eye!" ?></h3>   
                     </div>
                     <div class='auth-container'>
                         <form method='post' action='/php/check_auth.php'>

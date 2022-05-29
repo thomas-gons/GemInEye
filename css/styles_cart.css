@@ -1,12 +1,28 @@
-#order-content {
-    width: 100%;
+#order-title {
     min-width: fit-content;
-    padding:3%;
+    padding: 20px;
+    margin: 40px 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: var(--color-white);
+}
+#order-title h1, #order-title p {
+    font-family: "Quicksand-bold";
+    padding: 10px;
+}
+#order-content {
+    min-width: fit-content;
+    padding: 20px;
+    margin: 20px 40px 40px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: var(--color-cream);
+    border-radius: 20px;
+    background-color: var(--color-white);
 }
 table {
     width: 70%;
@@ -17,7 +33,8 @@ td, th {
     text-align: center;
     font-size: 1.4em;
 }
-table{
+table {
+    width: fit-content;
     border-spacing: 0;
 }
 td {
@@ -30,20 +47,23 @@ td {
 }
 td > img{
     border-radius: 20px;
+    width: 180px;
+    height: 180px;
 }
 .quantity-div {
     margin: 20px 0;
 }
 .quantity-btn {
-    margin-top: 10px;
-    color: black;
     width: 30px;
-    border-radius: 5px;
+    height: 25px;
+    margin: 0 5px;
+    background-color: var(--color-white);
+    border-radius: 7px;
     border: 1px solid var(--color-black);
-    margin: 5px;
-    padding: 2px;
     font-weight: 600;
     font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 .quantity-btn:active {
     transform: scale(0.95);
@@ -53,29 +73,99 @@ td > img{
     color: var(--color-white);
 }
 .quantity-more:hover {
-    background-color: #25b873;
+    background-color: var(--color-lightgreen);
     color: var(--color-white);
 }
 .remove-item {
-    color: black;
+    font-family: "Quicksand-bold";
+    font-weight: bolder;
+    color: var(--color-black);
     padding: 5px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--color-red);
-}
-.remove-item:hover {
-    box-shadow: inset 0px 3px 2px rgba(0, 0, 0, 0.233);
-    background-color: var(--color-red);
+    border: 1px solid var(--color-black);
+    border-radius: 7px;
+    background-color: var(--color-white);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 #remove-order {
-    width: 45%;
+    width: 20%;
+    font-family: "Quicksand-bold";
+    font-weight: bolder;
+    color: var(--color-black);
+    padding: 5px;
+    border: 1px solid var(--color-black);
+    border-radius: 7px;
+    background-color: var(--color-white);
+    transition: all 0.3s ease;
+}
+.remove-item:hover, #remove-order:hover {
+    background-color: var(--color-red);
+    box-shadow: inset 0px -3px 2px rgba(0, 0, 0, 0.233);
+}
+#continue-order{
+    width: 500px;
+    margin-bottom: 20px;
+    color: var(--color-white);
+    padding: 5px;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--color-blue);
+    text-decoration: none;
+    cursor: pointer;
+}
+.order-button:hover {
+    transition: 0.2s;
+    box-shadow: inset 0px -3px 2px rgba(0, 0, 0, 0.233);
+    cursor: pointer;
+    background-color:var(--color-red);
+    color: var(--color-white);
+    text-decoration: none;
+}
+#resume{
+    font-size: x-large;
+    background-color: var(--color-lightgrey);
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--color-white)
+}
+#resume-title{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px
+}
+#buy-button{
+    margin-bottom: 20px;
+    width: 500px;
     color: var(--color-white);
     padding: 5px;
     border: none;
     border-radius: 4px;
-    background-color: var(--color-red);
+    background-color: var(--color-blue);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    transition: 0.2s;
 }
-#remove-order:hover {
-    background-color:var(--color-red);
-    color: var(--color-white);
+#buy-button:hover{
+    box-shadow:0px 5px 5px -8px rgba(0, 0, 0, 0.233);
+    text-decoration: none;
+    transform: translateY(-4px);
+}
+#link-resume{
+    text-align: center;
+    text-decoration: none;
+}
+#all-ticket-container{
+    width: 50%;
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+}
+#ticket-container{
+    background-color: var(--color-white);
+    margin-top: 20px;
+    text-align: right;
+    border-radius: 5px;
+    padding:10px;
 }
