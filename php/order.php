@@ -1,15 +1,21 @@
 <?php
     session_start();
-    $input = explode(",", $_POST["cartContent"]);
-    $data = array(
-        "id" => $input[0],
-        "img" => $input[1],
-        "name" => $input[2],
-        "quantity" => intval($input[3]),
-        "price" => intval($input[4])
-    );
+    if (isset($_POST) && !empty($_POST)) {
+        if (isset($_POST["cartContentBuyNow"]) && !empty($_POST["cartContentBuyNow"])) {
+            $input = explode(",", $_POST["cartContentBuyNow"]);
+        } else {
+            $input = explode(",", $_POST["cartContent"]);
+        }
+        $data = array(
+            "id" => $input[0],
+            "img" => $input[1],
+            "name" => $input[2],
+            "quantity" => intval($input[3]),
+            "price" => intval($input[4])
+        );
 
     addToCart($data, $_SESSION['customerID']);
+    }
 
     function addToCart($data, $customerID){
         $prev_data = file_get_contents('../data/order.json');
@@ -43,5 +49,9 @@
     }    
 
     $categoryID = explode("&", explode("?", $_SESSION["referrer"])[1])[0];
-    header('Location: /category.php?'.$categoryID);
+    if (!empty($_GET['buynow']) && $_GET['buynow'] === "1") {
+        header('Location: /cart.php');
+    } else {
+        header('Location: /category.php?'.$categoryID);
+    }
 ?>

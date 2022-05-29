@@ -1,11 +1,11 @@
-//Make carousel slides
+//Carousel slider for categories
 
 function moveSlide(count) {
     let prevSlide = document.querySelector('.enabled');
     let nextSlide = document.querySelector('[data-slide-'+count+']');
     prevSlide.classList.remove('enabled');
-    prevSlide.classList.add('disabled');
     nextSlide.classList.remove('disabled');
+    prevSlide.classList.add('disabled');
     nextSlide.classList.add('enabled');
 }
 

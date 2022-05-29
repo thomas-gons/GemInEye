@@ -2,7 +2,9 @@
     min-width: 555px;
     margin: 40px;
     padding: 20px;
-    color: var(--bg-color-black);
+    color: var(--color-black);
+    border-radius: 20px;
+    background-color: var(--color-white);
 }
 .content-title h1 {
     font-family: "Quicksand-bold";
@@ -18,7 +20,7 @@
     font-weight: 300;
     font-size: 120%;
     padding: 40px;
-    color: var(--bg-color-black);
+    color: var(--color-black);
 }
 #gems {
     display: flex;
@@ -28,6 +30,9 @@
     align-content: space-around;
     justify-content: space-around;
     padding: 0 30px 30px 30px;
+    margin: 0 40px 40px 40px;
+    border-radius: 20px;
+    background-color: var(--color-white);
 }
 .gem {
     min-width: 300px;
@@ -38,7 +43,7 @@
     margin: 40px;
     padding: 20px;
     border-radius: 20px;
-    background-color: var(--color-black);
+    background-color: var(--color-grey);
 }
 .gem>a {
     text-decoration: none;
@@ -53,7 +58,9 @@
     color: var(--color-white);
 }
 .gem-price {
-    color: var(--color-orange);
+    font-size: 1.3rem;
+    font-family: "Quicksand-bold";
+    color: var(--color-red);
     padding: 7px 0;
 }
 .gem img  {
@@ -69,10 +76,10 @@
 #slider-container {
     width: 100%;
     min-width: fit-content;
-    padding: 50px 20px;
+    padding: 30px 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: fit-content;
 }
 #slider-all {
@@ -86,13 +93,9 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0 5px;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
 }
 .disabled {
     display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 }
 .slider-single-title {
     display: flex;
@@ -104,7 +107,7 @@
     font-family: "Quicksand-bold";
     font-size: 400%;
     font-weight: bolder;
-    padding: 10px 0 30px 0;
+    padding: 0 0 20px 0;
 }
 .slider-single-title-img {
     width: 70px;
@@ -112,6 +115,10 @@
     padding: 0 0 0 5px;
     -webkit-filter: invert(100%);
     filter: invert(100%);
+    transition: filter 0.2s ease;
+}
+.slider-single-title-img:hover {
+    filter: invert(70%);
 }
 .slider-single-img {
     width: 100%;
@@ -123,7 +130,7 @@
     height: 500px;
     border-radius: 100%;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
-    transition: 0.5s ease-in-out;
+    transition: 0.6s ease;
 }
 .single-img:hover {
     transform: scale(1.10);
@@ -134,22 +141,17 @@
     height: 80px;
     margin: 10px;
     border-radius: 50px;
-    transition: height 1s ease-in-out;
-    transition-delay: 0.2s;
     background-color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .slider-btn:hover .extend-bg {
-    height: 450px;
+    height: 350px;
+    cursor: pointer;
 }
-.left-arrow {
-    width: 45px;
-    height: 45px;
-    padding-right: 5px;
-}
-.right-arrow {
+.arrow {
     width: 45px;
     height: 45px;
     padding-right: 5px;
@@ -163,7 +165,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50px;
-    transition: height 1s ease-in-out;
+    transition: height 0.7s ease;
     background-color: var(--color-white);
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }

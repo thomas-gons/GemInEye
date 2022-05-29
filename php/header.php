@@ -43,7 +43,8 @@
                             <img id='cart-img' src='/img/cart.png' alt='cart_image'>
                             <div id='cart-content'>
                                 <?php $jsonOrder = file_get_contents("data/order.json");
-                                if ($jsonOrder != null || $jsonOrder != '{}') {
+                                //Check to see if customer as already a cart in track in order.json and show a preview of the cart
+                                if ($jsonOrder !== null || $jsonOrder !== '{}') {
                                     $data = json_decode($jsonOrder, true);
                                     if (array_key_exists($_SESSION['customerID'], $data) != false) {
                                         $data = $data[$_SESSION['customerID']];

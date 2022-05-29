@@ -1,56 +1,18 @@
 <?php
     session_start();
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $errors = [];
-
-        //Verification des erreurs
-        if (empty($_POST['ContactDate'])) {
-            $errors['cDate'] = 'Enter a Date please';
-        }
-        if (empty($_POST['firstName']) || preg_match("/\d+/",$_POST['firstName'])) {
-            $errors['fName'] = 'Enter a valid firstName please';
-        }
-        if (empty($_POST['lastName']) || preg_match("/\d+/",$_POST['lastName'])) {
-            $errors['lName'] = 'Enter a valid lastName please';
-        }
-        if (empty($_POST['Email']) || !preg_match('/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/',$_POST['Email'])) {
-            $errors['email'] = 'Enter a valid Email please';
-        }
-        if (empty($_POST['Genre'])) {
-            $errors['genre'] = ' ';
-        }
-        if (empty($_POST['BirthDate'])) {
-            $errors['bDate'] = ' ';
-        }
-        if (empty($_POST['job'])) {
-            $errors['job'] = ' ';
-        }
-        if (empty($_POST['Object'])) {
-            $errors['object'] = ' ';
-        }
-        if (empty($_POST['Content'])) {
-            $errors['content'] = ' ';
-        }
-        if(empty($errors)) {
-            $_SESSION['cDate'] = $_POST['ContactDate'];
-            $_SESSION['fName'] = $_POST['firstName'];
-            $_SESSION['lName'] = $_POST['lastName'];
-            $_SESSION['email'] = $_POST['Email'];
-            $_SESSION['genre'] = $_POST['Genre'];
-            $_SESSION['bDate'] = $_POST['BirthDate'];
-            $_SESSION['job'] = $_POST['job'];
-            $_SESSION['object'] = $_POST['Object'];
-            $_SESSION['content'] = $_POST['Content'];
-            header("Location: php/mail.php");
-            die();
-        }
+    $current_uri = $_SERVER["REQUEST_URI"];
+    if (!isset($_SESSION["referrer"]) || empty($_SESSION['referrer'])) {
+        $_SESSION["referrer"] = $current_uri;
+    } else {
+        $previous_uri = $_SESSION["referrer"];
+        $_SESSION["referrer"] = $current_uri;
     }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gem In Eye - Contact</title>
+    <title>Contact - Gem In Eye</title>
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,7 +40,7 @@
                 </div>
                 <div class="FormContact">
                     <!-- Formulaire de Contact -->
-                    <form method="post" id="contactForm">
+                    <form method="post" action="/mail.php" id="contactForm">
                         <div class="form-input">
                         <label for="ContactDate">Contact date :     </label><br>
                         <input type="date" class="real-input" name="ContactDate" id="ContactDate" required/>

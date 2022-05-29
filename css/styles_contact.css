@@ -4,17 +4,19 @@
     width: 100%;
     min-width: fit-content;
     flex-wrap: wrap;
-    padding: 0 50px;
+    padding: 20px 50px;
     align-items: center;
     transition: width 0.4s ease;
 }
 #contact-title {
-    margin: 20px auto;
-    padding: 0 20px;  
-    min-width: 450px;
-    max-width: 450px;   
+    margin: 20px auto 0 auto;
+    padding: 0 40px 40px 40px;  
+    min-width: 470px;
+    max-width: 470px;   
     text-align: justify;
     color: var(--color-black);
+    border-radius: 20px;
+    background-color: var(--color-white);
 }
 #contact-title>h1 {
     padding: 40px 0;
@@ -26,7 +28,7 @@
     color: var(--color-blue);
 }
 .FormContact {
-    margin: 50px auto;
+    margin: 20px auto;
     min-width: 350px;
     max-width: 500px;
     border-radius: 10px;
@@ -64,6 +66,8 @@
     height: 35px;
     border-radius: 5px;
     border: none;
+    color: var(--color-white);
+    font-weight: bolder;
     background-color: var(--color-blue);
     transition: 0.3s ease;
 }

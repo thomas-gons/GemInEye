@@ -8,7 +8,8 @@
 }
 :root {
     --color-white: #ffffff;
-    --color-cream: #ebd5bd;
+    --color-cream: #eccdae;
+    --color-lightcream: #f1d7bf;
     --color-black: #292929;
     --color-grey: #3f3f3f;
     --color-lightgrey: #505050;
@@ -16,7 +17,7 @@
     --color-green: #179c31;
     --color-blue: #00aee7;
     --color-orange: #eb7f2d;
-    --color-red: #ff2600;
+    --color-red: #c7270b;
 }
 *, *::before, *::after {
     font-family: "Quicksand";
@@ -373,16 +374,16 @@ main aside {
     transition: width 0.4s ease;
     transition-delay: width 0.4s ease;
 }
-.resize {
+.resized {
     width: 86vw;
     transition: width 0.4s ease;
 }
-.black-bg-div {
+.black-div {
     width: 100%;
     height: 83vh;
     color: #181818;
     background-color: var(--color-cream);
-    border-bottom: solid 2px #adb1b5
+    border-bottom: solid 2px var(--color-white)
 }
 .main-container {
     width: 100%;
@@ -405,13 +406,16 @@ main aside {
     font-size: 120%;
     font-weight: 400;
     padding: 20px 0;
-    border: solid 2px #000000;
-    background-color: rgba(255, 255, 255, 0.05);
+    border: solid 2px var(--color-white);
+    border-radius: 10px;
+    background-color: var(--color-cream);
     transition: 0.3s ease;
 }
 #div-btn-journey>a{
+    font-family: "Quicksand-bold";
+    font-weight: bolder;
     padding: 20px 40px;
-    color: #000000;
+    color: var(--color-white);
     text-decoration: none;
 }
 #div-btn-journey:hover {
@@ -419,7 +423,9 @@ main aside {
     transform: scale(1.05);
 }
 .main-content-subtitle {
-    color: #726f6f;
+    font-family: "Quicksand-bold";
+    font-weight: bolder;
+    color: var(--color-lightgrey);
 }
 .main-content-text {
     width: 60%;
@@ -460,7 +466,7 @@ footer {
 }
 .footer-list-item a {
     font-weight: 600;
-    color: var(--color-cream);
+    color: var(--color-white);
     text-decoration:none;
     transition: 0.3s ease-in;
 }

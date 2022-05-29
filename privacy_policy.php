@@ -1,22 +1,18 @@
 <?php
     session_start();
-    if (!isset($_SESSION['login'])){
-        $xml = simplexml_load_file("data/customers.xml");
-        $_SESSION['customerID'] = ($xml != null) ? $xml->children()[count($xml->children()) - 1]->id + 1: 1; 
-    }
-
     $current_uri = $_SERVER["REQUEST_URI"];
-    if (!isset($_SESSION['referrer'])) {
+    if (!isset($_SESSION['referrer']) || empty($_SESSION['referrer'])) {
         $_SESSION['referrer'] = $current_uri;
     } else {
         $previous_uri = $_SESSION['referrer'];
         $_SESSION['referrer'] = $current_uri;
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gem In Eye - Privacy Policy</title>
+    <title>Privacy Policy - Gem In Eye</title>
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

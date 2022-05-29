@@ -1,7 +1,7 @@
 <?php
     session_start();
     $current_uri = $_SERVER["REQUEST_URI"];
-    if (!isset($_SESSION['referrer'])) {
+    if (!isset($_SESSION['referrer']) || empty($_SESSION['referrer'])) {
         $_SESSION['referrer'] = $current_uri;
     } else {
         $previous_uri = $_SESSION['referrer'];
@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gem In Eye - About</title>
+    <title>About - Gem In Eye</title>
     <meta charset="UTF-8">
     <meta name="description" content="Gemstones online shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

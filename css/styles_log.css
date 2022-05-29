@@ -13,6 +13,10 @@
     color: var(--color-black);
     margin: 30px auto;
 }
+h1, h3 {
+    text-align: center;
+    padding: 5px;
+}
 .auth-container {
     display: flex;
     flex-direction: column;
