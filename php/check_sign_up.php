@@ -1,12 +1,21 @@
+<!-- redirected from sign.php when the user press "sign up"
+    Check values of the entered fields and if the customer does
+    not already exist. If the registration values are correct,
+    creation of an account in customer.xml and redirection to
+    sign in page. If an error occurs, the user will be redirected
+    to sign up page.
+-->
+
+
 <?php
     session_start();
     if (isset($_POST) && !empty($_POST)) {
         $xml = simplexml_load_file("../data/customers.xml");
         
-        //variables d'erreur
+        // error variable
         $error = false;
 
-        //récuperation des données d'inscription
+        // collection of registration data
         $username = $_POST["username"];
         $email = $_POST["email"];
         $password = $_POST["password"];
@@ -19,12 +28,12 @@
         $id = 0;
 
 
-        //vérifie si tout les champs sont remplis
+        // checks if all fields are filled in
         if ($username === "" || $email === "" || $password === "" || $c_password === "" || $name === "" || $lastname === ""){
             $_SESSION["empty_error"] = "One or more fields are not filled in.";
             $error = true;
         }
-        //vérifie si le compte existe déjà
+        // check if the account already exists
         foreach ($xml->children() as $customer){
             if ((strval($customer->login) === $username ||
             strval($customer->email) === $email)) {
@@ -34,7 +43,7 @@
             $id = $id +1;
         }
         $id = $id +1;
-        //vérifie si la confirmation du mdp est bonne
+        // check if the password confirmation is correct
         if ($password !== $c_password){
             $_SESSION['mdp_error'] = "Passwords are not the same.";
             $error = true;
@@ -43,6 +52,7 @@
             header("Location: /sign.php?page=signup");
         }
         else {
+            // add the new customer to the customer file (XML)
             $xml2 = new DOMDocument();
             // pretty print for XML file
             $xml2->formatOutput = true;
@@ -63,8 +73,6 @@
             $xmlbdate = $xml2->createElement("birthdate",$bdate);
             $xmladress = $xml2->createElement("adress",$adress);
             
-
-
             $newcust->appendChild($xmlid);
             $newcust->appendChild($xmladmin);
             $newcust->appendChild($xmllogin);
@@ -75,7 +83,7 @@
             $newcust->appendChild($xmlemail);
             $newcust->appendChild($xmlbdate);
             $newcust->appendChild($xmladress);
-        
+            
             $cust->appendChild($newcust);
             $xml2->save("../data/customers.xml");
             $_SESSION['success_sign_up'] = "Sign up success";

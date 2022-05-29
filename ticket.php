@@ -31,7 +31,8 @@
             <div id="all-ticket-container">
             <?php 
                 $jsonOrder = file_get_contents("data/order.json");
-                $order = json_decode($jsonOrder, true)[strval($_SESSION['customerID'])]; 
+                $orderAll = json_decode($jsonOrder, true);
+                $order = $orderAll[strval($_SESSION['customerID'])];
                 $jsonStock = file_get_contents("data/stock.json");
                 $stock = json_decode($jsonStock, true);
             ?>
@@ -53,19 +54,23 @@
                 }
                 $TTC=$totalprice*0.8;
                 $TVA=$totalprice*0.2;
-                // FAIRE : afficher TVA ?
                 echo "<br>";
                 echo "<div style='font-size:small'>TTC = $TTC$</div>";
                 echo "<div style='font-size:small'>TVA = $TVA$</div>";
-                echo "<div>Total price : $totalprice$</div>";
-                for($i = 0; $i < count($order); $i++) {
-                    unset($order[$i]);
-
-                 } ?>
+                echo "<div>Total price : $totalprice$</div>"; ?>
                 </div>
                 <div id="div-btn-journey" style="margin: 40px">
                     <a href="/index.php">Back to Home Page</a>
                 </div>
+                <?php 
+                    if (count($orderAll) != 1)
+                        unset($orderAll[strval($_SESSION['customerID'])]);
+                    else
+                        $orderAll = (object) null;
+                    
+                    $jsonData = json_encode($orderAll, JSON_PRETTY_PRINT);
+                    file_put_contents("data/order.json", $orderAll); 
+                ?>
             </div>
         </div>
     </main>

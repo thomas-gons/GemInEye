@@ -1,3 +1,7 @@
+<!-- when the user access to a forbidden page, he his
+    redirected here
+-->
+
 <?php
     session_start();
 ?>

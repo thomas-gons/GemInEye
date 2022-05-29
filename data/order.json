@@ -1,1 +1,88 @@
-{}
+{
+    "1": [
+        {
+            "id": "C1",
+            "img": "\/img\/crystals\/aquamarine.png",
+            "name": "Aquamarine",
+            "quantity": 4,
+            "price": 0
+        },
+        {
+            "id": "C3",
+            "img": "\/img\/crystals\/diamond.png",
+            "name": "Diamond",
+            "quantity": 4,
+            "price": 0
+        },
+        {
+            "id": "C8",
+            "img": "\/img\/crystals\/topaz.png",
+            "name": "Topaz",
+            "quantity": 4,
+            "price": 0
+        },
+        {
+            "id": "C6",
+            "img": "\/img\/crystals\/spinel.png",
+            "name": "Spinel",
+            "quantity": 7,
+            "price": 0
+        },
+        {
+            "id": "R1",
+            "img": "\/img\/rough_gems\/azurite.png",
+            "name": "Azurite - Goethite - Limonite",
+            "quantity": 4,
+            "price": 0
+        },
+        {
+            "id": "R5",
+            "img": "\/img\/rough_gems\/prehnite.png",
+            "name": "Prehnite - Epidote",
+            "quantity": 3,
+            "price": 0
+        },
+        {
+            "id": "R7",
+            "img": "\/img\/rough_gems\/ruby.png",
+            "name": "Ruby (Corundum)",
+            "quantity": 4,
+            "price": 0
+        },
+        {
+            "id": "R8",
+            "img": "\/img\/rough_gems\/wulfenite.png",
+            "name": "Wulfenite",
+            "quantity": 4,
+            "price": 0
+        },
+        {
+            "id": "G1",
+            "img": "\/img\/geodes\/agate_kaolinite.png",
+            "name": "Agate (Chalcedony) - Kaolinite",
+            "quantity": 4,
+            "price": 0
+        },
+        {
+            "id": "G3",
+            "img": "\/img\/geodes\/amethyst.png",
+            "name": "Amethyst (Quartz) - Agate (Chalcedony)",
+            "quantity": 6,
+            "price": 0
+        },
+        {
+            "id": "G7",
+            "img": "\/img\/geodes\/kutnohorite.png",
+            "name": "Kutnohorite - Aragonite",
+            "quantity": 8,
+            "price": 0
+        },
+        {
+            "id": "G5",
+            "img": "\/img\/geodes\/calcite.png",
+            "name": "Calcite - Dolomite",
+            "quantity": 4,
+            "price": 0
+        }
+    ]
+}

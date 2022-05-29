@@ -1,3 +1,14 @@
+<!-- redirected from sign.php when the user press "sign in"
+    Check authentication by comparing the given password with
+    with the one the one in the xml according to the login entered.
+    
+    successful authentication: the customer's order is
+    merged with his account and he's redirected to categories page.
+
+    authentication failed: the customer's order is to sign in page
+    and must re-authenticate
+-->
+
 <?php
     session_start();
     if(isset($_POST) && !empty($_POST)) {
@@ -13,6 +24,7 @@
             $customer->password == $pswd) {
                 $check = true;
                 $id = strval($customer->id);
+                // change admin session value to that of the connected customer
                 $_SESSION["admin"] = intval($customer->admin);
                 $_SESSION["connect_error"] = "";
                 break;
@@ -23,11 +35,12 @@
         }
         // Assign the order that is not linked to any customer to the recently logged customer
         if ($check) {
+            include "order.php";
             $_SESSION["login"] = true;
             $data = file_get_contents('../data/order.json');
+            // get order of the not logged customer and write it to the order of the logged customer
             $orderNotLoggedInCustomer = json_decode($data, true)[$_SESSION["customerID"]];
             if ($orderNotLoggedInCustomer != array()){
-                include "order.php";
                 foreach($orderNotLoggedInCustomer as $item) {
                     addToCart($item, $id);
                 }
@@ -38,8 +51,10 @@
                 file_put_contents("../data/order.json", $jsonData);
             }
             $_SESSION["customerID"] = $id;
+            // redirected to the category page corresponding to the product
             header("Location: ".$_SESSION["referrer"]);
         } else {
+            // redirected to sign in page with an error message
             header("Location: /sign.php?page=signin");
         }
     }

@@ -1,4 +1,6 @@
 <?php
+    // from cart.php when the customer modify quantity,
+    // remove an item or remove the order.
     if (isset($_POST) && !empty($_POST)) {
 
         session_start();
@@ -12,7 +14,7 @@
         $data = json_decode($jsonStr, true);
         $gems = $data[strval($customer_id)];
         for ($i = 0; $i < count($gems); $i++){
-            if ($gems[$i]["id"] == $id){
+            if ($gems[$i]["id"] == $id) {
                 // if the customer wants to remove the item
                 if ($data[strval($customer_id)][$i]["quantity"] == $quantity * (-1)){
                     if (count($gems) != 1) {
@@ -24,7 +26,7 @@
                     }
                     $response = "quantity null";
                 } else {
-                    $response = "quantity ";
+                    $response = "quantity";
                     if ($data[strval($customer_id)][$i]["quantity"] + $quantity > 0){
                         $data[strval($customer_id)][$i]["quantity"] += $quantity;
                     }
@@ -37,10 +39,8 @@
                 break;
             }
         }
-        $jsonData = json_encode($data, JSON_PRETTY_PRINT);
-        file_put_contents("../data/order.json", $jsonData);
         echo $response;
+        $jsonData = json_encode($data, JSON_PRETTY_PRINT);
+        file_put_contents("../data/order.json", $jsonData); 
     }
-    $jsonData = json_encode($data, JSON_PRETTY_PRINT);
-    file_put_contents("../data/order.json", $jsonData);
 ?>

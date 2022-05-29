@@ -8,15 +8,6 @@ rows = Array.prototype.slice.call(rows);
 
 let quantityLess = document.querySelectorAll(".quantity-less");
 
-
-
-
-
-
-
-
-
-
 if (quantityLess != undefined) {
     quantityLess.forEach(element => {
         element.addEventListener('click', () => {
@@ -112,7 +103,9 @@ function makeRequest(data, file) {
     }
     xhr.onreadystatechange = function () {
         if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
+            console.log(xhr.responseText);
             if (file == "../php/modify_order.php" && xhr.responseText == "quantity null"){
+                console.log(xhr.responseText);
                 document.getElementById('cart-items-nb').textContent -= 1;
                 cartItems.forEach(itemDiv => {
                     if (itemDiv.children[1].textContent == data['id']){

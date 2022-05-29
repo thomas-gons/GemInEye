@@ -16,7 +16,7 @@
             "luster": "Waxy",
             "img": "\/img\/geodes\/agate_kaolinite.png",
             "url": "https:\/\/www.mindat.org\/photo-937759.html",
-            "quantity": 212,
+            "quantity": 205,
             "price": 23
         },
         {
@@ -35,7 +35,7 @@
             "luster": "Waxy",
             "img": "\/img\/geodes\/agate_quartz.png",
             "url": "https:\/\/www.mindat.org\/photo-1192495.html",
-            "quantity": 35,
+            "quantity": 5,
             "price": 15
         },
         {
@@ -54,7 +54,7 @@
             "luster": "Vitreous\/glassy",
             "img": "\/img\/geodes\/amethyst.png",
             "url": "https:\/\/www.mindat.org\/photo-799655.html",
-            "quantity": 279,
+            "quantity": 274,
             "price": 28
         },
         {
@@ -73,7 +73,7 @@
             "luster": "Vitreous",
             "img": "\/img\/geodes\/azurite.png",
             "url": "https:\/\/www.mindat.org\/photo-944476.html",
-            "quantity": 31,
+            "quantity": 20,
             "price": 22
         },
         {
@@ -92,7 +92,7 @@
             "luster": "Vitreous to pearly on cleavage surfaces",
             "img": "\/img\/geodes\/calcite.png",
             "url": "https:\/\/www.mindat.org\/photo-956540.html",
-            "quantity": 219,
+            "quantity": 222,
             "price": 21
         },
         {
@@ -111,7 +111,7 @@
             "luster": "Vitreous",
             "img": "\/img\/geodes\/celestine.png",
             "url": "https:\/\/www.mindat.org\/photo-885484.html",
-            "quantity": 46,
+            "quantity": 45,
             "price": 26
         },
         {
@@ -130,7 +130,7 @@
             "luster": "Vitreous to dull",
             "img": "\/img\/geodes\/kutnohorite.png",
             "url": "https:\/\/www.mindat.org\/photo-728904.html",
-            "quantity": 441,
+            "quantity": 448,
             "price": 25
         },
         {
@@ -149,7 +149,7 @@
             "luster": "Vitreous",
             "img": "\/img\/geodes\/quartz.png",
             "url": "https:\/\/www.mindat.org\/photo-1163174.html",
-            "quantity": 19,
+            "quantity": 10,
             "price": 18
         }
     ],
@@ -170,7 +170,7 @@
             "luster": "Vitreous",
             "img": "\/img\/rough_gems\/azurite.png",
             "url": "https:\/\/www.mindat.org\/photo-1205531.html",
-            "quantity": 273,
+            "quantity": 277,
             "price": 24
         },
         {
@@ -284,7 +284,7 @@
             "luster": "Subadamantine, vitreous, pearly (on partings)",
             "img": "\/img\/rough_gems\/ruby.png",
             "url": "https:\/\/www.mindat.org\/photo-1124235.html",
-            "quantity": 228,
+            "quantity": 231,
             "price": 39
         },
         {
@@ -303,7 +303,7 @@
             "luster": "Adamantine, resinous",
             "img": "\/img\/rough_gems\/wulfenite.png",
             "url": "https:\/\/www.mindat.org\/photo-1153791.html",
-            "quantity": 220,
+            "quantity": 224,
             "price": 36
         }
     ],
@@ -324,7 +324,7 @@
             "luster": "Vitreous",
             "img": "\/img\/crystals\/aquamarine.png",
             "url": "https:\/\/www.mindat.org\/photo-965056.html",
-            "quantity": 312,
+            "quantity": 327,
             "price": 42
         },
         {
@@ -362,7 +362,7 @@
             "luster": "Adamantine",
             "img": "\/img\/crystals\/diamond.png",
             "url": "https:\/\/www.mindat.org\/photo-883308.html",
-            "quantity": 260,
+            "quantity": 264,
             "price": 76
         },
         {
@@ -419,7 +419,7 @@
             "luster": "Vitreous",
             "img": "\/img\/crystals\/spinel.png",
             "url": "https:\/\/www.mindat.org\/photo-363617.html",
-            "quantity": 372,
+            "quantity": 379,
             "price": 55
         },
         {
@@ -457,7 +457,7 @@
             "luster": "Vitreous",
             "img": "\/img\/crystals\/topaz.png",
             "url": "https:\/\/www.mindat.org\/photo-299074.html",
-            "quantity": 237,
+            "quantity": 245,
             "price": 63
         }
     ]

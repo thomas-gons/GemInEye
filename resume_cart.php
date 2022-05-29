@@ -22,7 +22,6 @@
     <script src="/js/navbar.js" defer></script>
     <script src="/js/connected.js" defer></script>
     <script src="/js/order.js" defer></script>
-    <script src="/js/cart.js" defer></script>
 </head>
 <body>
     <?php include "php/header.php"; ?>

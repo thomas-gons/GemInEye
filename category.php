@@ -23,9 +23,8 @@
             }
         }
         // check for valid uri for category
-        if ($redirect !== 0){
-            header("Location: php/error_page.php");
-        }
+        if ($redirect !== 0)
+            header("Location: category.php");
     }
 ?>
 
@@ -44,6 +43,7 @@
     <script src="/js/navbar.js" defer></script>
     <script src="/js/connected.js" defer></script>
     <script src='/js/order.js' defer></script>
+    <script src='/js/category_cart.js' defer></script>
 </head>
 <body>
     <?php include "php/header.php"; ?>
@@ -118,11 +118,15 @@
                         if ($stock !== 0) { ?>
                             <div class='gem'>
                                 <a href='/gem.php?cat=<?=$categoryID?>&item=<?=$gem["id"][1]?>'>
+                                    <i style='display: none;'><?=$gem["id"]?></i>
                                     <img class='gem-img' src='<?=$gem["img"]?>' alt="<?=$first_word[0]?>">
                                     <p class='gem-name'><?=$gem["name"]?></p>
                                     <i class='gem-origin'><?=$gem["origin"]?></i>
                                     <p class='gem-price'>$<?=$gem["price"]?></p>
                                 </a>
+                                <div class='add-cart'>
+                                    <button class='add-cart-btn'>Add to cart</button>
+                                </div>
                             </div>
                         <?php }
                     } ?>
