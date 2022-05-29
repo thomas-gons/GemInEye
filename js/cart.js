@@ -21,6 +21,10 @@ if (quantityLess != undefined) {
                  clearTable();
             quant -= 1;
             quantityDiv.textContent = quant;
+            items = document.querySelectorAll('.cart-item');
+            if(items.length >= 5) {
+                items[4].style.removeProperty('display');
+            }     
         })
     })
 }
@@ -40,7 +44,7 @@ if (quantityMore != undefined) {
                 makeRequest({id: gemIds[indexRow], quantity: 1}, "../php/modify_order.php");
                 makeRequest({id: gemIds[indexRow], quantity: -1}, "../php/modify_stock.php");
             }
-            quantityDiv.textContent = quant;            
+            quantityDiv.textContent = quant;   
         })    
     })
 }
@@ -59,6 +63,10 @@ if (removeItem != undefined) {
             makeRequest({id: gemIds[indexRow], quantity: quant}, "../php/modify_stock.php");
             if (rows.length == 1)
                 clearTable();
+            items = document.querySelectorAll('.cart-item');
+            if(items.length >= 5) {
+                items[4].style.removeProperty('display');
+            }     
         })
     })
 }

@@ -41,8 +41,10 @@
             // get order of the not logged customer and write it to the order of the logged customer
             $orderNotLoggedInCustomer = json_decode($data, true)[$_SESSION["customerID"]];
             if ($orderNotLoggedInCustomer != array()){
+                $lastItem = $orderNotLoggedInCustomer[count($orderNotLoggedInCustomer) - 1];
                 foreach($orderNotLoggedInCustomer as $item) {
-                    addToCart($item, $id);
+                    if ($item != $lastItem)
+                        addToCart($item, $id);
                 }
                 $orders = file_get_contents('../data/order.json');
                 $orders = json_decode($orders, true);

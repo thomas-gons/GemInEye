@@ -65,7 +65,7 @@ document.getElementById('modifyItems').addEventListener("click", () => {
 })
 
 document.getElementById("property").addEventListener("change", ()=> { 
-    document.getElementById("modifyItemsStep2").style.visibility = "visible";
+    document.getElementById("modifyItemsStep2").style.display = "flex";
     document.getElementById("securityModify").style.visibility = "visible";
     document.getElementById("modifyItemsStep2").placeholder = document.getElementById('property').value;
 })

@@ -22,9 +22,9 @@
         <h1>Sorry !</h1>
     </header>
     <main id="error-content">
-        <p>Either you aren't cool enough to visit "<?=$_SESSION['referrer']?>" or it doesn't exists !</p>
+        <p>Either you aren't cool enough to visit this page or it doesn't exists !</p>
         <div id="div-btn-journey">
-            <a href="/category.php">Visit our Home Page</a>
+            <a href="/index.php">Visit our Home Page</a>
         </div>
     </main>
 </body>

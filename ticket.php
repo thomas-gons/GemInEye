@@ -66,7 +66,7 @@
                     if (count($orderAll) != 1)
                         unset($orderAll[strval($_SESSION['customerID'])]);
                     else
-                        $orderAll = (object) null;
+                        $orderAll = "{}";
                     
                     $jsonData = json_encode($orderAll, JSON_PRETTY_PRINT);
                     file_put_contents("data/order.json", $orderAll); 
