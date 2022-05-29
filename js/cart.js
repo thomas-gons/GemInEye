@@ -8,6 +8,15 @@ rows = Array.prototype.slice.call(rows);
 
 let quantityLess = document.querySelectorAll(".quantity-less");
 
+
+
+
+
+
+
+
+
+
 if (quantityLess != undefined) {
     quantityLess.forEach(element => {
         element.addEventListener('click', () => {
@@ -133,3 +142,14 @@ function formatData(data){
     }
     return formatedData;
 }
+
+//affichage du total dynamique
+//let allprices = document.querySelectorAll(".case-price");
+//let totalprice = 0;
+//allprices.forEach(function(price){
+//    totalprice = totalprice + parseInt(price.textContent)
+//});
+//document.getElementById("totalcalcul").textContent = totalprice;
+
+
+

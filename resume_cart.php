@@ -44,12 +44,12 @@
                         <?php 
                             $totalprice = 0;
                             for($i = 0; $i < count($order); $i++) {
-                                $totalprice += $order[$i]['price'];
+                                $totalprice += $order[$i]['price']*$order[$i]["quantity"];
                             }
                             echo strval($totalprice);
                         ?>
                     </p> 
-                    <p>Including TVA = <?php echo 0.20*$totalprice;?> $ ( 20% )</p> 
+                    <p style="font-size:small">Including TVA = <?php echo 0.20*$totalprice;?> $ ( 20% )</p> 
                 </div>
                 <a href="/ticket.php" id="link-resume" class="order-button"><div id="buy-button">Buy Now !</div></a>
                 </div>
@@ -91,7 +91,8 @@
                                 } else { ?>
                             <td class='stock' style='display: none'><?=$stockQuantity?></td>
                             <?php } ?>
-                            <td style='width: 20%;'>$<?=$order[$i]['price']?></td>
+                            <td style='width: 20%;'><div><?=$order[$i]['price']?>$</div><div style="font-size:medium">(TVA = <?=0.20 * $order[$i]['price']?>$)</div></td>
+
                         </tr>
                         <?php } ?>
                     </tbody>

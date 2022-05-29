@@ -7,6 +7,7 @@
         $previous_uri = $_SESSION['referrer'];
         $_SESSION['referrer'] = $current_uri;
     }
+    ini_set('display_errors','off');
 ?>
 
 <!DOCTYPE html>
@@ -86,12 +87,13 @@
                             <td class='stock' style='display: none'><?=$stockQuantity?></td>
                         <?php
                             } ?>
-                        <td  style='width: 20%;'>$<?=$order[$i]['price']?></td>
+                        <td class="case-price" style='width: 20%;'><p class="case-price"><?=$order[$i]['price']?></p></td>
                     </tr>
                 <?php
                     } ?>
                     </tbody>
                 </table>
+                <div id='totalcalcul'></div>
                 <a href="<?php if(!empty($_SESSION["login"]) && $_SESSION["login"] == true){
                                 echo "/resume_cart.php";
                             } else {

@@ -3,6 +3,7 @@
     if (isset($_SESSION["login"]) && $_SESSION["login"] == true)
         header("Location: ".$_SESSION["referrer"]);
     $page = $_GET['page'];
+    ini_set('display_errors','off');
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +52,7 @@
                                 } ?>
                             <?php 
                                 if (isset($_SESSION['success_sign_up']) && $_SESSION['success_sign_up'] != "") { ?>
-                                    <p style='color:red; padding-top: 15px;'><?=$_SESSION['success_sign_up']?></p>
+                                    <p style='color:green; padding-top: 15px;'><?=$_SESSION['success_sign_up']?></p>
                                     <?php $_SESSION['success_sign_up'] = "";
                                 } ?>
                         </form>
@@ -93,9 +94,9 @@
                             <div class='contain' id='gender'>
                                 <label>Gender</label>
                                 <div>
-                                    <input type='radio' name='Genre' id='Woman' value='Woman' style='margin-right:5px' required>
+                                    <input type='radio' name='genre' id='Woman' value='Woman' style='margin-right:5px' required>
                                     <label for='Woman' style='margin-right:20px' >Woman</label>
-                                    <input type='radio' name='Genre' id='Man' value='Man' style='margin-right:5px' required>
+                                    <input type='radio' name='genre' id='Man' value='Man' style='margin-right:5px' required>
                                     <label for='Man'>Man</label>
                                 </div>
                             </div>

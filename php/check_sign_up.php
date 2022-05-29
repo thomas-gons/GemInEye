@@ -13,6 +13,11 @@
         $c_password = $_POST["c_password"];
         $name = $_POST["name"];
         $lastname = $_POST["lastname"];
+        $adress = $_POST["adress"];
+        $gender = $_POST["genre"];
+        $bdate = $_POST["bdate"];
+        $id = 0;
+
 
         //vérifie si tout les champs sont remplis
         if ($username === "" || $email === "" || $password === "" || $c_password === "" || $name === "" || $lastname === ""){
@@ -26,7 +31,9 @@
                 $_SESSION["already_exist_error"] = "This email or username already exist.";
                 $error = true;
             }
+            $id = $id +1;
         }
+        $id = $id +1;
         //vérifie si la confirmation du mdp est bonne
         if ($password !== $c_password){
             $_SESSION['mdp_error'] = "Passwords are not the same.";
@@ -45,19 +52,29 @@
             $cust = $xml2->firstChild;
             $newcust = $xml2->createElement("customer");
             
-            $admin = $xml2->createElement("admin",'0');
-            $login = $xml2->createElement("login",$username);
-            $password = $xml2->createElement("password", hash('sha256', $password));
-            $firstname = $xml2->createElement("firstname",$name);
-            $lastname = $xml2->createElement("lastname",$lastname);
-            $email = $xml2->createElement("email",$email);
+            $xmlid = $xml2->createElement("id",$id);
+            $xmladmin = $xml2->createElement("admin",'0');
+            $xmllogin = $xml2->createElement("login",$username);
+            $xmlpassword = $xml2->createElement("password", hash('sha256', $password));
+            $xmlfirstname = $xml2->createElement("firstname",$name);
+            $xmllastname = $xml2->createElement("lastname",$lastname);
+            $xmlgender = $xml2->createElement("gender",$gender);
+            $xmlemail = $xml2->createElement("email",$email);
+            $xmlbdate = $xml2->createElement("birthdate",$bdate);
+            $xmladress = $xml2->createElement("adress",$adress);
             
-            $newcust->appendChild($admin);
-            $newcust->appendChild($login);
-            $newcust->appendChild($password);
-            $newcust->appendChild($firstname);
-            $newcust->appendChild($lastname);
-            $newcust->appendChild($email);
+
+
+            $newcust->appendChild($xmlid);
+            $newcust->appendChild($xmladmin);
+            $newcust->appendChild($xmllogin);
+            $newcust->appendChild($xmlpassword);
+            $newcust->appendChild($xmlfirstname);
+            $newcust->appendChild($xmllastname);
+            $newcust->appendChild($xmlgender);
+            $newcust->appendChild($xmlemail);
+            $newcust->appendChild($xmlbdate);
+            $newcust->appendChild($xmladress);
         
             $cust->appendChild($newcust);
             $xml2->save("../data/customers.xml");
