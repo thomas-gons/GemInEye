@@ -87,7 +87,7 @@
                             <td class='stock' style='display: none'><?=$stockQuantity?></td>
                         <?php
                             } ?>
-                        <td class="case-price" style='width: 20%;'><p class="case-price"><?=$order[$i]['price']?></p></td>
+                        <td class="case-price" style='width: 20%;'><p class="case-price"><?=$order[$i]['price']?>$</p></td>
                     </tr>
                 <?php
                     } ?>

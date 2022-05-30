@@ -35,7 +35,6 @@
         }
         // Assign the order that is not linked to any customer to the recently logged customer
         if ($check) {
-            include "order.php";
             $_SESSION["login"] = true;
             $data = file_get_contents('../data/order.json');
             // get order of the not logged customer and write it to the order of the logged customer
@@ -43,8 +42,7 @@
             if ($orderNotLoggedInCustomer != array()){
                 $lastItem = $orderNotLoggedInCustomer[count($orderNotLoggedInCustomer) - 1];
                 foreach($orderNotLoggedInCustomer as $item) {
-                    if ($item != $lastItem)
-                        addToCart($item, $id);
+                    addToCart($item, $id);
                 }
                 $orders = file_get_contents('../data/order.json');
                 $orders = json_decode($orders, true);
@@ -59,5 +57,36 @@
             // redirected to sign in page with an error message
             header("Location: /sign.php?page=signin");
         }
+    }
+
+    function addToCart($item, $customerID) {
+        $prev_data = file_get_contents('../data/order.json');
+
+        $orders = json_decode($prev_data, true);
+        // if json file is
+        if ($prev_data != "") {
+            $orders = json_decode($prev_data, true);
+            // if the customer has already done an order
+            if (array_key_exists($customerID, $orders) != false) {
+                $customerOrder = $orders[$customerID];
+                $gemIndexInJSON = array_search($item["name"], array_column($customerOrder, "name"));
+                // if the customer has already ordered this item
+                if ($gemIndexInJSON != "")
+                    $orders[$customerID][$gemIndexInJSON]["quantity"] += $item["quantity"];
+                else
+                    array_push($orders[$customerID], $item);
+                
+                $jsonData = json_encode($orders, JSON_PRETTY_PRINT);
+            } else {
+                $orders = $orders + array($customerID => array($item));
+                $jsonData = json_encode($orders, JSON_PRETTY_PRINT);
+            }
+        } else {
+            $order = array();
+            array_push($order, $item);
+            $order = array($customerID => $order);
+            $jsonData = json_encode($order, JSON_PRETTY_PRINT);
+        }
+        file_put_contents("../data/order.json", $jsonData);
     }
 ?>

@@ -33,6 +33,7 @@
                 $jsonOrder = file_get_contents("data/order.json");
                 $orderAll = json_decode($jsonOrder, true);
                 $order = $orderAll[strval($_SESSION['customerID'])];
+                putOrderInHistory($order, $_SESSION['customerID']);
                 $jsonStock = file_get_contents("data/stock.json");
                 $stock = json_decode($jsonStock, true);
             ?>
@@ -42,20 +43,18 @@
                 </div>
                 <div id="ticket-container">
             <?php
+                $totalprice = 0;
                 for($i = 0; $i < count($order); $i++) {
                     $id = $order[$i]["id"];
-                    $pr = $order[$i]['quantity'] * $order[$i]['price']  ?>
+                    $pr = $order[$i]['quantity'] * $order[$i]['price'];
+                    $totalprice += $pr; ?>
                     
                     <div><?=$order[$i]['name']?>...............<?=$order[$i]['quantity']?> X <?=$order[$i]['price']?>$ (TVA = <?=0.20*$order[$i]['price']?>$) </div>
             <?php }
-                $totalprice = 0;
-                for($i = 0; $i < count($order); $i++) {
-                    $totalprice += $order[$i]['price'];
-                }
-                $TTC=$totalprice*0.8;
-                $TVA=$totalprice*0.2;
+                $HT = $totalprice * 0.8;
+                $TVA = $totalprice * 0.2;
                 echo "<br>";
-                echo "<div style='font-size:small'>TTC = $TTC$</div>";
+                echo "<div style='font-size:small'>HT = $HT$</div>";
                 echo "<div style='font-size:small'>TVA = $TVA$</div>";
                 echo "<div>Total price : $totalprice$</div>"; ?>
                 </div>
@@ -63,13 +62,14 @@
                     <a href="/index.php">Back to Home Page</a>
                 </div>
                 <?php 
-                    if (count($orderAll) != 1)
+                    if (count($orderAll) > 1) {
                         unset($orderAll[strval($_SESSION['customerID'])]);
+                    }
                     else
-                        $orderAll = "{}";
+                        $orderAll = (object) null;
                     
                     $jsonData = json_encode($orderAll, JSON_PRETTY_PRINT);
-                    file_put_contents("data/order.json", $orderAll); 
+                    file_put_contents("data/order.json", $jsonData); 
                 ?>
             </div>
         </div>
@@ -77,3 +77,27 @@
     <?php include "commons/footer.html"; ?>
 </body>
 </html>
+
+<?php
+    // add customer's order to the history file 
+    function putOrderInHistory($order, $customerID) {
+        $prev_data = file_get_contents('data/history.json');
+
+        // if json file is
+        if ($prev_data != false) {
+            $history = json_decode($prev_data, true);
+            // if the customer has already done an order
+            if (isset($history[$customerID])) {
+                array_push($history[$customerID], $order);
+            } else {
+                $initHistoryCustomer = array($order);
+                $history = $history + array($customerID => $initHistoryCustomer);
+            }
+            $jsonData = json_encode($history, JSON_PRETTY_PRINT);         
+        } else {
+            $history = array($customerID => array($order));
+            $jsonData = json_encode($history, JSON_PRETTY_PRINT);
+        }
+        file_put_contents("data/history.json", $jsonData);
+    }
+?>

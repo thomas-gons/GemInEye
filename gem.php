@@ -7,6 +7,33 @@
         $previous_uri = $_SESSION["referrer"];
         $_SESSION["referrer"] = $current_uri;
     }
+    // check for valid uri for category and item
+    if (!empty($_GET['cat']) && !empty($_GET['item'])) {
+        $catID = $_GET['cat'];
+        // parse CSV file ==> result: an array of the file lines
+        // get the elements of the columns (separated by commas ==> 'str_getcsv')
+        $csv = array_map('str_getcsv', file("data/categories.csv"));
+        $redirect = 0;
+        for ($i = 1; $i < count($csv); $i++) {
+            if ($csv[$i][1] == $catID){
+                $categoryIndex = $i;
+                $redirect = 0;
+                break;
+            } else {
+                $redirect++;
+            }
+        }
+        $itemIndexInJSON = intVal($_GET["item"]) - 1;
+        error_log("ITEM INDEX:".$itemIndexInJSON);
+        $jsonStr = file_get_contents("data/stock.json");
+        $data = json_decode($jsonStr, true)[$catID];
+        if ($data[$itemIndexInJSON] === false || $data[$itemIndexInJSON] === null)
+            $redirect++;
+        if ($redirect !== 0)
+            header("Location: php/error_page.php");
+    } else {
+        header("Location: category.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,8 +57,7 @@
     <?php include "php/header.php"; ?>
     <main>
         <?php include "php/side_bar.php";
-            // Check for valid uri for category and item
-            $catID = $_GET["cat"];
+            // Check for valid uri for item
             $itemIndexInJSON = intVal($_GET["item"]) - 1;
             $jsonStr = file_get_contents("data/stock.json");
             $data = json_decode($jsonStr, true)[$catID];
@@ -122,10 +148,10 @@
                                     <div class='data-name'>Density:</div>
                                     <div class='data-value'><?=$data[$itemIndexInJSON]['density']?></div>
                                 </div>
-                                <!-- <div class="spacer">
+                                <div class="spacer">
                                     <div class='data-name'>Diaphaneity:</div>
-                                    <div class='data-value'><?=$data[$itemIndexInJSON]['diaphaneity']?></div>
-                                </div> -->
+                                    <div class='data-value'><?=explode(" ",$data[$itemIndexInJSON]['diaphaneity'])[0]?></div>
+                                </div>
                                 <div class="spacer">
                                     <div class='data-name'>Formula:</div>
                                     <div class='data-value'>
